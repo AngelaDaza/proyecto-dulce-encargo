@@ -12,13 +12,14 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header">
-        <nav class="header__nav">
+        <button id="abrir" class="header__btnMenu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="nav" class="header__nav">
+            <button id="cerrar" class="header__btnCerrar"><i class="fa-solid fa-bars"></i></button>
             <ul class="header__ul">
                 <li class="header__li">
                     <a href="#">Cliente</a>
@@ -46,9 +47,10 @@
                 </li>
                 <li class="header__li"><a href="#">A cerca de nosotros</a></li>
                 <li class="header__li"><a href="#">Contáctenos</a></li>
-                <li class="header__li"><a href="#">Ingresar</a></li>
             </ul>
+            
         </nav>
+        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
     </header>
 
     <!-- Aqui empieza la presentación del proyecto -->
@@ -87,35 +89,33 @@
                     </p>
                 </div>
             </div>
-            <div class="contenedor__misionVision">
-                <div class="contenedor__mision">
-                    <img src="img/mision.jpg" alt="img Misión" class="contenedor__misionImg">
-                    <div class="contenedor__misionDescripcion">
-                        <h2 class="contenedor__misionTitle">Misión</h2>
-                        <p class="contenedor__misionParrafo">
-                            Contribuir a la reducción del desperdicio de pan en las panaderías locales y sus
-                            consumidores locales, mediante una plataforma web con responsabilidad social que permita la
-                            difusión y promoción de productos saludables a bajo costo.
-                        </p>
-                    </div>
+            <div class="contenedor__mision">
+                <img src="img/mision.jpg" alt="img Misión" class="contenedor__misionImg">
+                <div class="contenedor__misionDescripcion">
+                    <h2 class="contenedor__misionTitle">Misión</h2>
+                    <p class="contenedor__misionParrafo">
+                        Contribuir a la reducción del desperdicio de pan en las panaderías locales y sus
+                        consumidores locales, mediante una plataforma web con responsabilidad social que permita la
+                        difusión y promoción de productos saludables a bajo costo.
+                    </p>
                 </div>
-                <div class="contenedor__vision">
-                    <img src="img/vision.jpg" alt="img Visión" class="contenedor__visionImg">
-                    <div class="contenedor__visionDescripcion">
-                        <h2 class="contenedor__visionTitle">Visión</h2>
-                        <p class="contenedor__visionParrafo">
-                            Ser unos referentes en la reducción del desperdicio alimentario en panaderías locales,
-                            beneficiando a los minoristas de los establecimientos y a los compradores, creando una
-                            sociedad más sostenible, siendo la plataforma web más innovadora y de mayor alcance en 2025.
-                        </p>
-                    </div>
+            </div>
+            <div class="contenedor__vision">
+                <img src="img/vision.jpg" alt="img Visión" class="contenedor__visionImg">
+                <div class="contenedor__visionDescripcion">
+                    <h2 class="contenedor__visionTitle">Visión</h2>
+                    <p class="contenedor__visionParrafo">
+                        Ser unos referentes en la reducción del desperdicio alimentario en panaderías locales,
+                        beneficiando a los minoristas de los establecimientos y a los compradores, creando una
+                        sociedad más sostenible, siendo la plataforma web más innovadora y de mayor alcance en 2025.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <section class="contenedorEquipo">
         <h2 class="contenedorEquipo__title">Equipo de desarrollo</h2>
-        <div class="contenedorEquipo__carousel" style="display: flex;">
+        <div class="contenedorEquipo__carousel" style="display: flex; margin-left: 1.2rem;">
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
@@ -191,7 +191,7 @@
 
     <footer class="footer">
         <!-- Footer -->
-        <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <footer style="padding-top: 1rem; margin-top: 1rem;" class="text-center text-lg-start bg-body-tertiary text-muted">
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start mt-5">
@@ -282,5 +282,6 @@
     <!-- MDB -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

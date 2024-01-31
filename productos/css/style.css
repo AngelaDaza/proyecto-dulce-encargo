@@ -332,35 +332,211 @@ body {
 }
 /* Aqui termina la Barra de Navegación */
 
-/* Aqui empieza el banner */
-.banner{
+/*Aqui empiezan los Estilos para el contenedor del banner pagina principal en modo celular*/
+.contenedor-pagina-principal {
     font-family: var(--fuentePrincipal);
 }
-.banner__contenedor{
-    background-color: #cfebca;
+
+.contenedor-banner-total {
+    background-color: #CFEBCA;
+    margin-top: -15px;
+    margin-bottom: -20px;
+}
+.contendor-banner {
     display: grid;
     grid-template-rows: ();
+    margin: 1rem 1rem;
+}
+
+.contenedor-banner-izq {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #CFEBCA;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.banner__contenido{
-    max-width: 15rem;
-}
-.banner__title{
     font-family: var(--fuenteSecundaria);
-    font-weight: bolder;
-    margin-top: 0rem;
+    height: fit-content;
+    border-radius: 1rem;
+}
+
+.contendedor-banner-parrafo {
+    text-align: center;
     color: black;
-    font-size: 30px;
-    letter-spacing: 0.2rem;
+    font-weight: bolder;
+    font-size: 13px;
+    margin-bottom: 25px;
+    padding-top: 1rem; 
 }
-.banner__img{
-    display: block;
-    margin-top: 3rem;
+
+.contenedor-banner-der {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #CFEBCA;
+    text-align: center;
+    height: fit-content;
+    border-radius: 1rem;
+    margin-top: -15px;
+    
+}
+
+.contenedor-banner-der-img {
     width: 100%;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
 }
-/* Aqui  el finaliza banner */
+
+.contenedor-banner-button {
+    font-weight: 700;
+    font-size: 11px;
+    color: #eceff1;
+    padding: 0.3rem 1.0rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.contenedor-banner-button a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--fuenteSecundaria);
+}
+
+.contenedor-banner-button:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
+}
+/*Aqui finalizan los Estilos para el contenedor del banner pagina principal en modo celular*/
+/*Aqui empieza el Responive de Tablet del banner pagina principal*/
+@media (min-width: 768px) {
+    .contendor-banner {
+        display: flex;
+        flex-direction: row;
+        /*grid-template-columns: repeat(2 1fr);*/
+        margin: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .contenedor-banner-izq {
+        padding: 1rem;
+        height: fit-content;
+        width: 50%;
+        align-self: center;
+    }
+    
+    .contendedor-banner-parrafo {
+        text-align: center;
+        color: black;
+        font-weight: bolder;
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding-top: 1rem; 
+    }
+    
+    .contenedor-banner-der {
+        padding: 1rem;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+    }
+    
+    .contenedor-banner-der-img {
+        width: 70%;
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .contenedor-banner-button {
+        font-weight: 700;
+        font-size: 15px;
+        color: #eceff1;
+        padding: 0.3rem 1.0rem;
+        background-color: #113775f0;
+        border: none;
+        border-radius: 3.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .contenedor-banner-button a {
+        text-decoration: none;
+        color: white;
+        font-family: var(--fuenteSecundaria);
+    }
+    
+    .contenedor-banner-button:hover {
+        background-color: #c88f44;
+        color: black;
+        transform: scale(1.1);
+    }
+}
+/*Aqui finaliza el Responive de Tablet del banner pagina principal*/
+/*Aqui empieza el Responive de escritorio del banner pagina principal*/
+@media(min-width:1023px) {
+    .contendor-banner {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .contenedor-banner-izq {
+        padding: 1rem;
+        height: fit-content;
+        width: 50%;
+        align-self: center;
+    }
+    
+    .contendedor-banner-parrafo {
+        text-align: center;
+        color: black;
+        font-weight: bolder;
+        font-size: 25px;
+        margin-bottom: 25px;
+        padding-top: 1rem; 
+    }
+    
+    .contenedor-banner-der {
+        padding: 1rem;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+    }
+    
+    .contenedor-banner-der-img {
+        width: 70%;
+        border-radius: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .contenedor-banner-button {
+        font-weight: 700;
+        font-size: 20px;
+        color: #eceff1;
+        padding: 0.3rem 1.0rem;
+        background-color: #113775f0;
+        border: none;
+        border-radius: 3.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .contenedor-banner-button a {
+        text-decoration: none;
+        color: white;
+        font-family: var(--fuenteSecundaria);
+    }
+    
+    .contenedor-banner-button:hover {
+        background-color: #c88f44;
+        color: black;
+        transform: scale(1.1);
+    }
+}
+/*Aqui finaliza el Responive de escritorio del banner pagina principal*/
+
+
 /*Aqui inicia los card de productos*/
 .producto{
     display: flex;

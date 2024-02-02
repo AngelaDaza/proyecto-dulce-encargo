@@ -338,27 +338,30 @@ body {
 }
 .banner__contenedor{
     background-color: #cfebca;
-    display: grid;
-    grid-template-rows: ();
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 .banner__contenido{
-    max-width: 15rem;
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
 }
 .banner__title{
     font-family: var(--fuenteSecundaria);
     font-weight: bolder;
     margin-top: 0rem;
     color: black;
-    font-size: 30px;
+    font-size: 40px;
     letter-spacing: 0.2rem;
+    align-self: center;
 }
 .banner__img{
     display: block;
     margin-top: 3rem;
-    width: 100%;
+    width: 30rem;
+    height: auto;
 }
 /* Aqui  el finaliza banner */
 
@@ -492,7 +495,7 @@ body {
         gap: 1rem;
     }
 }
-@media screen and (max-width: 1180px){
+@media screen and (max-width: 1500px){
     .contenedorEquipo__carousel{
         flex-direction: row;
         flex-wrap: wrap;

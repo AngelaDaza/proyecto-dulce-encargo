@@ -17,54 +17,46 @@
 <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header">
-        <button id="abrir" class="header__btnMenu"><i class="fa-solid fa-bars"></i></button>
+        <button id="abrir" class="header__btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="contenedor__logo">
+            <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
+        </div>
         <nav id="nav" class="header__nav">
-            <button id="cerrar" class="header__btnCerrar"><i class="fa-solid fa-bars"></i></button>
+            <button id="cerrar" class="header__btnCerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
             <ul class="header__ul">
                 <li class="header__li">
-                    <a href="#">Cliente</a>
-                    <ul class="header__ulCliente">
-                        <li class="header__liCliente">
-                            <a href="#">Página principal</a>
-                        </li>
-                        <li class="header__liCliente">
-                            <a href="#">Sucripción</a>
-                        </li>
-                        <li class="header__liCliente">
-                            <a href="#">Paquetes disponibles</a>
-                        </li>
-                    </ul>
+                    <a href="#">Inicio</a>
                 </li>
-                <li class="header__li"><a href="#">Negocio</a>
-                    <ul class="header__ulNegocio">
-                        <li class="header__liNegocio">
-                            <a href="#">Página principal</a>
-                        </li>
-                        <li class="header__liNegocio">
-                            <a href="#">Sucripción</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="header__li"><a href="#">A cerca de nosotros</a></li>
-                <li class="header__li"><a href="#">Contáctenos</a></li>
+                <li class="header__li"><a href="#">Acerca de nosotros</a></li>
+                <li class="header__li"> <a href="#">Contáctenos</a></li>
             </ul>
-            
         </nav>
         <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
     </header>
+    <!-- Aqui termina la Barra de Navegación -->
+
+    <!-- Aqui empieza el banner -->
+    <section class="banner">
+        <div class="banner__contenedor">
+            <div class="banner__contenido">
+                <img class="banner__img" src="img/banner.png" alt="">
+                <h1 class="banner__title" style="text-align: center;">Sobre Nosotros</h1>
+            </div>
+        </div>
+        <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+                    style="stroke: none; fill: #cfebca;"></path>
+            </svg></div>
+    </section>
+    <!-- Aqui termina el banner -->
 
     <!-- Aqui empieza la presentación del proyecto -->
     <section class="contenedor">
-        <div class="contenedor__logoBanner">
-            <div class="contenedor__logo">
-                <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
-            </div>
-            <div class="contenedor__banner">
-                <p class="contenedor__bannerParrafo">Deliciosamente responsables: Nuestras delicias. ¡Tu ahorro al final
-                    del día!</p>
-            </div>
-        </div>
-
         <div class="contenedor__marcaEmpresarial">
             <div class="contenedor__valores">
                 <h2 class="contenedor__valoresTitle">Valores Empresariales</h2>
@@ -115,173 +107,181 @@
     </section>
     <section class="contenedorEquipo">
         <h2 class="contenedorEquipo__title">Equipo de desarrollo</h2>
-        <div class="contenedorEquipo__carousel" style="display: flex; margin-left: 1.2rem;">
+        <div class="contenedorEquipo__carousel" style="display: flex; margin: 1rem; justify-content: center;">
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">Angela Daza</h5>
-                    <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title
-                        and make up the bulk of the
-                        card's content.</p>
+                    <h5 class="card-title" style="color: #1e559c;">Angela Daza</h5>
+                    <p class="card-text" style="text-align: justify;">Desarrolladora web con experiencia integral en
+                        Frontend y Backend, destacando habilidades sólidas en HTML, CSS, JavaScript, MySQL y Java.</p>
                 </div>
-                <div class="card-body" style="text-align: center; font-size: 2rem;">
-                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: black;"></i></a>
-                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: black;"></i></a>
+                <div class="card-body"
+                    style="text-align: center; font-size: 2rem; display: flex; align-items: end; justify-content: center;">
+                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: #1e559c;"></i></a>
+                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: #1e559c;"></i></a>
                 </div>
             </div>
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">Jairo Valencia</h5>
+                    <h5 class="card-title" style="color: #1e559c;">Jairo Valencia</h5>
                     <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title
                         and make up the bulk of the
                         card's content.</p>
                 </div>
-                <div class="card-body" style="text-align: center; font-size: 2rem;">
-                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: black;"></i></a>
-                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: black;"></i></a>
+                <div class="card-body"
+                    style="text-align: center; font-size: 2rem; display: flex; align-items: end; justify-content: center;">
+                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: #1e559c;"></i></a>
+                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: #1e559c;"></i></a>
                 </div>
             </div>
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">John Villegas</h5>
+                    <h5 class="card-title" style="color: #1e559c;">John Villegas</h5>
                     <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title
                         and make up the bulk of the
                         card's content.</p>
                 </div>
-                <div class="card-body" style="text-align: center; font-size: 2rem;">
-                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: black;"></i></a>
-                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: black;"></i></a>
+                <div class="card-body"
+                    style="text-align: center; font-size: 2rem; display: flex; align-items: end; justify-content: center;">
+                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: #1e559c;"></i></a>
+                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: #1e559c;"></i></a>
                 </div>
             </div>
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">Karina Sanabria</h5>
+                    <h5 class="card-title" style="color: #1e559c;">Karina Sanabria</h5>
                     <p class="card-text" style="text-align: justify;">Desarrolladora web Java con una sólida formación
                         en psicología organizacional, fusionando las habilidades técnicas con una comprensión profunda
                         de las dinámicas humanas.</p>
                 </div>
-                <div class="card-body" style="text-align: center; font-size: 2rem;">
-                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: black;"></i></a>
-                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: black;"></i></a>
+                <div class="card-body"
+                    style="text-align: center; font-size: 2rem; display: flex; align-items: end; justify-content: center;">
+                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: #1e559c;"></i></a>
+                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: #1e559c;"></i></a>
                 </div>
             </div>
             <div class="card" style="width: 18rem; margin-right: 1rem;">
                 <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top"
                     alt="Chicago Skyscrapers" />
                 <div class="card-body">
-                    <h5 class="card-title">Liliana Tamara</h5>
+                    <h5 class="card-title" style="color: #1e559c;">Liliana Tamara</h5>
                     <p class="card-text" style="text-align: justify;">Some quick example text to build on the card title
                         and make up the bulk of the
                         card's content.</p>
                 </div>
-                <div class="card-body" style="text-align: center; font-size: 2rem;">
-                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: black;"></i></a>
-                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: black;"></i></a>
+                <div class="card-body"
+                    style="text-align: center; font-size: 2rem; display: flex; align-items: end; justify-content: center;">
+                    <a href="#" class="card-link"><i class="fa-brands fa-github" style="color: #1e559c;"></i></a>
+                    <a href="#" class="card-link"><i class="fa-brands fa-linkedin" style="color: #1e559c;"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <!-- Footer -->
-        <footer style="padding-top: 1rem; margin-top: 1rem;" class="text-center text-lg-start bg-body-tertiary text-muted">
-            <!-- Section: Links  -->
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <!-- Grid row -->
-                    <div class="row mt-3">
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                <i class="fas fa-gem me-3"></i>Hybrid
-                            </h6>
-                            <p style="text-align: justify;">
-                                Un equipo de desarrollo apasionado y versátil, transformando ideas en soluciones innovadoras. Nuestra fuerza radica en la colaboración y agilidad, entregando productos de alta calidad que superan expectativas.
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Servicios
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Desarrollo web Frontend</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Desarrollo web Backend</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Bases de datos</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Análisis y diseño</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                Menú
-                            </h6>
-                            <p>
-                                <a href="#!" class="text-reset">Cliente</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Negocio</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Contáctenos</a>
-                            </p>
-                            <p>
-                                <a href="#!" class="text-reset">Ingresar</a>
-                            </p>
-                        </div>
-                        <!-- Grid column -->
-
-                        <!-- Grid column -->
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                            <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
-                            <p>
-                                <i class="fas fa-envelope me-3"></i>
-                                hybrid@gmail.com
-                            </p>
-                            <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
-                            <p><i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89</p>
-                        </div>
-                        <!-- Grid column -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Links  -->
+        <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #cfebca;"></path>
+            </svg></div>
+        <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Hybrid
+                        </h6>
+                        <p style="text-align: justify">
+                            Un equipo de desarrollo apasionado y versátil, transformando
+                            ideas en soluciones innovadoras.
+                        </p>
                     </div>
-                    <!-- Grid row -->
-                </div>
-            </section>
-            <!-- Section: Links  -->
+                    <!-- Grid column -->
 
-            <!-- Copyright -->
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2024 Copyright:
-                <a class="text-reset fw-bold" href="#">Hybrid</a>
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Desarrollo web Frontend</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Desarrollo web Backend</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Bases de datos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Análisis y diseño</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Inicio</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Acerca de nosotros</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Contáctenos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ingresar</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            hybrid@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+                        <p>
+                            <i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
             </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #8eb080; color: black;">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="#">Hybrid</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
     </footer>
     <!-- MDB -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

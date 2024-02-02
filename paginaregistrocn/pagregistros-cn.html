@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suscripción de clientes</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="img/icono-dulce-encargo.png" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <!-- Aqui empieza la Barra de Navegación -->
+  <header class="header" id="inicio">
+    <button id="abrir" class="header__btnMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    <div class="contenedor__logo">
+      <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
+    </div>
+    <nav id="nav" class="header__nav">
+      <button id="cerrar" class="header__btnCerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="header__ul">
+        <li class="header__li">
+          <a href="paginaPrincipal.html">Inicio</a>
+        </li>
+        <li class="header__li"><a href="/acercaDe/acercaDe.html">Acerca de nosotros</a></li>
+        <li class="header__li"> <a href="/Contactenos/contactenos.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+    <a href="/ingresarLogin/ingresarLogin.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+  </header>
+  <!-- Aqui termina la Barra de Navegación -->
+
+  <!-- Aqui empieza el contenedor de botones que cambian la vista de los formularios -->
+    <div id="vista">
+      <div class="contenedor-vista">
+        <div class="subcontenedor-vista">
+      <h2>¡Hola, bienvenido a Dulce Encargo!<br>¿Cómo deseas registrarte?</h2>
+      <button id="botonCliente">Cliente</button>
+      <button id="botonNegocio">Negocio</button>
+    </div>
+    </div>
+    </div>
+  <!-- Aqui finaliza el contenedor de botones que cambian la vista de los formularios -->
+
+  <!-- Aqui empieza el formulario para la suscripcion de los clientes -->
+  <section class="contenedor-total-formulario-clientes" id="formularioCliente" >
+
+    <div class="contenedor-titulo-formulario">
+      <img src="img/registro-clientes.png" alt="Logo registro clientes"/>
+      <h1>Registro de Clientes</h1>
+    </div>
+    <div style="height: 150px; overflow: hidden; margin-top: -1rem;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+
+    <section class="subcontenedor-total-formulario-clientes">
+    <div class="contenedor-formulario-clientes">
+
+      <form action="" class="formulario-clientes" onsubmit="return validarContrasenasCliente()">
+        <label for="tipo-documento" class="formulario-label">Tipo de documento</label>
+        <select name="tipo de documento" id="tipo-documento" class="formulario-input" data-placeholder='' required>
+        <option value="" >Seleccione...</option>
+        <option value="CC">CÉDULA DE CIUDADANÍA</option>
+	      <option value="CE">CÉDULA DE EXTRANJERÍA COLOMBIANA</option>
+	      <option value="DE">CÉDULA EXTRANJERA</option>
+	      <option value="OE">DOCUMENTO EXTRANJERO</option>
+	      <option value="PA">PASAPORTE</option>
+      </select>
+      
+      <label for="numero-documento" class="formulario-label">Número de documento</label>
+      <input type="number" class="formulario-input" id="numero-documento" placeholder="Escribe tu documento" name="Número de documento" required>
+
+      <label for="nombres-cliente" class="formulario-label">Nombres</label>
+      <input type="text" class="formulario-input" id="nombres-cliente" placeholder="Escribe tu nombre" name="Nombre del cliente" required>
+
+      <label for="apellidos-cliente" class="formulario-label">Apellidos</label>
+      <input type="text" class="formulario-input" id="apellidos-cliente" placeholder="Escribe tus apellidos" name="Apellidos del cliente" required>
+
+      <label for="tipo-localidad" class="formulario-label">Localidad de residencia (Solo Bogotá)</label>
+      <select name="tipo de localidad" id="tipo-localidad" class="formulario-input" data-placeholder='' required>
+        <option value="" >Seleccione...</option>
+        <option value="Usaquén">Usaquén</option>
+        <option value="Chapinero">Chapinero</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="San Cristóbal">San Cristóbal</option>
+        <option value="Usme">Usme</option>
+        <option value="Tunjuelito">Tunjuelito</option>
+        <option value="Bosa">Bosa</option>
+        <option value="Kennedy">Kennedy</option>
+        <option value="Fontibón">Fontibón</option>
+        <option value="Engativá">Engativá</option>
+        <option value="Suba">Suba</option>
+        <option value="Barrios Unidos">Barrios Unidos</option>
+        <option value="Teusaquillo">Teusaquillo</option>
+        <option value="Los Mártires">Los Mártires</option>
+        <option value="Antonio Nariño">Antonio Nariño</option>
+        <option value="Puente Aranda">Puente Aranda</option>
+        <option value="La Candelaria">La Candelaria</option>
+      </select>
+
+      <label for="direccion-cliente" class="formulario-label">Dirección de residencia</label>
+      <input type="text" class="formulario-input" id="direccion-cliente" placeholder="Escribe tu dirección" name="Dirección de residencia" required>
+
+      <label for="email-cliente" class="formulario-label">Correo electrónico</label>
+      <input type="email" class="formulario-input" id="email-cliente" placeholder="Escriba su correo electrónico" name="Dirección de email" required>
+
+      <label for="telefono-cliente" class="formulario-label">Teléfono de contacto</label>
+      <input type="number" class="formulario-input" id="telefono-cliente" placeholder="Teléfono de contacto" name="Teléfono de contacto" required>
+
+      <label for="usuario-cliente" class="formulario-label">Nombre de usuario</label>
+      <input type="text" class="formulario-input" id="usuario-cliente" placeholder="Escriba un nombre de usuario" name="Nombre de usuario" required>
+
+      <label for="clave-cliente" class="formulario-label">Contraseña</label>
+      <div class="input-contraseña">
+      <input type="password" class="formulario-input input1" id="clave-cliente" placeholder="Escriba una contraseña" name="contraseña de usuario" required>
+      <span class="icono-ojo" onclick="mostrarContrasenaCliente()">
+        <i class="fa-solid fa-eye"></i>
+      </span>
+      </div>
+
+      <label for="clave-cliente-2" class="formulario-label">Repita la Contraseña</label>
+      <div class="input-contraseña">
+      <input type="password" class="formulario-input input1" id="clave-cliente-2" placeholder="Vuelva a escribir la contraseña" name="Repeticion contraseña de usuario" required>
+      <span class="icono-ojo-cliente2" onclick="repetirMostrarContrasenaCliente()">
+        <i class="fa-solid fa-eye"></i>
+      </span>
+      </div>
+
+      <div class="contenedor-autorizacion-datos">
+        <input type="checkbox" class="formulario-input" id="auto-datos" name="Autorizacion de datos" required>
+        <label for="auto-datos" class="formulario-label">Autorizo <a href="#" onclick="abrirPDF()">el tratamiento de mis datos personales.</a></label>
+      </div>
+
+      <div class="contenedor-botones-formulario">
+        <input type="submit" class="formulario-input botonEnviar" id="submit" placeholder="" name="submit" onclick="" value="Registrarme">
+        <input type="reset" value="Cancelar" class="formulario-input botonCancelar" id="cancelar" placeholder="" name="cancelar">
+      </div>
+
+      </form>
+    </div>
+  </section>
+  </section>
+  <!-- Aqui finaliza el formulario para la suscripcion de los clientes -->
+
+  <!-- Aqui empieza el formulario para la suscripcion de los negocios -->
+  <section class="contenedor-total-formulario-negocio" id="formularioNegocio" >
+    <div class="contenedor-titulo-formulario">
+      <img src="img/registro-negocios.png" alt="Logo registro negocios"/>
+      <h1>Registro de Negocios</h1>
+    </div>
+    <div style="height: 150px; overflow: hidden; margin-top: -1rem;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+
+    <section class="subcontenedor-total-formulario-negocio">
+    <div class="contenedor-formulario-negocio">
+
+      <form action="" class="formulario-negocio" onsubmit="return validarContrasenasNegocio()">
+        
+        <label for="nombres-negocio" class="formulario-label">Nombre del negocio</label>
+        <input type="text" class="formulario-input" id="nombres-negocio" placeholder="Escribe el nombre del negocio" name="Nombre del negocio" required>
+        
+        <label for="tipo-documento-negocio" class="formulario-label">Tipo de documento del negocio</label>
+        <select name="tipo de documento del negocio" id="tipo-documento-negocio" class="formulario-input" data-placeholder='' required>
+        <option value="" >Seleccione...</option>
+        <option value="NIT">NIT</option>
+	      <option value="RUT">RUT</option>
+	      <option value="OTRO">OTRO</option>
+      </select>
+      
+      <label for="numero-documento-negocio" class="formulario-label">Número de documento del negocio</label>
+      <input type="number" class="formulario-input" id="numero-documento-negocio" placeholder="Escribe el documento del negocio" name="Número de documento del negocio" required>
+
+      <label for="tipo-localidad-negocio" class="formulario-label">Localidad de ubicación (Solo Bogotá)</label>
+      <select name="tipo de localidad del negocio" id="tipo-localidad-negocio" class="formulario-input" data-placeholder='' required>
+        <option value="" >Seleccione...</option>
+        <option value="Usaquén">Usaquén</option>
+        <option value="Chapinero">Chapinero</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="San Cristóbal">San Cristóbal</option>
+        <option value="Usme">Usme</option>
+        <option value="Tunjuelito">Tunjuelito</option>
+        <option value="Bosa">Bosa</option>
+        <option value="Kennedy">Kennedy</option>
+        <option value="Fontibón">Fontibón</option>
+        <option value="Engativá">Engativá</option>
+        <option value="Suba">Suba</option>
+        <option value="Barrios Unidos">Barrios Unidos</option>
+        <option value="Teusaquillo">Teusaquillo</option>
+        <option value="Los Mártires">Los Mártires</option>
+        <option value="Antonio Nariño">Antonio Nariño</option>
+        <option value="Puente Aranda">Puente Aranda</option>
+        <option value="La Candelaria">La Candelaria</option>
+      </select>
+
+      <label for="direccion-negocio" class="formulario-label">Dirección de ubicación</label>
+      <input type="text" class="formulario-input" id="direccion-negocio" placeholder="Escribe la dirección del negocio" name="Dirección del negocio" required>
+
+      <label for="tipo-negocio" class="formulario-label">Tipo de Negocio</label>
+      <select name="tipo de negocio" id="tipo-negocio" class="formulario-input" data-placeholder='' required>
+        <option value="" >Seleccione...</option>
+        <option value="Panadería tradicional">Panadería tradicional</option>
+        <option value="Panadería artesanal">Panadería artesanal</option>
+        <option value="Repostería tradicional">Repostería tradicional</option>
+        <option value="Repostería artesanal">Repostería artesanal</option>
+        <option value="Panadería y repostería tradicional">Panadería y repostería tradicional</option>
+        <option value="Panadería y repostería artesanal">Panadería y repostería artesanal</option>
+      </select>
+
+      <label for="email-negocio" class="formulario-label">Correo electrónico</label>
+      <input type="email" class="formulario-input" id="email-negocio" placeholder="Escriba el correo electrónico del negocio" name="Dirección de email" required>
+
+      <label for="telefono-negocio" class="formulario-label">Teléfono de contacto</label>
+      <input type="number" class="formulario-input" id="telefono-negocio" placeholder="Teléfono de contacto del negocio" name="Teléfono de contacto" required>
+
+      <label for="usuario-negocio" class="formulario-label">Nombre de usuario</label>
+      <input type="text" class="formulario-input" id="usuario-negocio" placeholder="Escriba un nombre de usuario para el negocio" name="Nombre de usuario negocio" required>
+
+      <label for="clave-negocio" class="formulario-label">Contraseña</label>
+      <div class="input-contraseña2">
+      <input type="password" class="formulario-input input2" id="clave-negocio" placeholder="Escriba una contraseña" name="contraseña de negocio" required>
+      <span class="icono-ojo2" onclick="mostrarContrasenaNegocio()">
+        <i class="fa-solid fa-eye"></i>
+      </span>
+      </div>
+
+      <label for="clave-negocio-2" class="formulario-label">Repita la Contraseña</label>
+      <div class="input-contraseña2">
+      <input type="password" class="formulario-input input2" id="clave-negocio-2" placeholder="Vuelva a escribir la contraseña" name="Repeticion contraseña de negocio" required>
+      <span class="icono-ojo2Negocio" onclick="repetirMostrarContrasenaNegocio()">
+        <i class="fa-solid fa-eye"></i>
+      </span>
+      </div>
+
+      <div class="contenedor-autorizacion-datos">
+        <input type="checkbox" class="formulario-input" id="auto-datos" name="Autorizacion de datos" required>
+        <label for="auto-datos" class="formulario-label">Autorizo <a href="#" onclick="abrirPDF()">el tratamiento de mis datos personales.</a></label>
+      </div>
+      
+      <div class="contenedor-botones-formulario">
+        <input type="submit" class="formulario-input botonEnviar" id="submit" placeholder="" name="submit" onclick="" value="Registrarme">
+        <input type="reset" value="Cancelar" class="formulario-input botonCancelar" id="cancelar" placeholder="" name="cancelar">
+      </div>
+      
+    </form>
+    </div>
+  </section>
+  </section>
+  <!-- Aqui finaliza el formulario para la suscripcion de los negocios -->
+
+  <!-- Aqui empieza el Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Links  -->
+    <div style="height: 100px; overflow: hidden; margin-bottom: -0.5rem;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Hybrid
+            </h6>
+            <p style="text-align: justify">
+              Un equipo de desarrollo apasionado y versátil, transformando
+              ideas en soluciones innovadoras.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+            <p>
+              <a href="#inicio" class="text-reset">Desarrollo web Frontend</a>
+            </p>
+            <p>
+              <a href="#inicio" class="text-reset">Desarrollo web Backend</a>
+            </p>
+            <p>
+              <a href="#inicio" class="text-reset">Bases de datos</a>
+            </p>
+            <p>
+              <a href="#inicio" class="text-reset">Análisis y diseño</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
+            <p>
+              <a href="paginaPrincipal.html" class="text-reset">Inicio</a>
+            </p>
+            <p>
+              <a href="/acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
+            </p>
+            <p>
+              <a href="/Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
+            </p>
+            <p>
+              <a href="/ingresarLogin/ingresarLogin.html" class="text-reset">Ingresar</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              hybrid@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+            <p>
+              <i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: #8eb080; color: black;">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Hybrid</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Aqui finaliza el Footer -->
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

@@ -283,6 +283,7 @@ body {
 .formulario-input {
     border: 1px solid gray;
     border-radius: 0.4rem;
+    width: 100%;
 }
 
 option {
@@ -357,7 +358,7 @@ option {
   .icono-ojo {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -391,7 +392,7 @@ option {
   .icono-ojo-cliente2 {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -425,7 +426,7 @@ option {
   .icono-ojo2 {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -459,7 +460,7 @@ option {
   .icono-ojo2Negocio {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -759,12 +760,9 @@ option {
     
     .contenedor-botones-formulario {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: row;
+        margin: auto;
         gap: 0.5rem;
-        margin-top: 1.5rem;
-        padding-bottom: 1rem;
+        width: 60%;
     }
     
     .botonEnviar{
@@ -774,6 +772,7 @@ option {
         border: 1px solid black;
         border-radius: 0.5rem;
         padding: 0.3rem;
+        
         
     }
     
@@ -787,6 +786,7 @@ option {
         border: 1px solid gray;
         border-radius: 0.5rem;
         padding: 0.3rem;
+        
     }
     
     .botonCancelar:hover{
@@ -1017,20 +1017,14 @@ option {
         margin-bottom: -6rem;
         font-family: var(--fuentePrincipal);
         font-size: 15px;
-        color: black;
-        background-color: #8eb080;
-        border-radius: 1rem;
-        padding: 1rem;
-        padding-left: 2rem;
-        width: 100%;
-        height: fit-content;
+        display: grid;
     }
     
     .formulario-clientes {
         display: grid;
         grid-template-columns: 50% 50%;
     }
-    
+
     .formulario-label {
         margin: 0.5rem 0;
         font-weight: bolder;
@@ -1041,7 +1035,7 @@ option {
         border: 1px solid gray;
         border-radius: 0.4rem;
         padding: 0.3rem;
-        width: 90%;
+        width: 100%;
     }
     
     option {
@@ -1066,7 +1060,7 @@ option {
         height: auto;
     }
     
-    .contenedor-botones-formulario {
+    /*.contenedor-botones-formulario {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1075,7 +1069,8 @@ option {
         margin-top: 1.5rem;
         padding-bottom: 1rem;
         margin-right: 1rem;
-    }
+        
+    }*/
     
     .botonEnviar{
         background-color: #113775;
@@ -1085,7 +1080,6 @@ option {
         border-radius: 0.5rem;
         padding: 0.4rem;
         width: 25%;
-        
     }
     
     .botonEnviar:hover{
@@ -1104,7 +1098,77 @@ option {
     .botonCancelar:hover{
         transform: scale(1.1);
     }
+
+/*Estilos para el campo de contraseña del formulario cliente primer campo de contraseña*/
+.input-contraseña {
+    position: relative;
+  }
+
+  .input1 {
+    width: 100%;
+  }
+  
+  .icono-ojo {
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .icono-ojo i {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input-contraseña:hover .icono-ojo i {
+    color: #777;
+  }
+  
+  #clave-cliente:focus ~ .icono-ojo i {
+    color: #000;
+  }
+  
+  #clave-cliente[type="text"] ~ .icono-ojo i {
+    transform: rotateZ(180deg);
+  }
+
+/*Estilos para el campo de contraseña del formulario cliente segundo campo de contraseña*/
+.input-contraseña {
+    position: relative;
+  }
+
+  .input1 {
+    width: 100%;
+  }
+  
+  .icono-ojo-cliente2 {
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .icono-ojo-cliente2 i {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input-contraseña:hover .icono-ojo-cliente2 i {
+    color: #777;
+  }
+  
+  #clave-cliente-2:focus ~ .icono-ojo-cliente2 i {
+    color: #000;
+  }
+  
+  #clave-cliente-2[type="text"] ~ .icono-ojo-cliente2 i {
+    transform: rotateZ(180deg);
+  }
 }
+
+
 /* Aqui finaliza el responsive de escritorio para el formulario de registro clientes */
 
 /*Aqui finalizan los Media Query del responsive para escritorio*/
@@ -1169,9 +1233,6 @@ option {
     display: flex;
     flex-direction: column;
 }
-.formulario-negocio div{
-    display: grid;
-}
 
 .formulario-label {
     margin: 0.5rem 0;
@@ -1182,6 +1243,7 @@ option {
 .formulario-input {
     border: 1px solid gray;
     border-radius: 0.4rem;
+    width: 100%;
 }
 
 option {
@@ -1221,7 +1283,7 @@ option {
     border: 1px solid black;
     border-radius: 0.5rem;
     padding: 0.2rem;
-    
+    width: 40%;
 }
 
 .botonEnviar:hover{
@@ -1234,6 +1296,7 @@ option {
     border: 1px solid gray;
     border-radius: 0.5rem;
     padding: 0.2rem;
+    width: 40%;
 }
 
 .botonCancelar:hover{
@@ -1335,7 +1398,7 @@ option {
         justify-content: center;
         align-items: center;
         flex: row;
-        gap: 0.5rem;
+        gap: 0.8rem;
         margin-top: 1.5rem;
         padding-bottom: 1rem;
     }
@@ -1411,13 +1474,6 @@ option {
         margin-bottom: -6rem;
         font-family: var(--fuentePrincipal);
         font-size: 15px;
-        color: black;
-        background-color: #8eb080;
-        border-radius: 1rem;
-        padding: 1rem;
-        padding-left: 2rem;
-        width: 100%;
-        height: fit-content;
     }
     
     .formulario-negocio {
@@ -1468,7 +1524,7 @@ option {
         gap: 0.8rem;
         margin-top: 1.5rem;
         padding-bottom: 1rem;
-        margin-left: 1rem;
+        /*margin-left: 1rem;*/
     }
     
     .botonEnviar{
@@ -1498,5 +1554,74 @@ option {
     .botonCancelar:hover{
         transform: scale(1.1);
     }
+
+    /*Estilos para el campo de contraseña del formulario negocio primer campo*/
+  .input-contraseña2 {
+    position: relative;
+    width: 90%;
+  }
+
+  .input2 {
+    width: 100%;
+  }
+  
+  .icono-ojo2 {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .icono-ojo2 i {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input-contraseña2:hover .icono-ojo2 i {
+    color: #777;
+  }
+
+  #clave-negocio:focus ~ .icono-ojo2 i {
+    color: #000;
+  }
+  
+  #clave-negocio[type="text"] ~ .icono-ojo2 i {
+    transform: rotateZ(180deg);
+  }
+
+/*Estilos para el campo de contraseña del formulario negocio segundo campo*/
+.input-contraseña2 {
+    position: relative;
+  }
+
+  .input2 {
+    width: 100%;
+  }
+  
+  .icono-ojo2Negocio {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .icono-ojo2Negocio i {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .input-contraseña2:hover .icono-ojo2Negocio i {
+    color: #777;
+  }
+
+  #clave-negocio-2:focus ~ .icono-ojo2Negocio i {
+    color: #000;
+  }
+  
+  #clave-negocio-2[type="text"] ~ .icono-ojo2Negocio i {
+    transform: rotateZ(180deg);
+  }
 }
 /* Aqui finaliza el responsive de escritorio para el formulario de registro negocio */

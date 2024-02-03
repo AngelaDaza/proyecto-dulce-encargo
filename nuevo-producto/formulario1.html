@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+     <!-- Aqui empieza la Barra de Navegación -->
+    <header class="header">
+        <button id="abrir" class="header__btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="contenedor__logo">
+            <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
+        </div>
+        <nav id="nav" class="header__nav">
+            <button id="cerrar" class="header__btnCerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <ul class="header__ul">
+                <li class="header__li">
+                    <a href="#">Inicio</a>
+                </li>
+                <li class="header__li"><a href="#">Acerca de nosotros</a></li>
+                <li class="header__li"> <a href="#">Contáctenos</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+    </header>
+    <!-- Aqui termina la Barra de Navegación -->
+
+    <section class="contenedor-formulario" >
+        <div class="contenedor-bienvenidos">
+            <h1>¡BIENVENIDOS!</h1>
+            <p>
+                "Emprender es un viaje apasionante lleno de desafíos y oportunidades. En este camino, recuerda que cada obstáculo es una lección y cada logro es un paso hacia tus sueños. Mantén viva tu visión, pero sé flexible en tu enfoque. Abraza la innovación y no temas a los errores, ya que son la materia prima de tu crecimiento personal y profesional. Cultiva relaciones sólidas, rodeándote de mentores y colegas que inspiren y desafíen tus ideas. No olvides cuidar de ti mismo; el equilibrio entre trabajo y bienestar es esencial. Confía en tu intuición, trabaja con pasión y recuerda que cada pequeño progreso es un logro.
+            </p>
+            <h2>
+                ¡Que tu viaje emprendedor esté lleno de creatividad, perseverancia y éxitos inolvidables!
+            </h2>
+        </div>
+        
+        <form>
+            <div>
+                <h3>Crear Nuevo Producto</h3>
+            </div>
+            <div>
+                <label for="formNombre">Nombre del producto</label>
+                <input type="text" id="formNombre" required>
+            </div>
+            <div>
+                <label for="formDescripcion">Ingrese la descripción</label>
+                <input type="text" id="formDescripcion" required>
+            </div>
+            <div>
+                <label for="formTienda">Nombre de la tienda</label>
+                <input type="text" id="formTienda" required>
+            </div>
+            <div>
+                <label for="formUbicacion">Ubicación de la tienda</label>
+                <input type="text" id="formUbicacion" required>
+            </div>
+            <div>
+                <label for="formRegular">Precio regular del producto</label>
+                <input type="number"  id="formRegular" required>
+            </div>
+            <div>
+                <label for="formFinal">Precio final del producto</label>
+                <input type="number" id="formFinal" required>
+            </div>
+            <div>
+                <button type="submit" onclick="">CREAR</button>
+            </div>
+        </form>    
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Links  -->
+        <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #cfebca;"></path>
+            </svg></div>
+        <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Hybrid
+                        </h6>
+                        <p style="text-align: justify">
+                            Un equipo de desarrollo apasionado y versátil, transformando
+                            ideas en soluciones innovadoras.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Desarrollo web Frontend</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Desarrollo web Backend</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Bases de datos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Análisis y diseño</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
+                        <p>
+                            <a href="#!" class="text-reset">Inicio</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Acerca de nosotros</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Contáctenos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Ingresar</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                        <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            hybrid@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+                        <p>
+                            <i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: #8eb080; color: black;">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="#">Hybrid</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    </footer>
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js">
+    </script>
+
+</body>
+</html>

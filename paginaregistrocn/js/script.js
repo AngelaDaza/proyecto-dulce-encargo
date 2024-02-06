@@ -206,7 +206,8 @@ signupFormCliente.addEventListener('submit', (e)=>{
        // Mostraremos que el usuario se registro con exito
        alert('Registro fue exitoso')
        // Que nos redireccione al login
-       window.location.href = 'login.html'
+       console.log("Entro aca")
+       window.location.href = '../paginaLogin/index.html'
 });
 //Aqui termina la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 
@@ -251,6 +252,6 @@ signupFormBusiness.addEventListener('submit', (e)=>{
        localStorage.setItem('users', JSON.stringify(Users))
        // Mostraremos que el usuario se registro con exito
        alert('Registro fue exitoso')
-       // Que nos redireccione al login
-       window.location.href = 'login.html'
+       // Que nos redireccione al login       
+       window.location.href = '../paginaLogin/index.html'
 });

@@ -10,6 +10,7 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 <body>
     <header class="header">
@@ -59,12 +60,11 @@
         <h2 class="contenedorPaquetesDisponibles__title">
             Paquetes activos
         </h2>
+
         <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft"><i class="fa-solid fa-circle-arrow-left"></i></button>
         <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight"><i class="fa-solid fa-circle-arrow-right"></i></button>
-        <div      class="contenedorPaquetesDisponibles__cards" >
-            
+        <div class="contenedorPaquetesDisponibles__cards" >
             <div class="paquetesDisponibles__cards" id="carrusel">
-                
                 <div class="paquetesDisponibles__card">
                     <img src="img/vintage-store-with-pastries.jpg" alt="Pan Baguette" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Baguettes</h3>
@@ -96,54 +96,179 @@
     </section>
 
     <section class="contenedorMediosDePago">
-        <h2 class="contenedorMediosDePago__title">Paquetes en progreso</h2>
-        <div>
-            <div class="input-group">
-                <div class="form-outline" data-mdb-input-init>
-                  <input id="search-focus" type="search" id="form1" class="form-control" />
-                  <label class="form-label" for="form1">Buscar</label>
-                </div>
-                <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                  <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div class="dropdown">
-                <button
-                  class="btn btn-primary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-mdb-dropdown-init
-                  data-mdb-ripple-init
-                  aria-expanded="false"
-                >
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+      <h2 class="contenedorMediosDePago__title">Paquetes en progreso</h2>
+      <div id="filtro">
+        <label for="buscar">Buscar:</label>
+        <input type="text" id="buscar" oninput="buscarElementos()">
+        <select id="filtroCategoria" onchange="filtrarPorCategoria()">
+            <option value="">Todas las categorías</option>
+            <!-- Agrega las opciones de categorías según tus datos -->
+            <option value="Categoria1">Categoria1</option>
+            <option value="Categoria2">Categoria2</option>
+        </select>
+      </div>
+  
+      <div id="paginacion" class="contenedorPaquetesProgreso__cards">
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>6:00pm-7:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
         </div>
- 
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>6:00pm-7:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>6:00pm-7:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>6:00pm-7:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>7:00pm-8:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>7:00pm-8:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>7:00pm-8:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>7:00pm-8:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>8:00pm-9:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>8:00pm-9:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>8:00pm-9:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>8:00pm-9:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+        <div class="contenedorPaquetesProgreso__card">
+          <h3>8:00pm-9:00pm</h3>
+          <lord-icon
+            src="https://cdn.lordicon.com/hsrrkevt.json"
+            trigger="hover"
+            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+            style="width:100px;height:100px">
+          </lord-icon>
+          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre cliente: Pepito Perez</p>
+          <p>Especificaciones especiales: </p>
+        </div>
+      </div>
+      <div id="botonesPagina">
+        
+      </div>
     </section>
 
     <!-- Footer -->

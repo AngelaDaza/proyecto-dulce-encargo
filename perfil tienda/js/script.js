@@ -43,36 +43,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//Se asigna funcionalidades con Bootstrap al buscador en los paquetes en progreso
-import { Input, Ripple, initMDB } from "mdb-ui-kit";
 
-initMDB({ Input, Ripple });
 
-const searchFocus = document.getElementById('search-focus');
-const keys = [
-  { keyCode: 'AltLeft', isTriggered: false },
-  { keyCode: 'ControlLeft', isTriggered: false },
-];
 
-window.addEventListener('keydown', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = true;
-    }
-  });
 
-  const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
 
-  if (shortcutTriggered) {
-    searchFocus.focus();
+
+
+
+
+
+//Paginación
+// Obtener los elementos relevantes del DOM
+const contenedorElementos = document.getElementById("paginacion");
+const botonesPagina = document.getElementById("botonesPagina");
+const elementosPorPagina = 8; // Cambia esto según la cantidad de elementos que quieras mostrar por página
+const totalElementos = contenedorElementos.children.length;
+let paginaActual = 1;
+
+// Función para mostrar elementos de la página actual
+function mostrarElementosPagina(pagina) {
+  const inicio = (pagina - 1) * elementosPorPagina;
+  const fin = inicio + elementosPorPagina;
+
+  for (let i = 0; i < totalElementos; i++) {
+    contenedorElementos.children[i].style.display = i >= inicio && i < fin ? "block" : "none";
   }
-});
+}
 
-window.addEventListener('keyup', (e) => {
-  keys.forEach((obj) => {
-    if (obj.keyCode === e.code) {
-      obj.isTriggered = false;
+// Función para generar botones de paginación
+function generarBotonesPaginacion() {
+  const totalPaginas = Math.ceil(totalElementos / elementosPorPagina);
+
+  // Limpiar botones existentes
+  botonesPagina.innerHTML = "";
+
+  // Crear botones
+  for (let i = 1; i <= totalPaginas; i++) {
+    const boton = document.createElement("li");
+    boton.classList.add("page-item");
+    boton.innerHTML = `<a class="page-link" href="#" onclick="cambiarPagina(${i})">${i}</a>`;
+    botonesPagina.appendChild(boton);
+  }
+}
+
+// Función para cambiar de página
+function cambiarPagina(pagina) {
+  paginaActual = pagina;
+  mostrarElementosPagina(pagina);
+  actualizarBotonesPaginacion();
+}
+
+// Función para actualizar el estado de los botones de paginación
+function actualizarBotonesPaginacion() {
+  const botones = botonesPagina.querySelectorAll(".page-item");
+
+  botones.forEach((boton, index) => {
+    if (index + 1 === paginaActual) {
+      boton.classList.add("active");
+    } else {
+      boton.classList.remove("active");
     }
   });
-});
+}
+
+// Inicializar la paginación
+mostrarElementosPagina(paginaActual);
+generarBotonesPaginacion();
+actualizarBotonesPaginacion();
 

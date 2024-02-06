@@ -17,7 +17,7 @@ cerrar.addEventListener("click", () =>{
 // Aqui empieza la funcionalidad para cambiar de formularios (cliente - negocio) con los botones al hacer click.
 
 
-/* El código JavaScript anterior funciona de la siguiente manera:
+/*El código JavaScript anterior funciona de la siguiente manera:
 
 Cuando se carga la página, el formulario de negocio se oculta.
 Cuando se hace clic en el botón "Cliente", se oculta el formulario de negocio, se inserta el formulario de cliente al principio del elemento div con id vista y luego se muestra el formulario de cliente.
@@ -162,3 +162,95 @@ function validarContrasenasNegocio() {
 // Agregar la función al evento "submit" del formulario
 document.getElementById('submit').addEventListener('click', validarContrasenasNegocio);
 //Aqui finaliza la funcionalidad que verifica que ambas contraseñas del formulario cliente y negocio sean iguales para permitir el registro en el formulario.
+
+
+//Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
+const signupFormCliente = document.querySelector('#formulario-clientes');
+
+signupFormCliente.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const typeDocument = document.querySelector('#tipo-documento').value;
+  const numberDocument = document.querySelector('#numero-documento').value;
+  const name = document.querySelector('#nombres-cliente').value;
+  const surname = document.querySelector('#apellidos-cliente').value;
+  const location = document.querySelector('#tipo-localidad').value;
+  const adress = document.querySelector('#direccion-cliente').value;
+  const email = document.querySelector('#email-cliente').value;
+  const telephone = document.querySelector('#telefono-cliente').value;
+  const nameUser = document.querySelector('#usuario-cliente').value;
+  const password = document.querySelector('#clave-cliente').value;
+
+   // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
+   const Users = JSON.parse(localStorage.getItem('users')) || []
+   // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
+   const isUserRegistered = Users.find(user => user.email === email) || Users.find(user=> user.nameUser === nameUser)
+   // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
+   if(isUserRegistered){
+       return alert ('El correo o nombre de usuario que ingresaste, ya se encuentra registrado')
+   }
+   // Si el correo no se encuentra registrado, que le permita guardarlo
+   Users.push({
+      typeDocument: typeDocument,
+      numberDocument: numberDocument,
+      name: name,
+      surname: surname,
+      location: location,
+      adress: adress, 
+      email: email, 
+      telephone: telephone,
+      nameUser: nameUser,
+      password: password
+    })
+       //Convertimos los datos en cadenas para almacenarlos
+       localStorage.setItem('users', JSON.stringify(Users))
+       // Mostraremos que el usuario se registro con exito
+       alert('Registro fue exitoso')
+       // Que nos redireccione al login
+       window.location.href = 'login.html'
+});
+//Aqui termina la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
+
+//Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio
+const signupFormBusiness = document.querySelector('#formulario-negocio');
+
+signupFormBusiness.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const typeDocumentBusiness = document.querySelector('#tipo-documento-negocio').value;
+  const numberDocumentBusiness = document.querySelector('#numero-documento-negocio').value;
+  const nameBusiness = document.querySelector('#nombres-negocio').value;
+  const locationBusiness = document.querySelector('#tipo-localidad-negocio').value;
+  const adressBusiness = document.querySelector('#direccion-negocio').value;
+  const typeBusiness= document.querySelector('#tipo-negocio').value;
+  const emailBusiness = document.querySelector('#email-negocio').value;
+  const telephoneBusiness = document.querySelector('#telefono-negocio').value;
+  const nameUserBusiness = document.querySelector('#usuario-negocio').value;
+  const passwordBusiness = document.querySelector('#clave-negocio').value;
+
+   // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
+   const Users = JSON.parse(localStorage.getItem('users')) || []
+   // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
+   const isUserRegisteredBusiness = Users.find(user => user.email === emailBusiness) || Users.find(user=> user.nameUser === nameUserBusiness)
+   // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
+   if(isUserRegisteredBusiness){
+       return alert ('El correo o nombre de usuario que ingresaste, ya se encuentra registrado')
+   }
+   // Si el correo no se encuentra registrado, que le permita guardarlo
+   Users.push({
+      typeDocument: typeDocumentBusiness,
+      numberDocument: numberDocumentBusiness,
+      name: nameBusiness,
+      location: locationBusiness,
+      adress: adressBusiness, 
+      typeBusiness: typeBusiness,
+      email: emailBusiness, 
+      telephone: telephoneBusiness,
+      nameUser: nameUserBusiness,
+      password: passwordBusiness
+    })
+       //Convertimos los datos en cadenas para almacenarlos
+       localStorage.setItem('users', JSON.stringify(Users))
+       // Mostraremos que el usuario se registro con exito
+       alert('Registro fue exitoso')
+       // Que nos redireccione al login
+       window.location.href = 'login.html'
+});

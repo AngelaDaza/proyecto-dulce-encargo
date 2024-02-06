@@ -1023,19 +1023,21 @@ option {
     .formulario-clientes {
         display: grid;
         grid-template-columns: 50% 50%;
+        column-gap: 2rem;
     }
+    
 
     .formulario-label {
         margin: 0.5rem 0;
         font-weight: bolder;
         color: black;
+        text-align: left;
     }
     
     .formulario-input {
         border: 1px solid gray;
         border-radius: 0.4rem;
         padding: 0.3rem;
-        width: 100%;
     }
     
     option {
@@ -1111,7 +1113,7 @@ option {
   .icono-ojo {
     position: absolute;
     top: 50%;
-    right: 90px;
+    right: 50px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -1145,7 +1147,7 @@ option {
   .icono-ojo-cliente2 {
     position: absolute;
     top: 50%;
-    right: 90px;
+    right: 50px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -1232,6 +1234,7 @@ option {
 .formulario-negocio {
     display: flex;
     flex-direction: column;
+    column-gap: 2rem;
 }
 
 .formulario-label {

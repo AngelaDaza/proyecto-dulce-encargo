@@ -229,7 +229,7 @@ async function mostrarProductosHtml() {
 }
 
 function reemplazarAtributos(text, paquete) {
-
+    text = text.replaceAll('{{id}}', paquete.id);
     text = text.replaceAll('{{img}}', paquete.img);
     text = text.replaceAll('{{nombre}}', paquete.nombre);
     text = text.replaceAll('{{descripcion}}', paquete.descripcion);
@@ -341,5 +341,43 @@ function ordenar() {
             break;
     }
 };
+
+// Logica del carrito de compras
+document.addEventListener("DOMContentLoaded", function (e) {
+    console.log(e.target);
+    const botonAgregarProducto = document.querySelector("#cards");
+    let listaCompras = JSON.parse(localStorage.getItem("listaCompras")) ?? [];
+    botonAgregarProducto.addEventListener("click", agregarCarrito);
+
+    function agregarCarrito(e) {
+        let contenedor = e.target.parentElement;
+        while(contenedor){
+            if(contenedor.classList.contains("card__contenedorBtn")){
+                break;
+            }
+            contenedor = contenedor.parentElement;
+        }
+
+        if (contenedor.classList.contains("card__contenedorBtn")) {
+            const agregar = paquetes.find(a => a.id == contenedor.dataset.id);
+            
+            if(listaCompras.find(a => a.id == contenedor.dataset.id)){
+                listaCompras = listaCompras.map(pq => {
+                    if(pq.id == contenedor.dataset.id){
+                        pq.cantidad++;
+                        return pq;
+                    }else{
+                        return pq;
+                    }
+                });
+            }else{
+                listaCompras = [...listaCompras, agregar];
+                console.log("listaCompras");
+            }
+        }
+        console.log(listaCompras);
+        localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
+    }
+});
 
 

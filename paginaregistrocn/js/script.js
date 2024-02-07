@@ -3,12 +3,12 @@ const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
 
-abrir.addEventListener("click", () =>{
-    nav.classList.add("header__nav--visible");
+abrir.addEventListener("click", () => {
+  nav.classList.add("header__nav--visible");
 })
 
-cerrar.addEventListener("click", () =>{
-    nav.classList.remove("header__nav--visible");
+cerrar.addEventListener("click", () => {
+  nav.classList.remove("header__nav--visible");
 })
 // Aqui finaliza la asignacion de funcionalidades al icono de menu para la opcion hamburguesa
 
@@ -22,20 +22,20 @@ cerrar.addEventListener("click", () =>{
 Cuando se carga la página, el formulario de negocio se oculta.
 Cuando se hace clic en el botón "Cliente", se oculta el formulario de negocio, se inserta el formulario de cliente al principio del elemento div con id vista y luego se muestra el formulario de cliente.
 Cuando se hace clic en el botón "Negocio", se oculta el formulario de cliente, se inserta el formulario de negocio al principio del elemento div con id vista y luego se muestra el formulario de negocio. */
-$(document).ready(function() {
-    $("#formularioNegocio").hide();
-    $("#botonCliente").click(function() {
-      $("#formularioNegocio").css("display", "none");
-      $("#vista").append($("#formularioCliente"));
-      $("#formularioCliente").show();
-    });
-  
-    $("#botonNegocio").click(function() {
-      $("#formularioCliente").css("display", "none");
-      $("#vista").append($("#formularioNegocio"));
-      $("#formularioNegocio").show();
-    });
+$(document).ready(function () {
+  $("#formularioNegocio").hide();
+  $("#botonCliente").click(function () {
+    $("#formularioNegocio").css("display", "none");
+    $("#vista").append($("#formularioCliente"));
+    $("#formularioCliente").show();
   });
+
+  $("#botonNegocio").click(function () {
+    $("#formularioCliente").css("display", "none");
+    $("#vista").append($("#formularioNegocio"));
+    $("#formularioNegocio").show();
+  });
+});
 // Aqui finaliza la funcionalidad para cambiar de formularios (cliente - negocio) con los botones al hacer click.
 
 
@@ -109,7 +109,7 @@ function repetirMostrarContrasenaNegocio() {
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 const signupFormCliente = document.querySelector('#formulario-clientes');
 
-signupFormCliente.addEventListener('submit', (e)=>{
+signupFormCliente.addEventListener('submit', (e) => {
   e.preventDefault();
   const typeDocument = document.querySelector('#tipo-documento').value;
   const numberDocument = document.querySelector('#numero-documento').value;
@@ -152,78 +152,86 @@ signupFormCliente.addEventListener('submit', (e)=>{
   $: Fin de la cadena.
   */
   const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,}$/;
-  if (!regexPassword.test(password)) {
-    e.preventDefault();
-    Swal.fire({
-      icon: 'info',
-      title: 'Oops...',
-      text: 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo.',
-    });
-    return false;
+
+if (!regexPassword.test(password)) {
+  e.preventDefault();
+  Swal.fire({
+    icon: 'info',
+    title: 'Oops...',
+    text: 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo.',
+  });
+  return false;
+}
+
+// Validar el correo electrónico
+
+/*Explicación de la expresión regular:
+
+^: Inicio de la cadena.
+(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+")): Coincide con la parte local del correo electrónico.
+@: Coincide con el símbolo "@".
+((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$: Coincide con el nombre de dominio del correo electrónico.
+$: Fin de la cadena.
+*/
+const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+if (!regexEmail.test(email)) {
+  e.preventDefault();
+  Swal.fire({
+    icon: 'info',
+    title: 'Oops...',
+    text: 'Por favor ingresa un correo electrónico válido.',
+  });
+  return false;
+}
+
+// Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
+const Users = JSON.parse(localStorage.getItem('users')) || []
+// Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
+const isUserRegistered = Users.find(user => user.email === email) || Users.find(user => user.nameUser === nameUser)
+
+// Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
+if (isUserRegistered) {
+  // Mostrar mensaje de error con Sweet Alert
+  Swal.fire({
+    icon: 'warning',
+    title: 'Oops...',
+    text: 'El correo o nombre de usuario que ingresaste, ya se encuentra registrado.',
+  });
+  return false;
+}
+// Si el correo no se encuentra registrado, que le permita guardarlo
+Users.push({
+  typeDocument: typeDocument,
+  numberDocument: numberDocument,
+  name: name,
+  surname: surname,
+  location: location,
+  adress: adress,
+  email: email,
+  telephone: telephone,
+  nameUser: nameUser,
+  password: password
+})
+//Convertimos los datos en cadenas para almacenarlos
+localStorage.setItem('users', JSON.stringify(Users))
+// Mostraremos que el usuario se registro con exito
+
+alert('Registro fue exitoso')
+// Que nos redireccione al login
+console.log("Entro aca")
+window.location.href = '../paginaLogin/index.html'
+
+Swal.fire({
+  icon: 'success',
+  title: '¡felicitaciones!',
+  text: 'Registro fue exitoso.',
+  onClose: () => {
+    window.location.href = "login.html";
   }
-  
-  // Validar el correo electrónico
+});
+// Limpiar el formulario
+signupFormCliente.reset();
 
-  /*Explicación de la expresión regular:
-
-  ^: Inicio de la cadena.
-  (([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+")): Coincide con la parte local del correo electrónico.
-  @: Coincide con el símbolo "@".
-  ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$: Coincide con el nombre de dominio del correo electrónico.
-  $: Fin de la cadena.
-  */
-  const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!regexEmail.test(email)) {
-    e.preventDefault();
-    Swal.fire({
-      icon: 'info',
-      title: 'Oops...',
-      text: 'Por favor ingresa un correo electrónico válido.',
-    });
-    return false;
-  }
-
-   // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
-   const Users = JSON.parse(localStorage.getItem('users')) || []
-   // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
-   const isUserRegistered = Users.find(user => user.email === email) || Users.find(user=> user.nameUser === nameUser)
-   
-   // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
-   if(isUserRegistered){
-    // Mostrar mensaje de error con Sweet Alert
-    Swal.fire({
-      icon: 'warning',
-      title: 'Oops...',
-      text: 'El correo o nombre de usuario que ingresaste, ya se encuentra registrado.',
-    });
-    return false;
-   }
-   // Si el correo no se encuentra registrado, que le permita guardarlo
-   Users.push({
-      typeDocument: typeDocument,
-      numberDocument: numberDocument,
-      name: name,
-      surname: surname,
-      location: location,
-      adress: adress, 
-      email: email, 
-      telephone: telephone,
-      nameUser: nameUser,
-      password: password
-    })
-       //Convertimos los datos en cadenas para almacenarlos
-       localStorage.setItem('users', JSON.stringify(Users))
-       // Mostraremos que el usuario se registro con exito
-       Swal.fire({
-        icon: 'success',
-        title: '¡felicitaciones!',
-        text: 'Registro fue exitoso.',
-        onClose: () => {
-          window.location.href = "login.html";
-        }
-      });
-      // Limpiar el formulario
-      signupFormCliente.reset();
 });
 //Aqui termina la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 
@@ -231,14 +239,14 @@ signupFormCliente.addEventListener('submit', (e)=>{
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio
 const signupFormBusiness = document.querySelector('#formulario-negocio');
 
-signupFormBusiness.addEventListener('submit', (e)=>{
+signupFormBusiness.addEventListener('submit', (e) => {
   e.preventDefault();
   const typeDocumentBusiness = document.querySelector('#tipo-documento-negocio').value;
   const numberDocumentBusiness = document.querySelector('#numero-documento-negocio').value;
   const nameBusiness = document.querySelector('#nombres-negocio').value;
   const locationBusiness = document.querySelector('#tipo-localidad-negocio').value;
   const adressBusiness = document.querySelector('#direccion-negocio').value;
-  const typeBusiness= document.querySelector('#tipo-negocio').value;
+  const typeBusiness = document.querySelector('#tipo-negocio').value;
   const emailBusiness = document.querySelector('#email-negocio').value;
   const telephoneBusiness = document.querySelector('#telefono-negocio').value;
   const nameUserBusiness = document.querySelector('#usuario-negocio').value;
@@ -283,7 +291,7 @@ signupFormBusiness.addEventListener('submit', (e)=>{
     });
     return false;
   }
-  
+
   // Validar el correo electrónico
 
   /*Explicación de la expresión regular:
@@ -305,12 +313,12 @@ signupFormBusiness.addEventListener('submit', (e)=>{
     return false;
   }
 
-   // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
-   const Users = JSON.parse(localStorage.getItem('users')) || []
-   // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
-   const isUserRegisteredBusiness = Users.find(user => user.email === emailBusiness) || Users.find(user=> user.nameUser === nameUserBusiness)
-   // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
-   if(isUserRegisteredBusiness){
+  // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
+  const Users = JSON.parse(localStorage.getItem('users')) || []
+  // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
+  const isUserRegisteredBusiness = Users.find(user => user.email === emailBusiness) || Users.find(user => user.nameUser === nameUserBusiness)
+  // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
+  if (isUserRegisteredBusiness) {
     // Mostrar mensaje de error con Sweet Alert
     Swal.fire({
       icon: 'warning',
@@ -318,23 +326,29 @@ signupFormBusiness.addEventListener('submit', (e)=>{
       text: 'El correo o nombre de usuario que ingresaste, ya se encuentra registrado.',
     });
     return false;
-   }
-   // Si el correo no se encuentra registrado, que le permita guardarlo
-   Users.push({
-      typeDocument: typeDocumentBusiness,
-      numberDocument: numberDocumentBusiness,
-      name: nameBusiness,
-      location: locationBusiness,
-      adress: adressBusiness, 
-      typeBusiness: typeBusiness,
-      email: emailBusiness, 
-      telephone: telephoneBusiness,
-      nameUser: nameUserBusiness,
-      password: passwordBusiness
-    })
-       //Convertimos los datos en cadenas para almacenarlos
-       localStorage.setItem('users', JSON.stringify(Users))
-       // Mostraremos que el usuario se registro con exito
+  }
+  // Si el correo no se encuentra registrado, que le permita guardarlo
+  Users.push({
+    typeDocument: typeDocumentBusiness,
+    numberDocument: numberDocumentBusiness,
+    name: nameBusiness,
+    location: locationBusiness,
+    adress: adressBusiness,
+    typeBusiness: typeBusiness,
+    email: emailBusiness,
+    telephone: telephoneBusiness,
+    nameUser: nameUserBusiness,
+    password: passwordBusiness
+  })
+  //Convertimos los datos en cadenas para almacenarlos
+  localStorage.setItem('users', JSON.stringify(Users))
+  // Mostraremos que el usuario se registro con exito
+
+  alert('Registro fue exitoso')
+  // Que nos redireccione al login       
+  window.location.href = '../paginaLogin/index.html'
+
+
        Swal.fire({
         icon: 'success',
         title: '¡felicitaciones!',
@@ -346,3 +360,4 @@ signupFormBusiness.addEventListener('submit', (e)=>{
       signupFormBusiness.reset();
 });
 //Aqui finaliza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio.
+

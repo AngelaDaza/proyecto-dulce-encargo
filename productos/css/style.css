@@ -492,7 +492,7 @@ body {
         text-align: center;
         color: black;
         font-weight: bolder;
-        font-size: 25px;
+        font-size: 20px;
         margin-bottom: 25px;
         padding-top: 1rem; 
     }
@@ -505,7 +505,7 @@ body {
     }
     
     .contenedor-banner-der-img {
-        width: 70%;
+        width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
     }
@@ -535,8 +535,84 @@ body {
     }
 }
 /*Aqui finaliza el Responive de escritorio del banner pagina principal*/
+/*Aqui inicia el Responive de escritorio del titulo, barra de busqueda y filtro*/
+.buscadorFiltro{
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.buscarfiltro__flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buscadorFiltro__titulo{
+    width: 15rem;
+    height: 3rem;
+    background-color: #8eb080;
+    margin: 0 auto;
+    border-radius: 5rem;
+}
+.buscadorFiltro__title{
+    font-family: var(--fuenteSecundaria);
+    color: white;
+    text-align: center;
+    line-height: 200%;
+    margin: 0;
+    height: 100%;
+    font-size: 25px;
+}
+.buscadorFiltro__buscador{
+    position: relative;
+    display: inline-block;
+    margin: 3rem 0;
+}
+.buscadorFiltro__buscar{
+    font-family: var(--fuentePrincipal);
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #1e559c;
+    outline: none;
+    width: 40rem;
+    font-size: 1rem;
+}
+.buscadorFiltro__btn{
+    background-color: transparent;
+    width: 31px;
+    height: 100%;
+    padding: 10px 20px 10px 0;
+    position: absolute;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    color: #1e559c;
+    cursor: pointer;
+}
+.buscadorFiltro__btn:hover{
+    color: #c88f44;
+}
+.buscadorFiltro__filtro{
+    font-family: var(--fuentePrincipal);
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0;
+    margin-left: 1rem;
+    line-height: 0;
+}
+.buscadorFiltro__ordenar{
+    border: none;
+    width: 6rem;
+    height: 41.6px;
+    text-align: center;
+    border-radius: 2rem;
+    background-color: #1e559c;
+    color: white;
+}
 
-
+/* Aqui finaliza el Responive de escritorio del titulo, barra de busqueda y filtro */
 /*Aqui inicia los card de productos*/
 .producto{
     display: flex;
@@ -555,7 +631,7 @@ body {
 }
 .card__imagen{
     width: auto;
-    height: auto;
+    height: 10rem;
     border-radius: .5rem;
     margin-bottom: 1rem;
 }
@@ -639,5 +715,14 @@ body {
 .card__infoUbicacion{
     margin: 0;
 }
-
 /* Aqui finaliza las card
+/*Aqui empieza los estilos del footer*/
+.footer__content {
+    margin-top: -1px;
+}
+
+.svg-onda {
+    background-color: #EEEEEE;
+}
+
+/*Aqui finaliza los estilos del footer*/

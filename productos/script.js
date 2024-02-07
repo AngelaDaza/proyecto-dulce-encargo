@@ -38,7 +38,7 @@ const localPaquetes = localStorage.getItem("paquetes");
 // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
 let paquetes = JSON.parse(localPaquetes) ?? [];
 
-if(!JSON.parse(localPaquetes)){
+if (!JSON.parse(localPaquetes)) {
     let paquete1 = new Paquete(
         1101,
         './img/paqueteDulce.jpg',
@@ -51,7 +51,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     let paquete2 = new Paquete(
         1102,
         './img/rollosCanela.jpg',
@@ -64,7 +64,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete3 = new Paquete(
         1103,
         './img/baguette.jpg',
@@ -77,7 +77,7 @@ if(!JSON.parse(localPaquetes)){
         8000,
         "Panaderia"
     );
-    
+
     let paquete4 = new Paquete(
         1104,
         './img/croissants.jpg',
@@ -90,7 +90,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     let paquete5 = new Paquete(
         1105,
         './img/galletas.jpg',
@@ -103,7 +103,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete6 = new Paquete(
         1106,
         './img/donas.jpg',
@@ -116,7 +116,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Pasteleria"
     );
-    
+
     let paquete7 = new Paquete(
         1107,
         './img/tartas.jpg',
@@ -129,7 +129,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Pasteleria"
     );
-    
+
     let paquete8 = new Paquete(
         1108,
         './img/panesIntegral.jpg',
@@ -142,7 +142,7 @@ if(!JSON.parse(localPaquetes)){
         22000,
         "Panaderia"
     );
-    
+
     let paquete9 = new Paquete(
         1109,
         './img/tortaChocolate.jpg',
@@ -155,7 +155,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete10 = new Paquete(
         1110,
         './img/muffin.jpg',
@@ -168,7 +168,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete11 = new Paquete(
         1111,
         './img/panQueso.jpg',
@@ -181,7 +181,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     // Se agregan al arreglo los objetos 
     paquetes.push(
         paquete1,
@@ -267,15 +267,15 @@ if (document.querySelector('.formulario')) {
 
         //Creamos un objeto con las propiedades de la clase Paquete
         const nuevoDato = new Paquete(
-            Date.now(), 
-            './img/rollosCanela.jpg', 
-            inputNombre.value, 
-            inputTienda.value, 
-            inputUbicacion.value, 
-            inputDescripcion.value, 
-            0, 
-            inputRegular.value, 
-            inputFinal.value, 
+            Date.now(),
+            './img/rollosCanela.jpg',
+            inputNombre.value,
+            inputTienda.value,
+            inputUbicacion.value,
+            inputDescripcion.value,
+            0,
+            inputRegular.value,
+            inputFinal.value,
             ""
         );
 
@@ -287,5 +287,59 @@ if (document.querySelector('.formulario')) {
         window.location.href = "productos.html";
     }
 }
+
+const inputBuscar = document.querySelector(".buscadorFiltro__buscar");
+const btnBuscar = document.querySelector(".buscadorFiltro__btn");
+
+// inputBuscar.addEventListener("keydowm", (e) => {
+//     if(e.key === "Enter"){
+
+//     }
+// });
+
+// Buscar  por nombre
+btnBuscar.addEventListener("click", function () {
+    const entradaText = inputBuscar.value.toLowerCase();
+    if (entradaText == "") {
+        const localPaquetes = localStorage.getItem("paquetes");
+        // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+        paquetes = JSON.parse(localPaquetes) ?? [];
+    }
+    paquetes = paquetes.filter(entrada => {
+        return entrada.nombre.toLowerCase().includes(entradaText);
+    });
+    console.log(paquetes);
+    mostrarProductosHtml();
+});
+
+// Filtrar por precio
+
+const inputOrdenar = document.querySelector(".buscadorFiltro__ordenar");
+
+inputOrdenar.addEventListener("change", ordenar);
+
+function ordenar() {
+    const valor = inputOrdenar.value;
+    switch (valor) {
+        case "opcionMenor":
+            paquetes = paquetes.sort((a, b) => {
+                return a.precioFinal - b.precioFinal;
+            });
+            mostrarProductosHtml();
+            break;
+        case "opcionMayor":
+            paquetes = paquetes.sort((b, a) => {
+                return a.precioFinal - b.precioFinal;
+            });
+            mostrarProductosHtml();
+            break;
+        default:
+            const localPaquetes = localStorage.getItem("paquetes");
+            // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+            paquetes = JSON.parse(localPaquetes) ?? [];
+            mostrarProductosHtml();
+            break;
+    }
+};
 
 

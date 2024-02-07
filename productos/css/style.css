@@ -135,7 +135,7 @@ body {
     margin: 0 0.2rem;
     color: #c88f44;
 }
-@media (min-width: 768px){
+@media (min-width: 768px) and (max-width: 1045px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -237,7 +237,7 @@ body {
         color: #c88f44;
     }
 }
-@media(min-width:1023px){
+@media(min-width:1046px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -379,7 +379,7 @@ body {
 }
 
 .contenedor-banner-der-img {
-    width: 100%;
+    width: 60%;
     border-radius: 1rem;
     margin-top: 0.5rem;
 }
@@ -442,7 +442,7 @@ body {
     }
     
     .contenedor-banner-der-img {
-        width: 70%;
+        width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
     }
@@ -613,6 +613,39 @@ body {
 }
 
 /* Aqui finaliza el Responive de escritorio del titulo, barra de busqueda y filtro */
+/*Aqui inicia el Responive de tablet del titulo, barra de busqueda y filtro*/
+@media (min-width: 768px) and (max-width: 1045px){
+    .buscadorFiltro__buscar{
+        width: 30rem;
+    }
+}
+/* Aqui finaliza el Responive de tablet del titulo, barra de busqueda y filtro */
+/*Aqui inicia el Responive de celular del titulo, barra de busqueda y filtro*/
+@media (min-width: 320px) and (max-width: 767px){
+    .buscadorFiltro__titulo{
+        width: 10rem;
+        height: 2rem;
+    }
+    .buscadorFiltro__title{
+        font-size: 17px;
+    }
+    .buscadorFiltro__buscar{
+        width: 18rem;
+        font-size: 14px;
+    }
+    .buscadorFiltro__ordenar{
+        height: 40px;
+        font-size: 14px;
+        margin-bottom: 2rem;
+    }
+    .buscarfiltro__flex{
+        flex-direction: column;
+    }
+    .buscadorFiltro__buscador{
+        margin-bottom: 1rem;
+    }
+}
+/* Aqui finaliza el Responive de celular del titulo, barra de busqueda y filtro */
 /*Aqui inicia los card de productos*/
 .producto{
     display: flex;

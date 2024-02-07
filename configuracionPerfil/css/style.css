@@ -299,7 +299,6 @@ body {
         color: #c88f44;
     }
 }
-
 /*Empieza el body*/
 .banner {
     background-color: #cfebca;
@@ -309,134 +308,72 @@ body {
 .bannerCompleto{
     display: grid;
     grid-auto-rows: ();
-    text-align: center;
-    gap: 1rem;
+    place-items: center;
 }
-.bannerCompleto img{
-    width: 100%;
+.bannerCompleto lord-icon{
     order: 2;
+    width:100px;
+    height:100px;
 }
 .bannerCompleto h3{
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     order: 1;
 }
-
-
-
-.contenedorPaquetesDisponibles__title{
-    font-family: var(--fuenteSecundaria);
-    color: black;
-    text-align: center;
-    margin: 2rem 3rem;
-}
-.contenedorPaquetesDisponibles__cards{
-    display: flex;
-    margin: 1rem 2rem;
-    overflow: hidden;
-    align-items: center;
-}
-.contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-    border: none;
-    font-size: 25px;
-    position: absolute;
-    justify-content: center;
-    margin: 15rem 0.2rem;
-    background-color: transparent;
-}
-.contenedorPaquetesDisponibles__btnLeft {
-    left: 1px;
-}
-
-.contenedorPaquetesDisponibles__btnRight {
-    right: 1px;
-}
-.paquetesDisponibles__cards{
-    display: flex;
-    transition: transform 0.5s ease; 
-    width: 100vw;
-}
-
-.paquetesDisponibles__card{
+form{
     display: grid;
-    grid-template-rows: 50% 10% 30% 10%;
-    flex: 0 0 auto;
-    width: 84%; 
-    background-color: #cfebca;
-    border-radius: 1rem;
-    padding: 0rem 1rem;
-}
-
-.paquetesDisponibles__cardImg{
-    padding-top: 1rem;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-    object-fit: cover;
-    box-shadow: 5px 5px #8eb080;
-}
-.paquetesDisponibles__cardTitle, .paquetesDisponibles__cardParagraph{
-    font-family: var(--fuenteSecundaria);
-    margin-top: 1rem;
-    text-align: center;
-    color: black;
-}
-.paquetesDisponibles__cardParagraph{
-    font-family: var(--fuentePrincipal);
-    text-align: center;
-}
-.paquetesDisponibles__card a{
-    margin-top: 0rem;
-    font-family: var(--fuenteSecundaria);
-    color: blue;
-    font-size: 20px;
-}
-.contenedorPaquetesProgreso__cards{
-    display: grid;
-    grid-template-rows: ();
-    margin-top: 1rem;
-    padding: 0.5rem;
-    row-gap: 2rem;
-    column-gap: 1rem;
     place-items: center;
 }
-.contenedorPaquetesProgreso__card{
-    border: 1px solid black;
-    border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    text-align: center;
-    background-color: white;
-    box-shadow: 5px 10px #8eb080;
-}
-.contenedorPaquetesProgreso__card h3{
-    color: black;
-    text-align: center;
-    font-family: var(--fuenteSecundaria);
-    font-size: 20px;
-}
-.contenedorPaquetesProgreso__card lord-icon{
-    background-color: #cfebca;
-    border-radius: 100px;
-}
-.contenedorPaquetesProgreso__card p{
-    text-align: justify;
-    margin-bottom: 0rem;
-    margin-top: 0.5rem;
+.formularioCompleto{
+    display: grid;
+    grid-template-rows: ();
+    margin: 1rem;
+    row-gap: 1rem;
     font-family: var(--fuentePrincipal);
-    font-size: 15px;
-}
-
-#botonesPagina{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    font-family: var(--fuenteSecundaria);
-    font-size: 20px;
     color: black;
 }
-
+.campo{
+    display: grid;
+    grid-template-columns:45% 45% 10%;
+    background-color: #cfebca;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    
+}
+.editar-icono{
+    background-color: #8eb080;
+    border-radius: 100%;
+    text-align: center;
+    color: black;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 0.5rem;
+    padding: 0.2rem 0.5rem;
+}
+input{
+    padding: 0.2rem;
+    height: fit-content;
+}
+select{
+    padding: 0.2rem;
+    height: fit-content;
+}
+button{
+    background-color: #113775;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: #c88f44;
+    color: black;
+}
 
 @media (min-width:768px){
     
@@ -457,84 +394,58 @@ body {
         color: black;
         order: 1;
     }
-    
-    .contenedorPaquetesDisponibles__title{
-        font-family: var(--fuenteSecundaria);
-        color: black;
-        text-align: center;
-        margin: 2rem 3rem;
-        padding-top: 1rem;
-    }
-    .contenedorPaquetesDisponibles__cards{
+    form{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 1rem 4rem;
-        overflow: hidden;
-        align-items: center;
-        position: relative;
+        place-items: center;
     }
-    .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-        border: none;
-        font-size: 30px;
-        justify-content: center;
-        margin: 0 0.2rem;
-        background-color: transparent;
-    }
-    .contenedorPaquetesDisponibles__btnLeft {
-        left: 1rem;
-        margin-top: 15rem;
-    }
-    
-    .contenedorPaquetesDisponibles__btnRight {
-        right: 1rem;
-        margin-top: 15rem;
-    }
-    .paquetesDisponibles__cards{
-        display: flex;
-        transition: transform 0.5s ease; 
-        width: 100vw;
-        gap: 0.2rem;
-    }
-    
-    .paquetesDisponibles__card{
+    .formularioCompleto{
         display: grid;
-        grid-template-rows: 40% 15% 30% 15%;
-        flex: 0 0 auto;
-        width: 41%; 
-        background-color: #cfebca;
-        border-radius: 1rem;
-        padding: 0.5rem 1.5rem;
-    }
-    .paquetesDisponibles__cardImg{
-        padding-top: 1rem;
-        width: 100%;
-        height: 100%;
-        border-radius: 2rem;
-    }
-    .paquetesDisponibles__cardTitle, .paquetesDisponibles__cardParagraph{
-        font-family: var(--fuenteSecundaria);
-        margin-top: 2rem;
-        text-align: center;
-        color: black;
-    }
-    .paquetesDisponibles__cardParagraph{
+        grid-template-rows: ();
+        margin: 1rem;
+        row-gap: 1rem;
         font-family: var(--fuentePrincipal);
-        text-align: justify;
-        font-size: 20px;
-        margin-top: 0rem;
+        color: black;
     }
-    .paquetesDisponibles__card a{
-        margin-top: 1rem;
-        font-family: var(--fuenteSecundaria);
-        color: blue;
-        font-size: 25px;
-    }
-    .contenedorPaquetesProgreso__cards{
+    .campo{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:45% 45% 10%;
+        background-color: #cfebca;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        
     }
-    .contenedorPaquetesProgreso__card p{
-        font-size: 15px;
+    .editar-icono{
+        background-color: #8eb080;
+        border-radius: 100%;
+        text-align: center;
+        color: black;
+        height: fit-content;
+        width: fit-content;
+        margin-left: 0.5rem;
+        padding: 0.2rem 0.5rem;
+    }
+    input{
+        padding: 0.2rem;
+        height: fit-content;
+    }
+    select{
+        padding: 0.2rem;
+        height: fit-content;
+    }
+    button{
+        background-color: #113775;
+        color: white;
+        font-weight: bolder;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        padding: 0.5rem 2rem;
+        width: fit-content;
+        margin-bottom: 2rem;
+    }
+    button:hover{
+        transform: scale(1.1);
+        background-color: #c88f44;
+        color: black;
     }
     
 }
@@ -543,8 +454,8 @@ body {
     .bannerCompleto{
         display: flex;
         flex-direction: row;
-        gap: 7rem;
         justify-content: center;
+        gap: 0
     }
     .bannerCompleto img{
         width: 30%;
@@ -556,118 +467,53 @@ body {
         color: black;
         order: 2;
     }
-    
-    .contenedorPaquetesDisponibles__title, .contenedorMediosDePago__title{
-        font-family: var(--fuenteSecundaria);
-        color: black;
-        text-align: center;
-        margin: 2rem 3rem;
-    }
-    .contenedorPaquetesDisponibles__cards{
-        display: flex;
-        margin: 1rem 5rem;
-        overflow: hidden;
-        align-items: center;
-        
-    }
-    .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-        border: none;
-        font-size: 40px;
-        position: absolute;
-        justify-content: center;
-        margin: 0 1rem;
-        background-color: transparent;
-    }
-    .contenedorPaquetesDisponibles__btnLeft {
-        left: 1px;
-        margin-top: 15rem;
-    }
-    
-    .contenedorPaquetesDisponibles__btnRight {
-        right: 1px;
-        margin-top: 15rem;
-    }
-    .paquetesDisponibles__cards{
-        display: flex;
-        transition: transform 0.5s ease; 
-        width: 100vw;
-        gap: 1rem;
-    }
-    
-    .paquetesDisponibles__card{
+    form{
         display: grid;
-        grid-template-rows: 40% 15% 30% 15%;
-        flex: 0 0 auto;
-        width: 24%; 
-        background-color: #cfebca;
-        border-radius: 1rem;
-        padding: 0rem 1rem;
-    }
-    .paquetesDisponibles__cardImg{
-        padding-top: 1rem;
-        width: 100%;
-        height: 100%;
-        border-radius: 2rem;
-    }
-    .paquetesDisponibles__cardTitle, .paquetesDisponibles__cardParagraph{
-        font-family: var(--fuenteSecundaria);
-        margin-top: 2rem;
-        text-align: center;
-        color: black;
-    }
-    .paquetesDisponibles__cardParagraph{
-        font-family: var(--fuentePrincipal);
-        text-align: center;
-        margin-top: 0;
-    }
-    .paquetesDisponibles__card a{
-        margin-top: 1rem;
-        font-family: var(--fuenteSecundaria);
-        color: blue;
-        font-size: 20px;
-    }
-    .contenedorPaquetesProgreso__cards{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        margin: 1rem;
-        padding: 0.5rem;
-        row-gap: 2rem;
-        column-gap: 1rem;
         place-items: center;
     }
-    .contenedorPaquetesProgreso__card{
-        border: 1px solid black;
-        border-radius: 1rem;
-        padding: 1rem;
-        display: flex;
-        text-align: center;
-        background-color: white;
-        box-shadow: 5px 10px #8eb080;
-    }
-    .contenedorPaquetesProgreso__card h3{
-        color: black;
-        text-align: center;
-        font-family: var(--fuenteSecundaria);
-        font-size: 20px;
-    }
-    .contenedorPaquetesProgreso__card lord-icon{
-        background-color: #cfebca;
-        border-radius: 100px;
-    }
-    .contenedorPaquetesProgreso__card p{
-        text-align: justify;
-        margin-bottom: 0rem;
-        margin-top: 0.5rem;
+    .formularioCompleto{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 2rem 0rem 2rem 3rem;
+        row-gap: 1rem;
         font-family: var(--fuentePrincipal);
-        font-size: 14px;
+        color: black;
     }
-
-    #botonesPagina{
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        font-family: var(--fuenteSecundaria);
-        font-size: 20px;
+    .campo{
+        display: grid;
+        grid-template-columns: 45% 45% 10%;
+        margin-right: 3rem;
+        background-color: #cfebca;
+        padding: 0.5rem 1rem;
+        align-items: center;
+    }
+    .editar-icono{
+        background-color: #8eb080;
+        border-radius: 100%;
+        text-align: center;
+        color: black;
+        height: fit-content;
+        width: fit-content;
+        margin-left: 0.5rem;
+        padding: 0.2rem 0.5rem;
+    }
+    input{
+        padding: 0.2rem;
+        height: fit-content;
+    }
+    button{
+        background-color: #113775;
+        color: white;
+        font-weight: bolder;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        padding: 0.5rem 2rem;
+        width: fit-content;
+        margin-bottom: 2rem;
+    }
+    button:hover{
+        transform: scale(1.1);
+        background-color: #c88f44;
         color: black;
     }
     

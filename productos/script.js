@@ -38,10 +38,10 @@ const localPaquetes = localStorage.getItem("paquetes");
 // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
 let paquetes = JSON.parse(localPaquetes) ?? [];
 
-if(!JSON.parse(localPaquetes)){
+if (!JSON.parse(localPaquetes)) {
     let paquete1 = new Paquete(
         1101,
-        './img/rollosCanela.jpg',
+        './img/paqueteDulce.jpg',
         "Paquete dulce",
         "Cafeteria los antojitos de la Abuela",
         "Calle del Sueño Dorado, Nº 23",
@@ -51,7 +51,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     let paquete2 = new Paquete(
         1102,
         './img/rollosCanela.jpg',
@@ -64,10 +64,10 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete3 = new Paquete(
         1103,
-        './img/rollosCanela.jpg',
+        './img/baguette.jpg',
         "Baguette",
         "Horno Celestial",
         "Rincón Estrellas, Calle Luna, Nº 42",
@@ -77,10 +77,10 @@ if(!JSON.parse(localPaquetes)){
         8000,
         "Panaderia"
     );
-    
+
     let paquete4 = new Paquete(
         1104,
-        './img/rollosCanela.jpg',
+        './img/croissants.jpg',
         "Croissants del Paraíso",
         "Cafeteria Hybrid",
         "Paseo de los Deseos, Nº 11A",
@@ -90,10 +90,10 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     let paquete5 = new Paquete(
         1105,
-        './img/rollosCanela.jpg',
+        './img/galletas.jpg',
         "Variedad de Galletas",
         "Pan de la Abuela",
         "Plaza del Arcoíris, Nº 9C",
@@ -103,10 +103,10 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete6 = new Paquete(
         1106,
-        './img/rollosCanela.jpg',
+        './img/donas.jpg',
         "Donas",
         "Dunkin Donuts",
         "Travesía de la Imaginación, Nº 88",
@@ -116,10 +116,10 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Pasteleria"
     );
-    
+
     let paquete7 = new Paquete(
         1107,
-        './img/rollosCanela.jpg',
+        './img/tartas.jpg',
         "Tartas Frescas",
         "Dulce Éxtasis",
         "Calle del Silencio Mágico, Nº 3D",
@@ -129,11 +129,11 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Pasteleria"
     );
-    
+
     let paquete8 = new Paquete(
         1108,
-        './img/rollosCanela.jpg',
-        "Panes Integral",
+        './img/panesIntegral.jpg',
+        "Panes Integrales",
         "Panaderia J.J.",
         "Avenida Mariposas Brillantes, Nº 27",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
@@ -142,11 +142,11 @@ if(!JSON.parse(localPaquetes)){
         22000,
         "Panaderia"
     );
-    
+
     let paquete9 = new Paquete(
         1109,
-        './img/rollosCanela.jpg',
-        "Rollos de Chocolate",
+        './img/tortaChocolate.jpg',
+        "Torta de Chocolate",
         "Panaderia J.J.",
         "Avenida Mariposas Brillantes, Nº 27",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
@@ -155,11 +155,11 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete10 = new Paquete(
         1110,
-        './img/rollosCanela.jpg',
-        "Rosquillas",
+        './img/muffin.jpg',
+        "Muffin",
         "El Rincon del Pan",
         "Carrera de los Fantásticos, Nº 64",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
@@ -168,10 +168,10 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Antojitos"
     );
-    
+
     let paquete11 = new Paquete(
         1111,
-        './img/rollosCanela.jpg',
+        './img/panQueso.jpg',
         "Panecillos de Queso",
         "Sabor Artesano",
         "Pasaje de los Sueños, Nº 13E",
@@ -181,7 +181,7 @@ if(!JSON.parse(localPaquetes)){
         15000,
         "Panaderia"
     );
-    
+
     // Se agregan al arreglo los objetos 
     paquetes.push(
         paquete1,
@@ -229,7 +229,7 @@ async function mostrarProductosHtml() {
 }
 
 function reemplazarAtributos(text, paquete) {
-
+    text = text.replaceAll('{{id}}', paquete.id);
     text = text.replaceAll('{{img}}', paquete.img);
     text = text.replaceAll('{{nombre}}', paquete.nombre);
     text = text.replaceAll('{{descripcion}}', paquete.descripcion);
@@ -250,31 +250,34 @@ if (document.getElementById('cards')) {
 if (document.querySelector('.formulario')) {
     // Creando nuevos productos desde el formulario
     // Seleccionando los input del html para poder manipularlos 
+    const inputImg = document.querySelector("#formImg");
     const inputNombre = document.querySelector("#formNombre");
     const inputDescripcion = document.querySelector("#formDescripcion");
     const inputTienda = document.querySelector("#formTienda");
     const inputUbicacion = document.querySelector("#formUbicacion");
     const inputRegular = document.querySelector("#formRegular");
     const inputFinal = document.querySelector("#formFinal");
-    const formulario = document.querySelector(".formulario");
+    const boton = document.querySelector(".formulario");
 
     // Agregar un evento para cuando se precione el boton
-    formulario.addEventListener("submit", agregarProducto); // Sin () para que no llame directamente la función
+    boton.addEventListener("submit", agregarProducto); // Sin () para que no llame directamente la función
 
     function agregarProducto(e) {
         e.preventDefault(); // Elimina acciones previas (solo con tipo submit)
 
         //Creamos un objeto con las propiedades de la clase Paquete
-        const nuevoDato = {
-            id: Date.now(), //Trae la cantidad de milisegundos desde hace años, lo que permite que no se repita el id
-            img: "./img/rollosCanela.jpg",
-            nombre: inputNombre.value,
-            tienda: inputTienda.value,
-            ubicacion: inputUbicacion.value,
-            descripcion: inputDescripcion.value,
-            precioRegular: inputRegular.value,
-            precioFinal: inputFinal.value,
-        }
+        const nuevoDato = new Paquete(
+            Date.now(),
+            './img/rollosCanela.jpg',
+            inputNombre.value,
+            inputTienda.value,
+            inputUbicacion.value,
+            inputDescripcion.value,
+            0,
+            inputRegular.value,
+            inputFinal.value,
+            ""
+        );
 
         // Agregando nuevo producto a la lista paquetes 
         paquetes.push(nuevoDato);
@@ -284,5 +287,97 @@ if (document.querySelector('.formulario')) {
         window.location.href = "productos.html";
     }
 }
+
+const inputBuscar = document.querySelector(".buscadorFiltro__buscar");
+const btnBuscar = document.querySelector(".buscadorFiltro__btn");
+
+// inputBuscar.addEventListener("keydowm", (e) => {
+//     if(e.key === "Enter"){
+
+//     }
+// });
+
+// Buscar  por nombre
+btnBuscar.addEventListener("click", function () {
+    const entradaText = inputBuscar.value.toLowerCase();
+    if (entradaText == "") {
+        const localPaquetes = localStorage.getItem("paquetes");
+        // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+        paquetes = JSON.parse(localPaquetes) ?? [];
+    }
+    paquetes = paquetes.filter(entrada => {
+        return entrada.nombre.toLowerCase().includes(entradaText);
+    });
+    console.log(paquetes);
+    mostrarProductosHtml();
+});
+
+// Filtrar por precio
+
+const inputOrdenar = document.querySelector(".buscadorFiltro__ordenar");
+
+inputOrdenar.addEventListener("change", ordenar);
+
+function ordenar() {
+    const valor = inputOrdenar.value;
+    switch (valor) {
+        case "opcionMenor":
+            paquetes = paquetes.sort((a, b) => {
+                return a.precioFinal - b.precioFinal;
+            });
+            mostrarProductosHtml();
+            break;
+        case "opcionMayor":
+            paquetes = paquetes.sort((b, a) => {
+                return a.precioFinal - b.precioFinal;
+            });
+            mostrarProductosHtml();
+            break;
+        default:
+            const localPaquetes = localStorage.getItem("paquetes");
+            // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+            paquetes = JSON.parse(localPaquetes) ?? [];
+            mostrarProductosHtml();
+            break;
+    }
+};
+
+// Logica del carrito de compras
+document.addEventListener("DOMContentLoaded", function (e) {
+    console.log(e.target);
+    const botonAgregarProducto = document.querySelector("#cards");
+    let listaCompras = JSON.parse(localStorage.getItem("listaCompras")) ?? [];
+    botonAgregarProducto.addEventListener("click", agregarCarrito);
+
+    function agregarCarrito(e) {
+        let contenedor = e.target.parentElement;
+        while(contenedor){
+            if(contenedor.classList.contains("card__contenedorBtn")){
+                break;
+            }
+            contenedor = contenedor.parentElement;
+        }
+
+        if (contenedor.classList.contains("card__contenedorBtn")) {
+            const agregar = paquetes.find(a => a.id == contenedor.dataset.id);
+            
+            if(listaCompras.find(a => a.id == contenedor.dataset.id)){
+                listaCompras = listaCompras.map(pq => {
+                    if(pq.id == contenedor.dataset.id){
+                        pq.cantidad++;
+                        return pq;
+                    }else{
+                        return pq;
+                    }
+                });
+            }else{
+                listaCompras = [...listaCompras, agregar];
+                console.log("listaCompras");
+            }
+        }
+        console.log(listaCompras);
+        localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
+    }
+});
 
 

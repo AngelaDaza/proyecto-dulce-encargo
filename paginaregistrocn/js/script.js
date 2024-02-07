@@ -105,65 +105,6 @@ function repetirMostrarContrasenaNegocio() {
 }
 //Aqui finaliza la funcionalidad para activar el icono que muestra u oculta la contraseña a peticion del usuario en el campo de contraseña de ambos formularios.
 
-
-
-//Aqui empieza la funcionalidad que verifica que ambas contraseñas del formulario cliente y negocio sean iguales para permitir el registro en el formulario.
-
-//Funcion verificar contraseñas cliente
-function validarContrasenasCliente() {
-  // Obtener los valores de los campos de contraseña
-  const contrasenaCliente1 = document.getElementById('clave-cliente').value;
-  const contrasenaCliente2 = document.getElementById('clave-cliente-2').value;
-
-  // Validar si las contraseñas coinciden
-  if (contrasenaCliente1 !== contrasenaCliente2) {
-    // Mostrar mensaje de error con Sweet Alert
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Las contraseñas no coinciden. Inténtalo de nuevo.',
-    });
-
-    // Evitar que se envíe el formulario
-    return false;
-  }
-
-  // Si las contraseñas coinciden, permitir que se envíe el formulario
-  return true;
-}
-
-// Agregar la función al evento "submit" del formulario
-document.getElementById('submit').addEventListener('click', validarContrasenasCliente);
-
-
-//Funcion verificar contraseñas negocio
-function validarContrasenasNegocio() {
-  // Obtener los valores de los campos de contraseña
-  const contrasenaNegocio1 = document.getElementById('clave-negocio').value;
-  const contrasenaNegocio2 = document.getElementById('clave-negocio-2').value;
-
-  // Validar si las contraseñas coinciden
-  if (contrasenaNegocio1 !== contrasenaNegocio2) {
-    // Mostrar mensaje de error con Sweet Alert
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Las contraseñas no coinciden. Inténtalo de nuevo.',
-    });
-
-    // Evitar que se envíe el formulario
-    return false;
-  }
-
-  // Si las contraseñas coinciden, permitir que se envíe el formulario
-  return true;
-}
-
-// Agregar la función al evento "submit" del formulario
-document.getElementById('submit').addEventListener('click', validarContrasenasNegocio);
-//Aqui finaliza la funcionalidad que verifica que ambas contraseñas del formulario cliente y negocio sean iguales para permitir el registro en el formulario.
-
-
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 const signupFormCliente = document.querySelector('#formulario-clientes');
 
@@ -179,14 +120,37 @@ signupFormCliente.addEventListener('submit', (e)=>{
   const telephone = document.querySelector('#telefono-cliente').value;
   const nameUser = document.querySelector('#usuario-cliente').value;
   const password = document.querySelector('#clave-cliente').value;
+  const password2 = document.querySelector('#clave-cliente-2').value;
+
+  // Validar si las contraseñas son iguales
+  if (password !== password2) {
+    e.preventDefault();
+
+    // Mostrar mensaje de error con Sweet Alert
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Las contraseñas no coinciden. Inténtalo de nuevo.',
+    });
+
+    // Evitar que se envíe el formulario
+    return false;
+  }
 
    // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
    const Users = JSON.parse(localStorage.getItem('users')) || []
    // Verificamos si el correo electrónico que se trata de ingresar se encuentra registrado o no
    const isUserRegistered = Users.find(user => user.email === email) || Users.find(user=> user.nameUser === nameUser)
+   
    // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
    if(isUserRegistered){
-       return alert ('El correo o nombre de usuario que ingresaste, ya se encuentra registrado')
+    // Mostrar mensaje de error con Sweet Alert
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'El correo o nombre de usuario que ingresaste, ya se encuentra registrado.',
+    });
+    return false;
    }
    // Si el correo no se encuentra registrado, que le permita guardarlo
    Users.push({
@@ -204,9 +168,16 @@ signupFormCliente.addEventListener('submit', (e)=>{
        //Convertimos los datos en cadenas para almacenarlos
        localStorage.setItem('users', JSON.stringify(Users))
        // Mostraremos que el usuario se registro con exito
-       alert('Registro fue exitoso')
-       // Que nos redireccione al login
-       window.location.href = 'login.html'
+       Swal.fire({
+        icon: 'success',
+        title: '¡felicitaciones!',
+        text: 'Registro fue exitoso.',
+        onClose: () => {
+          window.location.href = "login.html";
+        }
+      });
+      // Limpiar el formulario
+      signupFormCliente.reset();
 });
 //Aqui termina la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 
@@ -225,6 +196,22 @@ signupFormBusiness.addEventListener('submit', (e)=>{
   const telephoneBusiness = document.querySelector('#telefono-negocio').value;
   const nameUserBusiness = document.querySelector('#usuario-negocio').value;
   const passwordBusiness = document.querySelector('#clave-negocio').value;
+  const passwordBusiness2 = document.querySelector('#clave-negocio-2').value;
+
+  // Validar si las contraseñas son iguales
+  if (passwordBusiness !== passwordBusiness2) {
+    e.preventDefault();
+
+    // Mostrar mensaje de error con Sweet Alert
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Las contraseñas no coinciden. Inténtalo de nuevo.',
+    });
+
+    // Evitar que se envíe el formulario
+    return false;
+  }
 
    // Inicializar una variable que reciba los datos que serán guardados en el JSON (array de datos)
    const Users = JSON.parse(localStorage.getItem('users')) || []
@@ -232,7 +219,13 @@ signupFormBusiness.addEventListener('submit', (e)=>{
    const isUserRegisteredBusiness = Users.find(user => user.email === emailBusiness) || Users.find(user=> user.nameUser === nameUserBusiness)
    // Si el correo ya existe, nos mostrara un mensaje de alerta diciendo que ya se encuentra registrado el correo
    if(isUserRegisteredBusiness){
-       return alert ('El correo o nombre de usuario que ingresaste, ya se encuentra registrado')
+    // Mostrar mensaje de error con Sweet Alert
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'El correo o nombre de usuario que ingresaste, ya se encuentra registrado.',
+    });
+    return false;
    }
    // Si el correo no se encuentra registrado, que le permita guardarlo
    Users.push({
@@ -250,7 +243,13 @@ signupFormBusiness.addEventListener('submit', (e)=>{
        //Convertimos los datos en cadenas para almacenarlos
        localStorage.setItem('users', JSON.stringify(Users))
        // Mostraremos que el usuario se registro con exito
-       alert('Registro fue exitoso')
-       // Que nos redireccione al login
-       window.location.href = 'login.html'
+       Swal.fire({
+        icon: 'success',
+        title: '¡felicitaciones!',
+        text: 'Registro fue exitoso.',
+        onClose: () => {
+          window.location.href = "login.html";
+        }
+      });
+      signupFormBusiness.reset();
 });

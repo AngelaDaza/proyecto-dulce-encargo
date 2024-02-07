@@ -51,6 +51,7 @@ body {
     opacity: 0;
     visibility: hidden;
     font-size: 15px;
+    z-index: 100;
 }
 
 .header__ul {
@@ -351,7 +352,7 @@ option {
     position: relative;
   }
 
-  .input1 {
+  .input2 {
     width: 100%;
   }
   
@@ -385,7 +386,7 @@ option {
     position: relative;
   }
 
-  .input1 {
+  .input2 {
     width: 100%;
   }
   
@@ -1018,6 +1019,7 @@ option {
         font-family: var(--fuentePrincipal);
         font-size: 15px;
         display: grid;
+        padding-left: 2rem;
     }
     
     .formulario-clientes {
@@ -1062,18 +1064,6 @@ option {
         height: auto;
     }
     
-    /*.contenedor-botones-formulario {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: row;
-        gap: 0.8rem;
-        margin-top: 1.5rem;
-        padding-bottom: 1rem;
-        margin-right: 1rem;
-        
-    }*/
-    
     .botonEnviar{
         background-color: #113775;
         color: white;
@@ -1104,16 +1094,17 @@ option {
 /*Estilos para el campo de contraseña del formulario cliente primer campo de contraseña*/
 .input-contraseña {
     position: relative;
+    width: 90%;
   }
 
-  .input1 {
+  .input2 {
     width: 100%;
   }
   
   .icono-ojo {
     position: absolute;
     top: 50%;
-    right: 50px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -1140,14 +1131,14 @@ option {
     position: relative;
   }
 
-  .input1 {
+  .input2 {
     width: 100%;
   }
   
   .icono-ojo-cliente2 {
     position: absolute;
     top: 50%;
-    right: 50px;
+    right: 5px;
     transform: translateY(-50%);
     cursor: pointer;
     color: #ccc;
@@ -1477,11 +1468,13 @@ option {
         margin-bottom: -6rem;
         font-family: var(--fuentePrincipal);
         font-size: 15px;
+        padding-left: 2rem;
     }
     
     .formulario-negocio {
         display: grid;
         grid-template-columns: 50% 50%;
+        column-gap: 2rem;
     }
     
     .formulario-label {

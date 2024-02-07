@@ -105,6 +105,7 @@ function repetirMostrarContrasenaNegocio() {
 }
 //Aqui finaliza la funcionalidad para activar el icono que muestra u oculta la contraseña a peticion del usuario en el campo de contraseña de ambos formularios.
 
+
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 const signupFormCliente = document.querySelector('#formulario-clientes');
 
@@ -134,6 +135,51 @@ signupFormCliente.addEventListener('submit', (e)=>{
     });
 
     // Evitar que se envíe el formulario
+    return false;
+  }
+
+  // Validar la complejidad de la contraseña
+
+  /*Explicación de la expresión regular:
+
+  ^: Inicio de la cadena.
+  (?=.*[a-z]): Afirmación previa que busca al menos una letra minúscula.
+  (?=.*[A-Z]): Afirmación previa que busca al menos una letra mayúscula.
+  (?=.*[0-9]): Afirmación previa que busca al menos un número.
+  (?=.*[!@#$%^&*()_+=-]): Afirmación previa que busca al menos un símbolo.
+  .: Coincide con cualquier carácter.
+  {8,}: Coincide con al menos 8 caracteres.
+  $: Fin de la cadena.
+  */
+  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,}$/;
+  if (!regexPassword.test(password)) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo.',
+    });
+    return false;
+  }
+  
+  // Validar el correo electrónico
+
+  /*Explicación de la expresión regular:
+
+  ^: Inicio de la cadena.
+  (([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+")): Coincide con la parte local del correo electrónico.
+  @: Coincide con el símbolo "@".
+  ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$: Coincide con el nombre de dominio del correo electrónico.
+  $: Fin de la cadena.
+  */
+  const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (!regexEmail.test(email)) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'Por favor ingresa un correo electrónico válido.',
+    });
     return false;
   }
 
@@ -181,6 +227,7 @@ signupFormCliente.addEventListener('submit', (e)=>{
 });
 //Aqui termina la funcionaliad para guardar la información en el localstorage de la inscripción de cliente
 
+
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio
 const signupFormBusiness = document.querySelector('#formulario-negocio');
 
@@ -210,6 +257,51 @@ signupFormBusiness.addEventListener('submit', (e)=>{
     });
 
     // Evitar que se envíe el formulario
+    return false;
+  }
+
+  // Validar la complejidad de la contraseña
+
+  /*Explicación de la expresión regular:
+
+  ^: Inicio de la cadena.
+  (?=.*[a-z]): Afirmación previa que busca al menos una letra minúscula.
+  (?=.*[A-Z]): Afirmación previa que busca al menos una letra mayúscula.
+  (?=.*[0-9]): Afirmación previa que busca al menos un número.
+  (?=.*[!@#$%^&*()_+=-]): Afirmación previa que busca al menos un símbolo.
+  .: Coincide con cualquier carácter.
+  {8,}: Coincide con al menos 8 caracteres.
+  $: Fin de la cadena.
+  */
+  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,}$/;
+  if (!regexPassword.test(passwordBusiness)) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un símbolo.',
+    });
+    return false;
+  }
+  
+  // Validar el correo electrónico
+
+  /*Explicación de la expresión regular:
+
+  ^: Inicio de la cadena.
+  (([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+")): Coincide con la parte local del correo electrónico.
+  @: Coincide con el símbolo "@".
+  ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$: Coincide con el nombre de dominio del correo electrónico.
+  $: Fin de la cadena.
+  */
+  const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (!regexEmail.test(emailBusiness)) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'info',
+      title: 'Oops...',
+      text: 'Por favor ingresa un correo electrónico válido.',
+    });
     return false;
   }
 
@@ -253,3 +345,4 @@ signupFormBusiness.addEventListener('submit', (e)=>{
       });
       signupFormBusiness.reset();
 });
+//Aqui finaliza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio.

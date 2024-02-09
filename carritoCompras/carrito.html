@@ -4,32 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Producto</title>
+    <title>Carrito de compras</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/nuevoProducto.css">
-    <link
-      rel="shortcut icon"
-      href="img/icono-dulce-encargo.png"
-      type="image/x-icon"
-    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/icono.png" type="image/x-icon" />
 </head>
 
 <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header">
-        <button id="abrir" class="header__btnMenu" title="boton">
+        <button id="abrir" class="header__btnMenu">
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="contenedor__logo">
             <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-            <button id="cerrar" class="header__btnCerrar" title="boton">
+            <button id="cerrar" class="header__btnCerrar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="header__ul">
@@ -48,64 +44,57 @@
     <!-- Aqui empieza el contenido del banner pagina principal-->
     <div class="contenedor-banner-total">
         <div class="contendor-banner">
-              <div class="contenedor-banner-izq">
-                  <h2 class="contendedor-banner-parrafo">
-                    Comparte con los demas <br> las delicias que horneas con pasión 
-                  </h2>
-              </div>
-              <div class="contenedor-banner-der">
-                  <img src="img/bannerNuevoProducto.jpg" alt="Imagen banner principal" class="contenedor-banner-der-img">
-              </div>
-          </div>
+            <div class="contenedor-banner-izq">
+                <h2 class="contendedor-banner-parrafo">
+                    Tu compra inteligente, <br> en un solo carrito.
+                </h2>
+            </div>
+            <div class="contenedor-banner-der">
+                <img src="img/bannerCarrito.png" alt="Imagen banner principal" class="contenedor-banner-der-img">
+            </div>
         </div>
-        <div class="svg-onda" style="height: 100px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
-          <!--Aqui termina el contenido del banner pagina principal-->
-    <!-- Aqui termina el banner -->
-    <!-- Aqui empieza el formulario de nuevo producto -->
-    
-    <div class="nuevoProducto contenedor">
-        <h3 class="nuevoProducto__title">Nuevo producto</h3>
-        <form action="" class="formulario">
-            <div class="formulario__campo">
-                <label for="formImg">Imagen del producto</label>
-                <input type="file" id="formImg" class="formulario__img" accept="image/*" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formNombre">Nombre del producto</label>
-                <input type="text" id="formNombre" class="formulario__nombre" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formDescripcion">Ingrese la descripción</label>
-                <input type="text" id="formDescripcion" class="formulario__descripcion" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formTienda">Nombre de la tienda</label>
-                <input type="text" id="formTienda" class="formulario__tienda" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formUbicacion">Ubicación de la tienda</label>
-                <input type="text" id="formUbicacion" class="formulario__ubicacion" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formRegular">Precio regular del producto</label>
-                <input type="number" id="formRegular" class="formulario__precioRegular" required>
-            </div>
-            <div class="formulario__campo">
-                <label for="formFinal">Precio final del producto</label>
-                <input type="number" id="formFinal" class="formulario__precioFinal" required>
-            </div>
-            <div class="boton">
-                <button class="formulario__btn" type="submit" onclick="">Crear nuevo producto</button>
-            </div>
-        </form>
-        
     </div>
-    <!-- Aqui finaliza el formulario de nuevo producto -->
+    <div class="svg-onda" style="height: 100px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+                style="stroke: none; fill: #cfebca;"></path>
+        </svg></div>
+    <!--Aqui termina el contenido del banner pagina principal-->
+    <!-- Aqui termina el banner -->
+
+    <!-- Aqui empieza el primer contenedor -->
+    <section class="contenedorUno">
+        <div class="contenerdorUno__seguirFinalizar">
+            <div class="contenedorUno__seguir">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+                <h4 class="contenedorUno__subtitle">Seguir Comprando</h4>
+            </div>
+            <div class="contenedorUno__finalizar">
+                <h4 class="contenedorUno__title">Finalizar Compra</h4>
+            </div>
+        </div>
+        <div class="contenedorUno__carrito">
+            <h4 class="contenedorUno__carritoTitle">Mi carrito</h4>
+        </div>
+    </section>
+    <!-- Aqui termina el primer contenedor -->
+
+    <!-- Aqui empieza el segundo contenedor -->
+    <section class="contenedorDos">
+
+    </section>
+    <!-- Aqui termina el segundo contenedor -->
+
+    <!-- Aqui empieza el tercer contenedor -->
+    <section class="contenedorTres">
+        <h4 class="contenedorUno__title">Finalizar Compra</h4>
+    </section>
+    <!-- Aqui termina el tercer contenedor -->
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <!-- Section: Links  -->
-        <div class="svg-onda" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
+        <div class="svg-onda" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
+                preserveAspectRatio="none" style="height: 100%; width: 100%;">
                 <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
                     style="stroke: none; fill: #cfebca;"></path>
             </svg></div>

@@ -14,14 +14,14 @@
 </head>
 <body>
     <header class="header">
-        <button id="abrir" class="header__btnMenu">
+        <button id="abrir" class="header__btnMenu" title="boton">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="contenedor__logo">
           <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-          <button id="cerrar" class="header__btnCerrar">
+          <button id="cerrar" class="header__btnCerrar" title="boton">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <ul class="header__ul">
@@ -61,8 +61,8 @@
             Paquetes activos
         </h2>
 
-        <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft"><i class="fa-solid fa-circle-arrow-left"></i></button>
-        <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft" title="boton"><i class="fa-solid fa-circle-arrow-left"></i></button>
+        <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight" title="boton"><i class="fa-solid fa-circle-arrow-right"></i></button>
         <div class="contenedorPaquetesDisponibles__cards" >
             <div class="paquetesDisponibles__cards" id="carrusel">
                 <div class="paquetesDisponibles__card">
@@ -100,7 +100,7 @@
       <div id="filtro">
         <label for="buscar">Buscar:</label>
         <input type="text" id="buscar" oninput="buscarElementos()">
-        <select id="filtroCategoria" onchange="filtrarPorCategoria()">
+        <select id="filtroCategoria" onchange="filtrarPorCategoria()" title="categoria">
             <option value="">Todas las categorías</option>
             <!-- Agrega las opciones de categorías según tus datos -->
             <option value="Categoria1">Categoria1</option>

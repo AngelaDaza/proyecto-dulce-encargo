@@ -600,6 +600,9 @@ body {
 /*Aqui finaliza los estilos del contenedor Nuevo Producto Escritorio*/
 /*Aqui empieza los estilos del contenedor Nuevo Producto Movil*/
 @media (min-width: 220px) and (max-width: 767px) {
+    .nuevoProducto {
+        margin: 0 .5rem;
+    }
 
     .formulario {
         grid-template-columns: 1fr;

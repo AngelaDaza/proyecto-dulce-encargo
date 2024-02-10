@@ -632,6 +632,7 @@ body {
     .buscadorFiltro__buscar{
         width: 18rem;
         font-size: 14px;
+        padding: 5px 16px;
     }
     .buscadorFiltro__ordenar{
         height: 40px;
@@ -643,6 +644,12 @@ body {
     }
     .buscadorFiltro__buscador{
         margin-bottom: 1rem;
+    }
+    .buscadorFiltro__btn{
+        padding: 0 20px 0 0;
+    }
+    .buscadorFiltro__ordenar{
+        height: 35px;
     }
 }
 /* Aqui finaliza el Responive de celular del titulo, barra de busqueda y filtro */
@@ -748,6 +755,7 @@ body {
 .card__infoUbicacion{
     margin: 0;
 }
+
 /* Aqui finaliza las card
 /*Aqui empieza los estilos del footer*/
 .footer__content {

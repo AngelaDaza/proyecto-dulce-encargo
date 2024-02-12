@@ -89,6 +89,38 @@
 
     <!-- Aqui empieza el tercer contenedor -->
     <section class="contenedorTres">
+        <div class="contenedorTres__grid">
+            <div class="contenedorTres__promocion">
+                <input type="text" class="contenedorTres__cupon" placeholder="Ingrese código promocional">
+                <textarea name="cupon" class="contenedorTres__nota" placeholder="Agregar nota"></textarea>
+            </div>
+            <div class="contenedorTres__resumen-compra">
+                <div class="contenedorTres__descripcion-resumen">
+                    <span>Resumen de la orden</span>
+                    <span>Dirección de la tienda</span>
+                    <div class="contenedorTres__tabla-producto">
+                        <p>Productos</p>
+                        <table class="contenedorTres__tabla">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                            <tr>
+                                <td>Tarta Fresas</td>
+                                <td>7</td>
+                                <td>15000</td>
+                            </tr>
+                        </table> 
+                    </div>
+                    <div class="contenedorTres__total-compra">
+                        <span>Total</span>
+                        <input type="text" class="contenedorTres__cantidad" disabled>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
         <button class="contenedorUno__finaliza">Finalizar Compra</button>
     </section>
     <!-- Aqui termina el tercer contenedor -->

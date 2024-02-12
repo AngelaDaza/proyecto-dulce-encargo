@@ -492,7 +492,7 @@ h4{
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    color: #527d41;
+    color: #1e559c;
 }
 .contenedorUno__subtitle{
     margin: 0;
@@ -520,7 +520,7 @@ h4{
     border-radius: 3.1rem;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    float: right;
+    width: 12rem;
 }
 .contenedorUno__title:hover {
     background-color: #c88f44;
@@ -626,14 +626,6 @@ h4{
 .contenedorP_tituloP {
     font-weight: 700;
 }
-.contenedorTres {
-    display: block;
-    margin: 4rem auto 0 auto;
-    max-width: 1200px;
-    background-color: transparent;
-    display: flex;
-    justify-content: end;
-}
 .contenedorUno__finaliza {
     margin: 0;
     letter-spacing: .1px;
@@ -646,8 +638,9 @@ h4{
     border: none;
     border-radius: 3.1rem;
     cursor: pointer;
+    width: 12rem;
     transition: all 0.3s ease 0s;
-    float: right;
+    align-self: flex-end;
 }
 .contenedorUno__finaliza:hover {
     background-color: #c88f44;
@@ -655,6 +648,112 @@ h4{
     transform: scale(1.1);
 }
 /*Aqui finaliza Responive de escritorio del card compra*/
+
+/*Aqui empieza los estilos de resumen compra*/
+.contenedorTres{
+    max-width: 1200px;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contenedorTres__grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 5rem;
+}
+
+.contenedorTres__promocion{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: start;
+    align-items: stretch;
+}
+.contenedorTres__cupon{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+    padding: 0 1rem;
+    border: none;
+}
+.contenedorTres__nota{
+    width: 100%;
+    height: 10rem;
+    resize: none;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+    border: none;
+    padding: 1rem;
+}
+
+.contenedorTres__descripcion-resumen{
+    margin: 0;
+    font-weight: 700;
+}
+
+.contenedorTres__descripcion-resumen span{
+    display: block;
+    margin-bottom: 1rem;
+}
+.contenedorTres__descripcion-resumen span:last-of-type{
+    margin-bottom: 0;
+}
+.contenedorTres__resumen-compra{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+    padding: 2rem;
+    font-family: var(--fuentePrincipal);
+}
+
+.contenedorTres__total-compra{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.contenedorTres__cantidad{
+    width: 15rem;
+}
+
+.contenedorTres__tabla-producto{
+    display: flex;
+    justify-content: space-between;
+}
+
+table {     
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    width: 480px; 
+    text-align: center;    
+    border-collapse: collapse; 
+}
+
+th{
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: white;
+    border-top: 1px solid #28a3e19c;    
+    border-bottom: 1px solid #28a3e19c; color: #1e559c;
+    font-family: var(--fuenteSecundaria);
+}
+
+td {    
+    padding: 8px;     
+    background: white;     
+    border-bottom: 1px solid #fff;
+    color: #1e559c;    
+    border-top: 1px solid transparent; 
+    font-family: var(--fuentePrincipal);
+}
+.contenedorTres__tabla{
+    width: 15rem;
+}
+/*Aqui finaliza los estilos de resumen compra*/
 
 /*Aqui empieza los estilos del footer*/
 .footer__content {

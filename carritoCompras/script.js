@@ -2,14 +2,16 @@
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
+const body = document.body;
 
 abrir.addEventListener("click", () =>{
     nav.classList.add("header__nav--visible");
+    body.classList.add("body--activo");
 })
 cerrar.addEventListener("click", () =>{
     nav.classList.remove("header__nav--visible");
+    body.classList.remove("body--activo");
 })
-
 // Se define el arreglo paquetes
 // Obtenemos los paquetes del local Storage
 const localCompras = localStorage.getItem("listaCompras");
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         } = compra;
         // Contenedor Principal
         const divCard = document.createElement("div");
+        divCard.id = "card__producto";
         divCard.classList.add("contenedorP");
 
         // Contenedor de check
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         const parrafo = document.createElement("p");
         parrafo.classList.add("contenedorP_parrafo");
         parrafo.textContent = desProducto;
-
+    
         divDescripcion.appendChild(parrafo);
         divContenido.appendChild(divDescripcion);
         divCard.appendChild(divContenido);
@@ -81,9 +84,13 @@ document.addEventListener('DOMContentLoaded', () =>{
         // Contenedor precio
         const divPrecio = document.createElement("div");
         divPrecio.classList.add("contenedorP_precio");
+        const ptitulo = document.createElement("h4");
+        ptitulo.classList.add("contenedorP_tituloP");
+        ptitulo.textContent = "Precio";
         const parrafoPrecio = document.createElement("p");
         parrafoPrecio.classList.add("contenedorP_parrafo-precio");
         parrafoPrecio.textContent = precioFinalProducto;
+        divPrecio.appendChild(ptitulo);
         divPrecio.appendChild(parrafoPrecio);
         divCard.appendChild(divPrecio);
 

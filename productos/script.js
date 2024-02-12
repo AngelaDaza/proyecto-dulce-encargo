@@ -2,12 +2,15 @@
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
+const body = document.body;
 
 abrir.addEventListener("click", () =>{
     nav.classList.add("header__nav--visible");
+    body.classList.add("body--activo");
 })
 cerrar.addEventListener("click", () =>{
     nav.classList.remove("header__nav--visible");
+    body.classList.remove("body--activo");
 })
 
 // Se crea la clase de productos
@@ -208,6 +211,8 @@ if (!JSON.parse(localPaquetes)) {
         paquete10,
         paquete11,
     );
+
+    localStorage.setItem("paquetes",JSON.stringify(paquetes));
 }
 
 // Creando productos en el HTML

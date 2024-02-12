@@ -92,8 +92,14 @@ body {
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
+    pointer-events: all;
+}
+.body--activo {
+    position: relative;
+    pointer-events: none;
 }
 .header__btnMenu {
     appearance: none;
@@ -200,8 +206,14 @@ body {
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
         font-size: 20px;
+        pointer-events: all;
+    }
+    .body--activo {
+        position: relative;
+        pointer-events: none;
     }
     .header__btnMenu {
         cursor: pointer;
@@ -604,6 +616,9 @@ body {
         justify-content: center;
         gap: 1rem;
     }
+    .card {
+        z-index: -1;
+    }
     .contenedorEquipo__titulo {
         margin: 3rem auto 3rem auto;
     }
@@ -654,6 +669,9 @@ body {
     }
     .contenedorEquipo__titulo {
         margin: 3rem auto 3rem auto;
+    }
+    .card {
+        z-index: -1;
     }
 }
 /*Aqui finaliza el Responive de celular del ontenido principal*/

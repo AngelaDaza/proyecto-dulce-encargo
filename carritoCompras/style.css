@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@300&family=Sofia&display=swap');
-
 /* Se definen las variables CSS */
 :root {
-
+    
     --fuentePrincipal: 'Raleway', sans-serif;
     --fuenteSecundaria: 'Josefin Sans', sans-serif;
     --fuenteCursiva: 'Sofia', cursive;
 }
-
 /* Se establecen estilos generales */
 * {
     box-sizing: border-box;
@@ -18,7 +16,6 @@
 body {
     background-color: #EEEEEE;
 }
-
 /* Se le asignan estilos al menú de navegación */
 .header {
     background-color: #78BADB;
@@ -32,7 +29,6 @@ body {
     font-size: 20px;
     box-shadow: 0 0 1rem 0 #1e559c;
 }
-
 .header__btnMenu,
 .header__btnCerrar {
     display: block;
@@ -53,7 +49,6 @@ body {
     visibility: hidden;
     font-size: 15px;
 }
-
 .header__ul {
     list-style: none;
     margin-bottom: 0;
@@ -62,18 +57,15 @@ body {
     align-items: first baseline;
     padding-left: 2rem;
 }
-
 .header__li {
     display: inline-block;
     margin-bottom: 0.2rem;
 }
-
 .header__li a {
     font-size: 700;
     color: #eceff1;
     text-decoration: none;
 }
-
 .header__li:hover {
     transform: scale(1.1);
     background-color: #a3d4ff;
@@ -92,20 +84,23 @@ body {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
-
 .header__btnA:hover {
     background-color: #c88f44;
     color: black;
     transform: scale(1.1);
 }
-
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
+    pointer-events: all;
 }
-
+.body--activo {
+    position: relative;
+    pointer-events: none;
+}
 .header__btnMenu {
     appearance: none;
     border: none;
@@ -116,7 +111,6 @@ body {
     outline: none;
     color: #eceff1;
 }
-
 .header__btnCerrar {
     appearance: none;
     border: none;
@@ -128,7 +122,7 @@ body {
     font-size: 1.4rem;
 }
 
-.contenedor__logo {
+.contenedor__logo{
     font-family: var(--fuenteCursiva);
     font-size: 1rem;
     color: black;
@@ -136,21 +130,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .contenedor__logoTitle {
     margin: 0;
     -webkit-text-stroke: 1px black;
     font-size: 1rem;
 }
-
 .contenedor__logoTitle i {
     font-size: 1rem;
     -webkit-text-stroke: 1px black;
     margin: 0 0.2rem;
     color: #c88f44;
 }
-
-@media (min-width: 768px) and (max-width: 1045px) {
+@media (min-width: 768px) and (max-width: 1045px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -163,12 +154,11 @@ body {
         font-size: 20px;
         box-shadow: 0 0 1rem 0 #1e559c;
     }
-
     .header__btnMenu,
     .header__btnCerrar {
         display: block;
     }
-
+    
     .header__nav {
         position: absolute;
         top: 0;
@@ -180,7 +170,6 @@ body {
         visibility: hidden;
         font-size: 15px;
     }
-
     .header__ul {
         list-style: none;
         margin-bottom: 0;
@@ -189,17 +178,15 @@ body {
         align-items: first baseline;
         padding-left: 2rem;
     }
-
     .header__li {
         display: inline-block;
     }
-
     .header__li a {
         font-size: 700;
         color: #eceff1;
         text-decoration: none;
     }
-
+    
     .header__btnA {
         font-weight: 700;
         font-size: 20px;
@@ -211,27 +198,29 @@ body {
         cursor: pointer;
         transition: all 0.3s ease 0s;
     }
-
     .header__btnA:hover {
         background-color: #c88f44;
         color: black;
         transform: scale(1.1);
     }
-
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
         font-size: 20px;
+        pointer-events: all;
     }
-
+    .body--activo {
+        position: relative;
+        pointer-events: none;
+    }
     .header__btnMenu {
         cursor: pointer;
         outline: none;
         color: #eceff1;
         font-size: 2rem;
     }
-
     .header__btnCerrar {
         cursor: pointer;
         outline: none;
@@ -239,8 +228,8 @@ body {
         color: white;
         font-size: 2rem;
     }
-
-    .contenedor__logo {
+    
+    .contenedor__logo{
         font-family: var(--fuenteCursiva);
         font-size: 2rem;
         color: black;
@@ -248,13 +237,11 @@ body {
         justify-content: center;
         align-items: center;
     }
-
     .contenedor__logoTitle {
         margin: 0;
         -webkit-text-stroke: 2px black;
         font-size: 2rem;
     }
-
     .contenedor__logoTitle i {
         font-size: 2rem;
         -webkit-text-stroke: 2px black;
@@ -262,8 +249,7 @@ body {
         color: #c88f44;
     }
 }
-
-@media(min-width:1046px) {
+@media(min-width:1046px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -274,12 +260,11 @@ body {
         font-size: 20px;
         box-shadow: 0 0 50rem 0rem #1e559c70;
     }
-
     .header__btnMenu,
     .header__btnCerrar {
         display: none;
     }
-
+    
     .header__nav {
         position: absolute;
         top: 0;
@@ -295,35 +280,31 @@ body {
         align-items: center;
         box-shadow: none;
     }
-
     .header__ul {
         list-style: none;
         margin-bottom: 0;
         display: flex;
         flex-direction: row;
     }
-
     .header__li {
         display: inline;
         margin-right: 2.5rem;
         margin-top: 0.5rem;
     }
-
     .header__li a {
         font-size: 20px;
         color: white;
         text-decoration: none;
         font-weight: bold;
     }
-
     .header__li:hover {
         transform: scale(1.1);
         background-color: #a3d4ff;
         border-radius: 2rem;
         padding: 0rem 1rem;
     }
-
-
+    
+    
     .header__btnA {
         font-weight: 700;
         font-size: 18px;
@@ -336,14 +317,12 @@ body {
         transition: all 0.3s ease 0s;
         float: right;
     }
-
     .header__btnA:hover {
         background-color: #c88f44;
         color: black;
         transform: scale(1.1);
     }
-
-    .contenedor__logo {
+    .contenedor__logo{
         font-family: var(--fuenteCursiva);
         font-size: 3rem;
         color: black;
@@ -351,13 +330,11 @@ body {
         justify-content: left;
         align-items: left;
     }
-
     .contenedor__logoTitle {
         margin: 0;
         -webkit-text-stroke: 1.5px black;
         font-size: 1.5rem;
     }
-
     .contenedor__logoTitle i {
         font-size: 1.5rem;
         -webkit-text-stroke: 1.5px black;
@@ -365,7 +342,6 @@ body {
         color: #c88f44;
     }
 }
-
 /* Aqui termina la Barra de Navegación */
 
 /*Aqui empiezan los Estilos para el contenedor del banner pagina principal en modo celular*/
@@ -378,7 +354,6 @@ body {
     margin-top: -15px;
     margin-bottom: -20px;
 }
-
 .contendor-banner {
     display: grid;
     grid-template-rows: ();
@@ -399,9 +374,9 @@ body {
     text-align: center;
     color: black;
     font-weight: bolder;
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 25px;
-    padding-top: 1rem;
+    padding-top: 1rem; 
 }
 
 .contenedor-banner-der {
@@ -412,11 +387,11 @@ body {
     height: fit-content;
     border-radius: 1rem;
     margin-top: -15px;
-
+    
 }
 
 .contenedor-banner-der-img {
-    width: 100%;
+    width: 60%;
     border-radius: 1rem;
     margin-top: 0.5rem;
 }
@@ -431,38 +406,37 @@ body {
         margin: 1rem;
         padding: 1rem 0;
     }
-
+    
     .contenedor-banner-izq {
         padding: 1rem;
         height: fit-content;
         width: 50%;
         align-self: center;
+        padding: 1rem 1rem 1rem 4rem;
     }
-
+    
     .contendedor-banner-parrafo {
         text-align: center;
         color: black;
         font-weight: bolder;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 25px;
-        padding-top: 1rem;
+        padding-top: 1rem; 
     }
-
+    
     .contenedor-banner-der {
         padding: 1rem;
         margin: 0;
         padding: 0;
         width: 50%;
     }
-
+    
     .contenedor-banner-der-img {
-        width: 70%;
+        width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
     }
-
 }
-
 /*Aqui finaliza el Responive de Tablet del banner pagina principal*/
 /*Aqui empieza el Responive de escritorio del banner pagina principal*/
 @media(min-width:1023px) {
@@ -472,51 +446,40 @@ body {
         margin: 1rem;
         padding: 1rem 0;
     }
-
+    
     .contenedor-banner-izq {
         padding: 1rem;
         height: fit-content;
         width: 50%;
         align-self: center;
+        padding: 1rem 1rem 1rem 8rem;
     }
-
+    
     .contendedor-banner-parrafo {
         text-align: center;
         color: black;
         font-weight: bolder;
-        font-size: 25px;
+        font-size: 22px;
         margin-bottom: 25px;
-        padding-top: 1rem;
+        padding-top: 1rem; 
     }
-
+    
     .contenedor-banner-der {
         padding: 1rem;
         margin: 0;
         padding: 0;
         width: 50%;
     }
-
+    
     .contenedor-banner-der-img {
         width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
-    }
+    }   
 }
-
 /*Aqui finaliza el Responive de escritorio del banner pagina principal*/
 
-/*Aqui empieza los estilos del footer*/
-.footer__content {
-    margin-top: -1px;
-}
-
-.svg-onda {
-    background-color: #EEEEEE;
-}
-
-/*Aqui finaliza los estilos del footer*/
-
-/** INICIO EINER **/
+/*Aqui empieza Responive de escritorio del card compra*/
 h4{
     margin: 0;
 }
@@ -529,33 +492,66 @@ h4{
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    color: #527d41;
 }
 .contenedorUno__subtitle{
     margin: 0;
 }
+.contenedorUno__seguircompra {
+    margin: 0;
+    display: block;
+    letter-spacing: .1px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.contenedorUno__carritoTitle {
+    color: #527d41;
+}
+.contenedorUno__title {
+    margin: 0;
+    letter-spacing: .1px;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 700;
+    font-size: 18px;
+    color: #eceff1;
+    padding: 0.3rem 1.5rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    float: right;
+}
+.contenedorUno__title:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
+}
 .contenerdorUno__seguirFinalizar{
-    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
-    outline: 1px solid red;
+    font-family: var(--fuentePrincipal);
+    align-items: center;
 }
 .contenedorUno__carrito{
     padding: 1rem;
-    outline: 1px solid blue;
+    
 }
 
 .contenedorDos{
     max-width: 1200px;
     margin: 0 auto;
-    outline: 1px solid coral;
 }
 
 .contenedorP{
     padding: 2rem 1rem;
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    background-color: white;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+    border-radius: 5px;
 }
 
 .contenedorP__imagen{
@@ -567,31 +563,49 @@ h4{
     height: 100%;
     object-fit: cover;
     display: block;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+    border-radius: 5px;
 }
 .contenedorP__divCheck{
     width: 30px;
 }
 .contenedorP__check{
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
 }
 .contenedorP_titulo-descripcion{
     text-align: center;
-    outline: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-evenly;
+    height: 12rem;
+    width: 20rem;
+    font-family: var(--fuentePrincipal);
+}
+.contenedorP_h-title {
+    font-weight: 700;
+}
+.contenedorP_parrafo {
+    margin: 0;
 }
 .contenedorP_mas-menos{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    outline: 2px solid cyan;
 }
 .contenedorP_btn-mas,
 .contenedorP_btn-menos{
     all: unset;
     width: 30px;
     height: 30px;
-    color: red;
+    color: #28a4e1;
+}
+.contenedorP_cantidad {
+    all: unset;
+    border-bottom: 1px solid #28a4e1;
+    text-align: center;
 }
 .contenedorP_btn-mas:hover,
 .contenedorP_btn-menos:hover{
@@ -600,3 +614,55 @@ h4{
 .contenedorP_mas-menos input{
     width: 30px;
 }
+.contenedorP_precio {
+    font-family: var(--fuentePrincipal);
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+}
+.contenedorP_tituloP {
+    font-weight: 700;
+}
+.contenedorTres {
+    display: block;
+    margin: 4rem auto 0 auto;
+    max-width: 1200px;
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+}
+.contenedorUno__finaliza {
+    margin: 0;
+    letter-spacing: .1px;
+    font-family: var(--fuenteSecundaria);
+    font-weight: 700;
+    font-size: 18px;
+    color: #eceff1;
+    padding: 0.3rem 1.5rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    float: right;
+}
+.contenedorUno__finaliza:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
+}
+/*Aqui finaliza Responive de escritorio del card compra*/
+
+/*Aqui empieza los estilos del footer*/
+.footer__content {
+    margin-top: -1px;
+}
+
+.svg-onda {
+    background-color: #EEEEEE;
+}
+
+/*Aqui finaliza los estilos del footer*/

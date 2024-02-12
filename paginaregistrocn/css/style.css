@@ -369,6 +369,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media (min-width: 320px) and (max-width: 1022px){
+    .subcontenedor-vista {
+        z-index: -1;
+    }
+}
 
 .contenedor-vista h2 {
     font-family: var(--fuenteSecundaria);

@@ -324,6 +324,7 @@ body {
 form{
     display: grid;
     place-items: center;
+    
 }
 .formularioCompleto{
     display: grid;
@@ -332,6 +333,7 @@ form{
     row-gap: 1rem;
     font-family: var(--fuentePrincipal);
     color: black;
+    max-width: 100%;
 }
 .campo{
     display: grid;

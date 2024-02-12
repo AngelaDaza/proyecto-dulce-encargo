@@ -102,9 +102,14 @@ body {
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
-    width: 14rem;
+    pointer-events: all;
+}
+.body--activo {
+    position: relative;
+    pointer-events: none;
 }
 
 .header__btnMenu {
@@ -244,9 +249,14 @@ body {
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
-        width: 38%;
         font-size: 20px;
+        pointer-events: all;
+    }
+    .body--activo {
+        position: relative;
+        pointer-events: none;
     }
 
     .header__btnMenu {
@@ -958,3 +968,12 @@ body {
         color: black;
     } 
 }
+/*Aqui empieza los estilos del footer*/
+.footer__content {
+    margin-top: -1px;
+}
+
+.svg-onda {
+    background-color: #EEEEEE;
+}
+/*Aqui finaliza los estilos del footer*/

@@ -92,8 +92,14 @@ body {
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
+    pointer-events: all;
+}
+.body--activo {
+    position: relative;
+    pointer-events: none;
 }
 .header__btnMenu {
     appearance: none;
@@ -135,8 +141,7 @@ body {
     margin: 0 0.2rem;
     color: #c88f44;
 }
-
-@media (min-width: 768px){
+@media (min-width: 768px) and (max-width: 1045px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -201,8 +206,14 @@ body {
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
         font-size: 20px;
+        pointer-events: all;
+    }
+    .body--activo {
+        position: relative;
+        pointer-events: none;
     }
     .header__btnMenu {
         cursor: pointer;
@@ -238,8 +249,7 @@ body {
         color: #c88f44;
     }
 }
-
-@media(min-width:1023px){
+@media(min-width:1046px){
     .header {
         background-color: #78BADB;
         font-family: var(--fuenteSecundaria);
@@ -294,6 +304,7 @@ body {
         padding: 0rem 1rem;
     }
     
+    
     .header__btnA {
         font-weight: 700;
         font-size: 18px;
@@ -311,7 +322,6 @@ body {
         color: black;
         transform: scale(1.1);
     }
-
     .contenedor__logo{
         font-family: var(--fuenteCursiva);
         font-size: 3rem;

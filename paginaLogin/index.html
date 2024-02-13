@@ -21,14 +21,14 @@
 <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header">
-        <button id="abrir" class="header__btnMenu">
+        <button id="abrir" class="header__btnMenu" title="abrir">
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="contenedor__logo">
             <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-            <button id="cerrar" class="header__btnCerrar">
+            <button id="cerrar" class="header__btnCerrar" title="cerrar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="header__ul">
@@ -47,20 +47,21 @@
     <main class="form-formulario">
         <section class="form-login">
             <div>
-                <img src="img/imgLogin.jpg" alt="" >
+                <img class="form-img" src="img/imgLogin.jpg" alt="" >
             </div>
             <div class="form-informacion">
-                <h5>Iniciar Sesión</h5>
+                <h5>Inicia Sesión</h5>
                 <div class="form-informacion-usuario" >
-                    <label for="">USUARIO</label>
-                    <input id="usuario" class="control" type="text" name="usuario" >
+                    <label for="usuario">USUARIO</label>
+                    <input id="usuario" class="control" type="text" title="usuario" >
                 </div>   
                 <div class="form-informacion-contrasena">
-                    <label for="" >CONTRASEÑA</label>
-                    <input id="contraseña" class="control"  type="password" name="contrasena" >
+                    <label for="contraseña" >CONTRASEÑA</label>
+                    <input id="contraseña" class="control"  type="password" title="contrasena" >
                 </div>
                 <button onclick="validarLogin()">Ingresar</button>
-                <a href="#">¿Olvidaste tu Contraseña?</a>
+                <label class="clave"  onclick="obtenerContraseña()">¿Olvidaste tu Contraseña?</label>
+                <label class="no-regis" id="contraseñaOlvidada"></label>
             </div>
         </section>
     </main>
@@ -69,12 +70,12 @@
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <!-- Section: Links  -->
-        <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+        <div class="onda" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
                 style="height: 100%; width: 100%;">
                 <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
                     style="stroke: none; fill: #cfebca;"></path>
             </svg></div>
-        <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+        <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
             <div class="container text-center text-md-start mt-5">
                 <!-- Grid row -->
                 <div class="row mt-3">

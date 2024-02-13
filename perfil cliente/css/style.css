@@ -160,6 +160,15 @@ body {
     color: white;
     padding: .5rem .5rem .5rem 1rem;
 }
+.header__ulPerfil{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+}
+.header__li:hover .header__ulPerfil{
+    display: block;
+}
 @media (min-width: 768px){
     .header {
         display: grid;
@@ -268,6 +277,16 @@ body {
         border-radius: 2rem;
         padding: 0rem 1rem;
     }
+
+    .header__ulPerfil{
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 200px;
+    }
+    .header__li:hover .header__ulPerfil{
+        display: block;
+    }
     
     
     
@@ -321,9 +340,10 @@ body {
     grid-auto-rows: ();
     text-align: center;
     gap: 1rem;
+    place-items: center;
 }
 .bannerCompleto img{
-    width: 100%;
+    width: 13rem;
     order: 2;
 }
 .bannerCompleto h3{
@@ -344,6 +364,7 @@ body {
     margin: 1rem 2rem;
     overflow: hidden;
     align-items: center;
+    z-index: 100;
 }
 .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
     border: none;
@@ -364,6 +385,7 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
+    z-index: -1;
 }
 
 .paquetesDisponibles__card{
@@ -405,6 +427,7 @@ body {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     margin: 2rem 2rem;
+    margin-bottom: 0rem;
 }
 .contenedorMediosDePago__card{
     display: grid;
@@ -533,6 +556,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         margin: 2rem 2rem;
         height: 650px;
+        margin-bottom: 6rem;
     }
     .contenedorMediosDePago__card{
         display: grid;
@@ -657,6 +681,7 @@ body {
         grid-template-columns: repeat(4, 1fr);
         margin: 2rem 2rem;
         height: 390px;
+        margin-bottom: 6rem;
     }
     .contenedorMediosDePago__card{
         display: grid;

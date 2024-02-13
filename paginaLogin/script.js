@@ -16,13 +16,40 @@ function validarLogin(){
     let usuario = document.getElementById("usuario").value;
     let contraseña = document.getElementById("contraseña").value;
 
-    let usuarios = JSON.parse(localStorage.getItem("users"));    
+    let usuarios = obtenerUsuariosLocalStorage();
+        
     let user = usuarios.find(user => user.nameUser == usuario && user.password == contraseña)
-    
-    if(user){        
+    if (user) {
+        document.getElementById("contraseñaOlvidada").innerHTML = ""
         window.location.href = '../productos/productos.html'
     }
-    else{        
-        alert("Usuario invalido")
-    }    
+    else {
+        document.getElementById("contraseñaOlvidada").innerHTML = "Usuario invalido"
+    }
+}
+
+function obtenerUsuariosLocalStorage(){
+    let usuarios = JSON.parse(localStorage.getItem("users"));
+    if(usuarios){
+        return usuarios
+    }
+    return []
+}
+
+function obtenerContraseña() {
+    let usuario = document.getElementById("usuario").value;
+
+    let usuarios = obtenerUsuariosLocalStorage();
+
+    let user = usuarios.find(user => user.nameUser == usuario);
+    if (user) {
+        let documento = prompt("Por favor digita tu numero de documento");        
+        if (user.numberDocument == documento) {
+            document.getElementById("contraseñaOlvidada").innerHTML = "Su contraseña es = " + user.password            
+        } else {
+            document.getElementById("contraseñaOlvidada").innerHTML = "Documento invalido"            
+        }
+    } else {        
+        document.getElementById("contraseñaOlvidada").innerHTML = "Usuario no registrado"
+    }
 }

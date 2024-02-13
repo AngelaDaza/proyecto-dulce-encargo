@@ -368,8 +368,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     function agregarCarrito(e) {
         let contenedor = e.target.parentElement;
-        while(contenedor){
-            if(contenedor.classList.contains("card__contenedorBtn")){
+        while (contenedor) {
+            if (contenedor.classList.contains("card__contenedorBtn")) {
                 break;
             }
             contenedor = contenedor.parentElement;
@@ -377,17 +377,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (contenedor.classList.contains("card__contenedorBtn")) {
             const agregar = paquetes.find(a => a.id == contenedor.dataset.id);
-            
-            if(listaCompras.find(a => a.id == contenedor.dataset.id)){
+
+            if (listaCompras.find(a => a.id == contenedor.dataset.id)) {
                 listaCompras = listaCompras.map(pq => {
-                    if(pq.id == contenedor.dataset.id){
+                    if (pq.id == contenedor.dataset.id) {
                         pq.cantidad++;
                         return pq;
-                    }else{
+                    } else {
                         return pq;
                     }
                 });
-            }else{
+            } else {
                 listaCompras = [...listaCompras, agregar];
                 console.log("listaCompras");
             }

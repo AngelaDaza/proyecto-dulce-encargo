@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historial de compras</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+  
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+      }
+  
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+  
+      h1, h2 {
+        color: #333;
+      }
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+  
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+
+      td {
+        height: 300px;
+      }
+  
+      th, td {
+        padding: 15px;
+        text-align: center;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      input[type="date"], input[type="submit"] {
+        padding: 10px;
+        margin: 5px 0;
+      }
+  
+      form {
+        margin-top: 20px;
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      div.btn-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Aqui empieza la Barra de Navegación -->
+    <header class="header">
+      <button id="abrir" class="header__btnMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav id="nav" class="header__nav">
+        <button id="cerrar" class="header__btnCerrar">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="header__ul">
+          <li class="header__li">
+            <a href="#">Cliente</a>
+            <ul class="header__ulCliente">
+              <li class="header__liCliente">
+                <a href="#">Página principal</a>
+              </li>
+              <li class="header__liCliente">
+                <a href="#">Sucripción</a>
+              </li>
+              <li class="header__liCliente">
+                <a href="#">Paquetes disponibles</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__li">
+            <a href="#">Negocio</a>
+            <ul class="header__ulNegocio">
+              <li class="header__liNegocio">
+                <a href="#">Página principal</a>
+              </li>
+              <li class="header__liNegocio">
+                <a href="#">Sucripción</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__li"><a href="#">A cerca de nosotros</a></li>
+          <li class="header__li"> 
+            <a href="#">Contáctenos</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+    </header>
+    <!-- Aqui termina la Barra de Navegación -->
+
+    <!-- Aqui empieza el Historial de compras -->
+    <main>
+      <h1>Historial de compras</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <form>
+              <label for="opciones">Opciones:</label>
+              <select id="opciones" name="opciones">
+                <option value="opcion1">Mis pedidos</option>
+                <option value="opcion2">Mis Favoritos</option>
+                <option value="opcion3">Cambio y devolución</option>
+              </select>
+            </form>
+          </th>
+          <th>Información detallada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <form>
+        <label for="fechaInicio">Fecha de Inicio:</label>
+        <input type="date" id="fechaInicio" name="fechaInicio">
+  
+        <label for="fechaFin">Fecha de Fin:</label>
+        <input type="date" id="fechaFin" name="fechaFin">
+  
+        <div class="btn-container">
+          <input type="submit" id="buscar" value="Buscar">
+        </div>
+      </form>
+    </main>
+
+    
+    <!-- Aqui termina el Historial de compras -->
+
+    <!-- Footer -->
+    <footer
+    style="padding-top: 1rem; margin-top: 1rem"
+    class="text-center text-lg-start bg-body-tertiary text-muted"
+  >
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Hybrid
+            </h6>
+            <p style="text-align: justify">
+              Un equipo de desarrollo apasionado y versátil, transformando
+              ideas en soluciones innovadoras. Nuestra fuerza radica en la
+              colaboración y agilidad, entregando productos de alta calidad
+              que superan expectativas.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+            <p>
+              <a href="#!" class="text-reset">Desarrollo web Frontend</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Desarrollo web Backend</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Bases de datos</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Análisis y diseño</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
+            <p>
+              <a href="#!" class="text-reset">Cliente</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Negocio</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Contáctenos</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Ingresar</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              hybrid@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+            <p>
+              <i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+      class="text-center p-4"
+      style="background-color: rgba(0, 0, 0, 0.05)"
+    >
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Hybrid</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</footer>
+  </body>
+</html>

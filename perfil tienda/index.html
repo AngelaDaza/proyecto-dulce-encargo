@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Tienda</title>
+    <title>Perfil Tienda de Dulce Encargo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -11,6 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    
+    
 </head>
 <body>
     <header class="header">
@@ -26,27 +28,27 @@
           </button>
           <ul class="header__ul">
             <li class="header__li">
-              <a href="#">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
             </li>
-            <li class="header__li"><a href="#">Paquetes activos</a></li>
-            <li class="header__li"><a href="#">En progreso</a></li>
+            <li class="header__li"><a href="#contenedorPaquetesDisponibles__title">Paquetes activos</a></li>
+            <li class="header__li"><a href="contenedorMediosDePago">En progreso</a></li>
             <li class="header__li">
                 <a href="#">Perfil</a>
                 <ul class="header__ulPerfil">
                     <li class="header__liPerfil">
-                        <a href="#">Editar</a>
+                        <a href="../configuracionTienda/">Editar</a>
                     </li>
-                    <li class="header__liPerfil">
+                    <!--<li class="header__liPerfil">
                         <a href="#">Historial de ventas</a>
-                    </li>
+                    </li>-->
                     <li class="header__liPerfil">
-                        <a href="#">Agregar nuevo paquete</a>
+                        <a href="../productos/formularioProducto.html">Agregar nuevo paquete</a>
                     </li>
                 </ul>
             </li>
           </ul>
         </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
       </header>
       <section class="banner">
         <div class="bannerCompleto">
@@ -57,7 +59,7 @@
     </section>
     <div style="height: 60px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 398.67,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
     <section class="contenedorPaquetesDisponibles">
-        <h2 class="contenedorPaquetesDisponibles__title">
+        <h2 class="contenedorPaquetesDisponibles__title"id="contenedorPaquetesDisponibles__title" >
             Paquetes activos
         </h2>
 
@@ -95,7 +97,7 @@
         
     </section>
 
-    <section class="contenedorMediosDePago">
+    <section class="contenedorMediosDePago" id="contenedorMediosDePago" >
       <h2 class="contenedorMediosDePago__title">Paquetes en progreso</h2>
       <div id="filtro">
         <label for="buscar">Buscar:</label>
@@ -274,7 +276,7 @@
     <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Links  -->
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <div style="height: 150px; overflow: hidden; background-color: #EEEEEE;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
     <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
@@ -316,16 +318,16 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
             <p>
-              <a href="#!" class="text-reset">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
             </p>
             <p>
               <a href="#!" class="text-reset">Acerca de nosotros</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contáctenos</a>
+              <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Ingresar</a>
+              <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
             </p>
           </div>
           <!-- Grid column -->

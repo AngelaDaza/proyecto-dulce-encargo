@@ -31,7 +31,7 @@
               <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
             </li>
             <li class="header__li"><a href="#contenedorPaquetesDisponibles__title">Paquetes activos</a></li>
-            <li class="header__li"><a href="contenedorMediosDePago">En progreso</a></li>
+            <li class="header__li"><a href="#contenedorMediosDePago">En progreso</a></li>
             <li class="header__li">
                 <a href="#">Perfil</a>
                 <ul class="header__ulPerfil">
@@ -71,25 +71,37 @@
                     <img src="img/vintage-store-with-pastries.jpg" alt="Pan Baguette" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Baguettes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestros frescos productos de panadería: croissants, y baguettes que despierta los sentidos.</p>
-                    <a href="#">Ver más</a>
+                    <div class="cambiosPaquetesDisponibles">
+                      <a href="#" class="edit">Editar</a>
+                      <a href="#" class="delete">Eliminar</a>
+                    </div>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/colorful-fresh-vegetables-bowl-wooden-tabletop.jpg" alt="Verduras y frutas" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Verduras y frutas</h3>
                     <p class="paquetesDisponibles__cardParagraph">Explora frescura y vitalidad con nuestro paquete premium de frutas y verduras.</p>
-                    <a href="#">Ver más</a>
+                    <div class="cambiosPaquetesDisponibles">
+                      <a href="#" class="edit">Editar</a>
+                      <a href="#" class="delete">Eliminar</a>
+                    </div>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/assortment-pieces-cake.jpg" alt="Pasteles" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Pasteles</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestras exquisitas tortas. Cada creación es una obra maestra de sabor.</p>
-                    <a href="#">Ver más</a>
+                    <div class="cambiosPaquetesDisponibles">
+                      <a href="#" class="edit">Editar</a>
+                      <a href="#" class="delete">Eliminar</a>
+                    </div>
                 </div>
                 <div class="paquetesDisponibles__card">
                     <img src="img/leaves-near-buns-bread-tower.jpg" alt="Panes" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Panes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Descubre la perfección en cada mordisco con nuestra selección de panes y pasteles horneados.</p>
-                    <a href="#">Ver más</a>
+                    <div class="cambiosPaquetesDisponibles">
+                      <a href="#" class="edit">Editar</a>
+                      <a href="#" class="delete">Eliminar</a>
+                    </div>
                 </div>
                 
             </div>
@@ -99,20 +111,21 @@
 
     <section class="contenedorMediosDePago" id="contenedorMediosDePago" >
       <h2 class="contenedorMediosDePago__title">Paquetes en progreso</h2>
-      <div id="filtro">
-        <label for="buscar">Buscar:</label>
-        <input type="text" id="buscar" oninput="buscarElementos()">
+      <div id="filtro" class="buscarFiltro">
+        <!--<label for="buscar">Buscar:</label>-->
+        <input type="text" id="buscar" oninput="buscarElementos()" placeholder="Buscar">
         <select id="filtroCategoria" onchange="filtrarPorCategoria()">
-            <option value="">Todas las categorías</option>
-            <!-- Agrega las opciones de categorías según tus datos -->
-            <option value="Categoria1">Categoria1</option>
-            <option value="Categoria2">Categoria2</option>
+            <option value="">Filtro</option>
+            <option value="5:00pm-6:00pm">5:00pm-6:00pm</option>
+            <option value="6:00pm-7:00pm">6:00pm-7:00pm</option>
+            <option value="7:00pm-8:00pm">7:00pm-8:00pm</option>
+            <option value="8:00pm-9:00pm">8:00pm-9:00pm</option>
         </select>
       </div>
   
-      <div id="paginacion" class="contenedorPaquetesProgreso__cards">
-        <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+      <div id="paginacion" class="contenedorPaquetesProgreso__cards" >
+        <div class="contenedorPaquetesProgreso__card" >
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -124,7 +137,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -136,7 +149,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -148,7 +161,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -160,7 +173,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -172,7 +185,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -184,7 +197,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -196,7 +209,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -208,7 +221,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -220,7 +233,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -232,7 +245,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -244,7 +257,7 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -256,14 +269,14 @@
           <p>Especificaciones especiales: </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre paquete: Hola</p>
           <p>Nombre cliente: Pepito Perez</p>
           <p>Especificaciones especiales: </p>
         </div>

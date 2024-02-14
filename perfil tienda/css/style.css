@@ -403,6 +403,37 @@ body {
     color: blue;
     font-size: 20px;
 }
+.cambiosPaquetesDisponibles{
+    display: flex;
+    gap: 7rem;
+    margin-left: 1rem;
+}
+.buscarFiltro{
+    margin-right: 3rem;
+    font-family: var(--fuenteSecundaria);
+    font-size: 18px;
+    color: black;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-rows: ();
+    justify-content: end;
+}
+#buscar{
+    height: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    width: 11rem;
+}
+#filtroCategoria{
+    background-color: #8eb080;
+    height: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+    width: 11rem;
+}
+option{
+    font-size: 10px;
+}
 .contenedorPaquetesProgreso__cards{
     display: grid;
     grid-template-rows: ();
@@ -540,6 +571,37 @@ body {
         color: blue;
         font-size: 25px;
     }
+    .cambiosPaquetesDisponibles{
+        display: flex;
+        gap: 5rem;
+        margin-left: 1rem;
+    }
+    .buscarFiltro{
+        margin-right: 4rem;
+        font-family: var(--fuenteSecundaria);
+        font-size: 18px;
+        color: black;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 2rem;
+
+    }
+    #buscar{
+        height: 2rem;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+        width: 11rem;
+    }
+    #filtroCategoria{
+        background-color: #8eb080;
+        height: 2rem;
+        text-align: left;
+        padding-left: 1rem;
+        width: 11rem;
+    }
+    option{
+        font-size: 10px;
+    }
     .contenedorPaquetesProgreso__cards{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -636,6 +698,30 @@ body {
         font-family: var(--fuenteSecundaria);
         color: blue;
         font-size: 20px;
+    }
+    .cambiosPaquetesDisponibles{
+        display: flex;
+        gap: 4rem;
+        margin-left: 1rem;
+    }
+
+    .buscarFiltro{
+        text-align: right;
+        margin-right: 3rem;
+        font-family: var(--fuenteSecundaria);
+        font-size: 20px;
+        color: black;
+        margin-bottom: 2rem;
+    }
+    #buscar{
+        height: 2rem;
+        padding-left: 1rem;
+    }
+    #filtroCategoria{
+        background-color: #8eb080;
+        height: 2rem;
+        text-align: left;
+        padding-left: 1rem;
     }
     .contenedorPaquetesProgreso__cards{
         display: grid;

@@ -26,8 +26,9 @@ class Paquete {
     precioFinal = 0.0;
     categoria = "";
     descuento = 0.0;
+    stock = 0;
 
-    constructor(id, img, nombre, tienda, ubicacion, descripcion, cantidad, precioRegular, precioFinal, categoria) {
+    constructor(id, img, nombre, tienda, ubicacion, descripcion, cantidad, precioRegular, precioFinal, categoria, stock) {
         this.id = id;
         this.img = img;
         this.nombre = nombre;
@@ -38,6 +39,7 @@ class Paquete {
         this.precioRegular = precioRegular;
         this.precioFinal = precioFinal;
         this.categoria = categoria;
+        this.stock = stock;
         this.descuento = this.calcularDescuento();
     }
     calcularDescuento() {
@@ -61,10 +63,11 @@ if (!JSON.parse(localPaquetes)) {
         "Cafeteria los antojitos de la Abuela",
         "Calle del Sueño Dorado, Nº 23",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Panaderia"
+        "Panaderia",
+        5
     );
 
     let paquete2 = new Paquete(
@@ -74,10 +77,11 @@ if (!JSON.parse(localPaquetes)) {
         "Palmeritas",
         "Avenida de los Suspiros, Nº 7B",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Antojitos"
+        "Antojitos",
+        5
     );
 
     let paquete3 = new Paquete(
@@ -87,10 +91,11 @@ if (!JSON.parse(localPaquetes)) {
         "Horno Celestial",
         "Rincón Estrellas, Calle Luna, Nº 42",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         10000,
         8000,
-        "Panaderia"
+        "Panaderia",
+        5
     );
 
     let paquete4 = new Paquete(
@@ -100,10 +105,11 @@ if (!JSON.parse(localPaquetes)) {
         "Cafeteria Hybrid",
         "Paseo de los Deseos, Nº 11A",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Panaderia"
+        "Panaderia",
+        5
     );
 
     let paquete5 = new Paquete(
@@ -113,10 +119,11 @@ if (!JSON.parse(localPaquetes)) {
         "Pan de la Abuela",
         "Plaza del Arcoíris, Nº 9C",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Antojitos"
+        "Antojitos",
+        5
     );
 
     let paquete6 = new Paquete(
@@ -126,10 +133,11 @@ if (!JSON.parse(localPaquetes)) {
         "Dunkin Donuts",
         "Travesía de la Imaginación, Nº 88",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Pasteleria"
+        "Pasteleria",
+        5
     );
 
     let paquete7 = new Paquete(
@@ -139,10 +147,11 @@ if (!JSON.parse(localPaquetes)) {
         "Dulce Éxtasis",
         "Calle del Silencio Mágico, Nº 3D",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Pasteleria"
+        "Pasteleria",
+        5
     );
 
     let paquete8 = new Paquete(
@@ -152,10 +161,11 @@ if (!JSON.parse(localPaquetes)) {
         "Panaderia J.J.",
         "Avenida Mariposas Brillantes, Nº 27",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         25000,
         22000,
-        "Panaderia"
+        "Panaderia",
+        5
     );
 
     let paquete9 = new Paquete(
@@ -165,10 +175,11 @@ if (!JSON.parse(localPaquetes)) {
         "Panaderia J.J.",
         "Avenida Mariposas Brillantes, Nº 27",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Antojitos"
+        "Antojitos",
+        5
     );
 
     let paquete10 = new Paquete(
@@ -178,10 +189,11 @@ if (!JSON.parse(localPaquetes)) {
         "El Rincon del Pan",
         "Carrera de los Fantásticos, Nº 64",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Antojitos"
+        "Antojitos",
+        5
     );
 
     let paquete11 = new Paquete(
@@ -191,10 +203,11 @@ if (!JSON.parse(localPaquetes)) {
         "Sabor Artesano",
         "Pasaje de los Sueños, Nº 13E",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        5,
+        1,
         20000,
         15000,
-        "Panaderia"
+        "Panaderia",
+        5
     );
 
     // Se agregan al arreglo los objetos 
@@ -361,7 +374,6 @@ function ordenar() {
 
 // Logica del carrito de compras
 document.addEventListener("DOMContentLoaded", function (e) {
-    console.log(e.target);
     const botonAgregarProducto = document.querySelector("#cards");
     let listaCompras = JSON.parse(localStorage.getItem("listaCompras")) ?? [];
     botonAgregarProducto.addEventListener("click", agregarCarrito);

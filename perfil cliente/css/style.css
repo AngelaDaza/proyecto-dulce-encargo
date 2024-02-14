@@ -96,6 +96,7 @@ body {
     height: 100%;
     font-size: 13px;
     pointer-events: all;
+    z-index: 1000;
 }
 .body--activo {
     position: relative;
@@ -364,7 +365,7 @@ body {
     margin: 1rem 2rem;
     overflow: hidden;
     align-items: center;
-    z-index: 100;
+    z-index: 1;
 }
 .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
     border: none;
@@ -385,7 +386,6 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
-    z-index: -1;
 }
 
 .paquetesDisponibles__card{
@@ -396,6 +396,7 @@ body {
     background-color: #cfebca;
     border-radius: 1rem;
     padding: 0rem 1rem;
+
 }
 
 .paquetesDisponibles__cardImg{

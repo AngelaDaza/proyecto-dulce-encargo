@@ -96,6 +96,7 @@ body {
     height: 100%;
     font-size: 13px;
     pointer-events: all;
+    z-index: 1000;
 }
 .body--activo {
     position: relative;
@@ -541,10 +542,15 @@ h4{
 .contenedorDos{
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedorP{
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     display: flex;
     gap: 2rem;
     justify-content: space-evenly;
@@ -651,11 +657,13 @@ h4{
 
 /*Aqui empieza los estilos de resumen compra*/
 .contenedorTres{
-    max-width: 1200px;
+    max-width: 1030px;
     margin: 2rem auto 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: end;
+    justify-content: center;
 }
 
 .contenedorTres__grid{

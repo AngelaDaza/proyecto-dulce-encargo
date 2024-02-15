@@ -21,7 +21,11 @@ function validarLogin(){
     let user = usuarios.find(user => user.nameUser == usuario && user.password == contraseña)
     if (user) {
         document.getElementById("contraseñaOlvidada").innerHTML = ""
-        window.location.href = '../productos/productos.html'
+        if (usuario=="pepito" || usuario=="eder"){
+            window.location.href = '../perfil cliente/index.html'
+        }else{
+            window.location.href = '../perfil tienda/index.html'
+        }
     }
     else {
         document.getElementById("contraseñaOlvidada").innerHTML = "Usuario invalido"

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración perfil cliente de Dulce encargo</title>
+    <title>Configuración perfil tienda de Dulce encargo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -21,28 +21,32 @@
           <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-          <button id="cerrar" class="header__btnCerrar" style="background-color: transparent">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-          <ul class="header__ul">
-            <li class="header__li">
-              <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
-            </li>
-            <li class="header__li"><a href="../perfil cliente/index.html">Paquetes disponibles</a></li>
-            <li class="header__li">
-                <a href="#">Perfil</a>
-                <ul class="header__ulPerfil">
-                    <li class="header__liPerfil">
-                        <a href="../configuracionCliente/index.html">Editar</a>
-                    </li>
-                    <!--<li class="header__liPerfil">
-                        <a href="#">Historial de pedidos</a>
-                    </li>-->
-                </ul>
-            </li>
-          </ul>
-        </nav>
-        <a href="../paginaPrincipal/paginaPrincipal.html" class="header__btn"><button class="header__btnA">Salir</button></a>
+            <button id="cerrar" class="header__btnCerrar">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <ul class="header__ul">
+              <li class="header__li">
+                <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
+              </li>
+              <li class="header__li"><a href="../perfil tienda/index.html">Paquetes activos</a></li>
+              <li class="header__li"><a href="../perfil tienda/index.html">En progreso</a></li>
+              <li class="header__li">
+                  <a href="#">Perfil</a>
+                  <ul class="header__ulPerfil" >
+                        <li class="header__liPerfil">  
+                        <a href="../configuracionTienda/" >Editar</a>
+                      </li>
+                      <!--<li class="header__liPerfil">
+                          <a href="#">Historial de ventas</a>
+                      </li>-->
+                        <li class="header__liPerfil" >
+                          <a href="../productos/formularioProducto.html">Agregar nuevo paquete</a>
+                      </li>
+                  </ul>
+              </li>
+            </ul>
+          </nav>
+          <a href="../paginaPrincipal/paginaPrincipal.html" class="header__btn"><button class="header__btnA">Salir</button></a>
       </header>
     <section class="banner">
         <div class="bannerCompleto">
@@ -56,19 +60,28 @@
         <form id="formularioPerfil">
             <div class="formularioCompleto">
                 <div class="campo">
+                    <label for="nombre-tienda" class="formulario-label">Nombre</label>
+                    <input
+                    type="text"
+                    class="formulario-input"
+                    id="nombre-tienda"
+                    placeholder="Escribe el nombre"
+                    name="Nombre de la tienda"
+                    required value="Dulce Pasteleria" disabled/>
+                    <span class="editar-icono" data-campo="nombre-tienda"><i class="fas fa-pencil-alt"></i></span>
+                </div>
+                <div class="campo">
                     <label for="tipo-documento" class="formulario-label"
-                    >Tipo de documento</label>
+                    >Tipo de documento del negocio</label>
                     <select name="tipo de documento"
                     id="tipo-documento"
                     class="formulario-input"
                     data-placeholder=""
                     required disabled>
-                        <option value="1" selected>CÉDULA DE CIUDADANÍA</option>
-                        <option value="CC">CÉDULA DE CIUDADANÍA</option>
-                        <option value="CE">CÉDULA DE EXTRANJERÍA COLOMBIANA</option>
-                        <option value="DE">CÉDULA EXTRANJERA</option>
-                        <option value="OE">DOCUMENTO EXTRANJERO</option>
-                        <option value="PA">PASAPORTE</option>
+                        <option value="1" selected>NIT</option>
+                        <option value="NIT">NIT</option>
+                        <option value="RUT">RUT</option>
+                        <option value="OTRO">OTRO</option>
                     </select>
                     <span class="editar-icono" data-campo="tipo-documento"><i class="fas fa-pencil-alt"></i></span>
                 </div>
@@ -78,35 +91,13 @@
                     type="number"
                     class="formulario-input"
                     id="numero-documento"
-                    placeholder="Escribe tu documento"
+                    placeholder="Escribe el documento"
                     name="Número de documento"
                     required value="123456789" disabled/>
                     <span class="editar-icono" data-campo="numero-documento"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="nombres-cliente" class="formulario-label">Nombres</label>
-                    <input
-                    type="text"
-                    class="formulario-input"
-                    id="nombres-cliente"
-                    placeholder="Escribe tu nombre"
-                    name="Nombre del cliente"
-                    required value="Pepito" disabled/>
-                    <span class="editar-icono" data-campo="nombres-cliente"><i class="fas fa-pencil-alt"></i></span>
-                </div>
-                <div class="campo">
-                    <label for="apellidos-cliente" class="formulario-label">Apellidos</label>
-                    <input
-                    type="text"
-                    class="formulario-input"
-                    id="apellidos-cliente"
-                    placeholder="Escribe tus apellidos"
-                    name="Apellidos del cliente"
-                    required value="Perez" disabled/>
-                    <span class="editar-icono" data-campo="apellidos-cliente"><i class="fas fa-pencil-alt"></i></span>
-                </div>
-                <div class="campo">
-                    <label for="tipo-localidad" class="formulario-label">Localidad de residencia (Solo Bogotá)</label>
+                    <label for="tipo-localidad" class="formulario-label">Localidad de ubicación (Solo Bogotá)</label>
                     <select name="tipo de localidad"
                     id="tipo-localidad"
                     class="formulario-input"
@@ -134,54 +125,79 @@
                     <span class="editar-icono" data-campo="tipo-localidad"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="direccion-cliente" class="formulario-label">Dirección de residencia</label>
+                    <label for="direccion-tienda" class="formulario-label">Dirección de ubicación</label>
                     <input type="text"
                     class="formulario-input"
-                    id="direccion-cliente"
-                    placeholder="Escribe tu dirección"
-                    name="Dirección de residencia" 
+                    id="direccion-tienda"
+                    placeholder="Escribe la dirección"
+                    name="Dirección de tienda" 
                     required value="Calle Manzana #10-04" disabled>
-                    <span class="editar-icono" data-campo="direccion-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="direccion-tienda"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="email-cliente" class="formulario-label">Correo electrónico</label>
+                    <label for="tipo-negocio" class="formulario-label"
+                    >Tipo de negocio</label>
+                    <select name="tipo de negocio"
+                    id="tipo-negocio"
+                    class="formulario-input"
+                    data-placeholder=""
+                    required disabled>
+                        <option value="1" selected>Panadería artesanal</option>
+                        <option value="Panadería tradicional">Panadería tradicional
+                        </option>
+                        <option value="Panadería artesanal">Panadería artesanal</option>
+                        <option value="Repostería tradicional">
+                        Repostería tradicional
+                        </option>
+                        <option value="Repostería artesanal">Repostería artesanal</option>
+                        <option value="Panadería y repostería tradicional">
+                        Panadería y repostería tradicional
+                        </option>
+                        <option value="Panadería y repostería artesanal">
+                        Panadería y repostería artesanal
+                        </option>
+                    </select>
+                    <span class="editar-icono" data-campo="tipo-negocio"><i class="fas fa-pencil-alt"></i></span>
+                </div>
+                <div class="campo">
+                    <label for="email-negocio" class="formulario-label">Correo electrónico</label>
                     <input type="email"
                     class="formulario-input"
-                    id="email-cliente"
+                    id="email-negocio"
                     placeholder="Escriba su correo electrónico"
                     name="Dirección de email" 
                     required value="Pepito@gmail.com" disabled>
-                    <span class="editar-icono" data-campo="email-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="email-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="telefono-cliente" class="formulario-label">Teléfono de contacto</label>
+                    <label for="telefono-negocio" class="formulario-label">Teléfono de contacto</label>
                     <input type="number"
                     class="formulario-input"
-                    id="telefono-cliente"
+                    id="telefono-negocio"
                     placeholder="Teléfono de contacto"
                     name="Teléfono de contacto" required value="1234567890" disabled>
-                    <span class="editar-icono" data-campo="telefono-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="telefono-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="usuario-cliente" class="formulario-label">Nombre de usuario</label>
+                    <label for="usuario-negocio" class="formulario-label">Nombre de usuario</label>
                     <input type="text"
                     class="formulario-input"
-                    id="usuario-cliente"
-                    placeholder="Escriba un nombre de usuario"
+                    id="usuario-negocio"
+                    placeholder="Escriba el nombre de usuario"
                     name="Nombre de usuario" required value="PepitoPerez" disabled>
-                    <span class="editar-icono" data-campo="usuario-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="usuario-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="clave-cliente" class="formulario-label">Contraseña</label>
+                    <label for="clave-negocio" class="formulario-label">Contraseña</label>
                     <input
                         type="password"
                         class="formulario-input input1"
-                        id="clave-cliente"
+                        id="clave-negocio"
                         placeholder="Escriba una contraseña"
                         name="contraseña de usuario"
                         required value="contraseña1234" disabled
                     />
-                    <span class="editar-icono" data-campo="clave-cliente" onclick="mostrarContrasenaCliente()"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="clave-negocio" onclick="mostrarContrasenaCliente()"><i class="fas fa-pencil-alt"></i></span>
                 </div>
             </div>
             <button type="submit">Guardar Cambios</button>
@@ -191,8 +207,8 @@
      <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Links  -->
-    <div class="svg-onda" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
-    <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+    <div style="height: 150px; overflow: hidden; background-color: #eeeeee;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
@@ -236,7 +252,7 @@
               <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
             </p>
             <p>
-              <a href="../acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
+              <a href="../Acercade/acercade.html" class="text-reset">Acerca de nosotros</a>
             </p>
             <p>
               <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>

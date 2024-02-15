@@ -48,6 +48,7 @@ body {
     opacity: 0;
     visibility: hidden;
     font-size: 15px;
+    z-index: 1;
 }
 .header__ul {
     list-style: none;
@@ -165,10 +166,13 @@ body {
     position: absolute;
     display: none;
     list-style: none;
-    width: 200px;
+    width: 280%;
 }
 .header__li:hover .header__ulPerfil{
     display: block;
+}
+.header__liPerfil a {
+    font-size: 15px;
 }
 @media (min-width: 768px){
     .header {
@@ -279,7 +283,9 @@ body {
         padding: 0rem 1rem;
     }
     
-    
+    .header__liPerfil a {
+        font-size: 15px;
+    }
     
     
     .header__btnA {
@@ -376,7 +382,6 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
-    z-index: -1;
 }
 
 .paquetesDisponibles__card{
@@ -387,6 +392,24 @@ body {
     background-color: #cfebca;
     border-radius: 1rem;
     padding: 0rem 1rem;
+    place-items: center;
+}
+.eliminar__btnA {
+    font-weight: 700;
+    font-size: 18px;
+    color: #eceff1;
+    padding: 0.3rem 1.0rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}
+.eliminar__btnA:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
 }
 
 .paquetesDisponibles__cardImg{
@@ -413,6 +436,37 @@ body {
     font-family: var(--fuenteSecundaria);
     color: blue;
     font-size: 20px;
+}
+.cambiosPaquetesDisponibles{
+    display: flex;
+    gap: 7rem;
+    margin-left: 1rem;
+}
+.buscarFiltro{
+    margin-right: 3rem;
+    font-family: var(--fuenteSecundaria);
+    font-size: 18px;
+    color: black;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-rows: ();
+    justify-content: end;
+}
+#buscar{
+    height: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    width: 11rem;
+}
+#filtroCategoria{
+    background-color: #8eb080;
+    height: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+    width: 11rem;
+}
+option{
+    font-size: 10px;
 }
 .contenedorPaquetesProgreso__cards{
     display: grid;
@@ -551,6 +605,37 @@ body {
         color: blue;
         font-size: 25px;
     }
+    .cambiosPaquetesDisponibles{
+        display: flex;
+        gap: 5rem;
+        margin-left: 1rem;
+    }
+    .buscarFiltro{
+        margin-right: 4rem;
+        font-family: var(--fuenteSecundaria);
+        font-size: 18px;
+        color: black;
+        margin-bottom: 2rem;
+        display: flex;
+        gap: 2rem;
+
+    }
+    #buscar{
+        height: 2rem;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+        width: 11rem;
+    }
+    #filtroCategoria{
+        background-color: #8eb080;
+        height: 2rem;
+        text-align: left;
+        padding-left: 1rem;
+        width: 11rem;
+    }
+    option{
+        font-size: 10px;
+    }
     .contenedorPaquetesProgreso__cards{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -593,12 +678,7 @@ body {
         
     }
     .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-        border: none;
-        font-size: 40px;
-        position: absolute;
-        justify-content: center;
-        margin: 0 1rem;
-        background-color: transparent;
+        display: none;
     }
     .contenedorPaquetesDisponibles__btnLeft {
         left: 1px;
@@ -647,6 +727,34 @@ body {
         font-family: var(--fuenteSecundaria);
         color: blue;
         font-size: 20px;
+    }
+    .cambiosPaquetesDisponibles{
+        display: flex;
+        gap: 4rem;
+        margin-left: 1rem;
+    }
+
+    .buscarFiltro{
+        text-align: right;
+        margin-right: 3rem;
+        font-family: var(--fuenteSecundaria);
+        font-size: 20px;
+        color: black;
+        margin-bottom: 2rem;
+    }
+    #buscar{
+        height: 2rem;
+        padding-left: 0.5rem;
+    }
+    #filtroCategoria{
+        background-color: #8eb080;
+        height: 2rem;
+        text-align: left;
+        padding-left: 1rem;
+        width: fit-content;
+    }
+    option{
+        font-size: 15px;
     }
     .contenedorPaquetesProgreso__cards{
         display: grid;

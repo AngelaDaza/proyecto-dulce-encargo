@@ -757,9 +757,46 @@ body {
     display: block;
     right: 20px;
     bottom: 20px;
+    width: 200px;
+    height: 100px;
+    background-color: transparent;
+    z-index: 2000;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: center;
+    gap: .5rem;
+}
+
+.irCarrito-icono{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: red;
-    z-index: 2000;
+    background-color: #c88f44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.irCarrito i{
+    display: block;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.irCarrito:hover span{
+    opacity: 1;
+    transform: translateX(-20px);
+}
+
+.irCarrito span{
+    position: relative;
+    left: 50px;
+    background-color: #78BADB;
+    padding: 5px 40px 5px 20px;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    color: white;
 }

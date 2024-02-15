@@ -674,6 +674,7 @@ body {
     display: flex;
     justify-content: end;
     align-self: flex-end;
+    position: relative;
 }
 .card__btn{
     font-size: 13px;
@@ -690,8 +691,29 @@ body {
     color: black;
     transform: scale(1.1);
 }
+
 .card__btn i{
     font-size: 20px;
+}
+
+.card__contenedorBtn-stoke{
+    position: absolute;
+    right: 35px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #78BADB;
+    color: white;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    text-align: center;
+    font-size: 12px;
+}
+
+.card__contenedorBtn-stoke--activo{
+    opacity: 1;
+    transform: translateX(-15px);
 }
 .card__info{
     font-family: var(--fuenteSecundaria);
@@ -729,3 +751,15 @@ body {
 }
 
 /*Aqui finaliza los estilos del footer*/
+
+.irCarrito{
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 2000;
+}

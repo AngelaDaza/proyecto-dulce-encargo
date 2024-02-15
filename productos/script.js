@@ -420,6 +420,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
     }
+
+    //* Se agrega funcion de ir al carrito desde productos
+    const btnIrCarrito = document.querySelector('.irCarrito');
+    btnIrCarrito.addEventListener('click', () =>{
+        window.location.href='/carritoCompras/carrito.html';
+    });
 });
 
 

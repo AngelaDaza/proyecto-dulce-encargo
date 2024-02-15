@@ -1,3 +1,17 @@
+// Se asignan funcionalidades al icono de menu
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+const cerrar = document.querySelector("#cerrar");
+const body = document.body;
+
+abrir.addEventListener("click", () =>{
+    nav.classList.add("header__nav--visible");
+    body.classList.add("body--activo");
+})
+cerrar.addEventListener("click", () =>{
+    nav.classList.remove("header__nav--visible");
+    body.classList.remove("body--activo");
+})
 // Se define el arreglo paquetes
 // Obtenemos los paquetes del local Storage
 const localCompras = localStorage.getItem("listaCompras");
@@ -20,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         } = compra;
         // Contenedor Principal
         const divCard = document.createElement("div");
+        divCard.id = "card__producto";
         divCard.classList.add("contenedorP");
+        divCard.dataset.id = idProducto;
 
         // Contenedor de check
         const divCheck = document.createElement("div");
@@ -61,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         const parrafo = document.createElement("p");
         parrafo.classList.add("contenedorP_parrafo");
         parrafo.textContent = desProducto;
-
+    
         divDescripcion.appendChild(parrafo);
         divContenido.appendChild(divDescripcion);
         divCard.appendChild(divContenido);
@@ -69,9 +85,13 @@ document.addEventListener('DOMContentLoaded', () =>{
         // Contenedor precio
         const divPrecio = document.createElement("div");
         divPrecio.classList.add("contenedorP_precio");
+        const ptitulo = document.createElement("h4");
+        ptitulo.classList.add("contenedorP_tituloP");
+        ptitulo.textContent = "Precio";
         const parrafoPrecio = document.createElement("p");
         parrafoPrecio.classList.add("contenedorP_parrafo-precio");
-        parrafoPrecio.textContent = precioFinalProducto;
+        parrafoPrecio.textContent = cantidadProducto * precioFinalProducto;
+        divPrecio.appendChild(ptitulo);
         divPrecio.appendChild(parrafoPrecio);
         divCard.appendChild(divPrecio);
 
@@ -111,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () =>{
         contenedorCompras.appendChild(divCard);
     });
 
+    /** Funcion para mostrar compra en resumen de compra **/
+    recorrerListaCompras();
 
     function reaccionCheck(e){
         if(this.checked) {
@@ -127,6 +149,10 @@ document.addEventListener('DOMContentLoaded', () =>{
             if(producto.id == this.parentElement.dataset.id){
                 producto.cantidad++;
                 this.nextElementSibling.value++;
+                this.parentElement.
+                parentElement.
+                childNodes[3].
+                childNodes[1].textContent = producto.cantidad * producto.precioFinal;
                 return producto;
             }else{
                 return producto;
@@ -134,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         });
 
         localStorage.setItem('listaCompras', JSON.stringify(compras));
+        recorrerListaCompras();
     }
 
     function disminuirProducto(e) {
@@ -141,10 +168,16 @@ document.addEventListener('DOMContentLoaded', () =>{
             eliminarProducto(this);
             return;
         }
+
+        
         compras.map(producto => {
             if(producto.id == this.parentElement.dataset.id){
                 producto.cantidad--;
                 this.previousElementSibling.value--;
+                this.parentElement.
+                parentElement.
+                childNodes[3].
+                childNodes[1].textContent = producto.cantidad * producto.precioFinal;
                 return producto;
             }else{
                 return producto;
@@ -152,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         });
 
         localStorage.setItem('listaCompras', JSON.stringify(compras));
+        recorrerListaCompras();
     }
 
     function eliminarProducto(div){
@@ -161,9 +195,57 @@ document.addEventListener('DOMContentLoaded', () =>{
             console.log(padre);
 
             if (padre.classList.contains('contenedorP')) {
+                console.log(padre);
                 padre.remove();
+                compras = compras.filter(prod => prod.id != padre.dataset.id);
                 break;
             }
         }
+
+        recorrerListaCompras();
     }
 });
+
+//* Recorre la lista de compras para crear los datos de la tabla}
+function recorrerListaCompras(){
+    //! Variable donde agregaremos la informacion
+    const datosTabla = document.querySelector(".contenedorTres__tabla-body");
+    limpiarHTMLPrevio(datosTabla);
+    console.log(compras);
+    compras.forEach(compra => {
+        datosTabla.appendChild(crearFilaResumenCompra(compra));
+    })
+}
+
+//* Funcion que crea la fila par insertar en la tabla
+function crearFilaResumenCompra(producto){
+    const {nombre,cantidad, precioFinal} = producto;
+
+    const tr = document.createElement("tr");
+
+    const tdNombre = document.createElement("td");
+    tdNombre.textContent = nombre;
+
+    const tdCantidad = document.createElement("td");
+    tdCantidad.textContent = cantidad;
+
+    const tdPrecioFinal = document.createElement("td");
+    const totalCompra = cantidad * precioFinal;
+    tdPrecioFinal.textContent = totalCompra;
+
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdCantidad);
+    tr.appendChild(tdPrecioFinal);
+
+    return tr;
+}
+
+function limpiarHTMLPrevio(padre){
+    let elemento = padre.firstChild;
+
+    while(elemento){
+        elemento.remove();
+        elemento = padre.firstChild;
+    }
+}
+

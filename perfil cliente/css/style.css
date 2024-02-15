@@ -93,9 +93,15 @@ body {
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
-    width: 14rem;
+    pointer-events: all;
+    z-index: 1000;
+}
+.body--activo {
+    position: relative;
+    pointer-events: none;
 }
 .header__btnMenu {
     appearance: none;
@@ -198,9 +204,14 @@ body {
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
-        width: 38%;
         font-size: 20px;
+        pointer-events: all;
+    }
+    .body--activo {
+        position: relative;
+        pointer-events: none;
     }
     .header__btnMenu {
         font-size: 2rem;
@@ -347,8 +358,6 @@ body {
     order: 1;
 }
 
-
-
 .contenedorPaquetesDisponibles__title, .contenedorMediosDePago__title{
     font-family: var(--fuenteSecundaria);
     color: black;
@@ -380,7 +389,6 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
-
 }
 
 .paquetesDisponibles__card{
@@ -391,6 +399,7 @@ body {
     background-color: #cfebca;
     border-radius: 1rem;
     padding: 0rem 1rem;
+
 }
 
 .paquetesDisponibles__cardImg{
@@ -733,3 +742,12 @@ body {
         text-align: center;
     }
 }
+/*Aqui empieza los estilos del footer*/
+.footer__content {
+    margin-top: -1px;
+}
+
+.svg-onda {
+    background-color: #EEEEEE;
+}
+/*Aqui finaliza los estilos del footer*/

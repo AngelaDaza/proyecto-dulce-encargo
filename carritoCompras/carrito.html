@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+    <title>Carrito de Compras Dulce Encargo</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -30,13 +30,13 @@
             </button>
             <ul class="header__ul">
                 <li class="header__li">
-                    <a href="#">Inicio</a>
+                    <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
                 </li>
-                <li class="header__li"><a href="#">Acerca de nosotros</a></li>
-                <li class="header__li"> <a href="#">Contáctenos</a></li>
+                <li class="header__li"><a href="../acercaDe/acercaDe.html">Acerca de nosotros</a></li>
+                <li class="header__li"> <a href="../Contactenos/contactenos.html">Contáctenos</a></li>
             </ul>
         </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
     </header>
     <!-- Aqui termina la Barra de Navegación -->
 
@@ -65,12 +65,14 @@
     <!-- Aqui empieza el primer contenedor -->
     <section class="contenedorUno">
         <div class="contenerdorUno__seguirFinalizar">
-            <div class="contenedorUno__seguir">
-                <i class="fa-solid fa-circle-arrow-left"></i>
-                <h4 class="contenedorUno__subtitle">Seguir Comprando</h4>
+            <div class="contenedorUno__header">
+                <a class="contenedorUno__seguir" href="../productos/productos.html">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <h4 class="contenedorUno__seguircompra">Seguir Comprando</h4>
+                </a>
             </div>
             <div class="contenedorUno__finalizar">
-                <h4 class="contenedorUno__title">Finalizar Compra</h4>
+                <button class="contenedorUno__title">Finalizar Compra</button>
             </div>
         </div>
         <div class="contenedorUno__carrito">
@@ -87,7 +89,38 @@
 
     <!-- Aqui empieza el tercer contenedor -->
     <section class="contenedorTres">
-        <h4 class="contenedorUno__title">Finalizar Compra</h4>
+        <div class="contenedorTres__grid">
+            <div class="contenedorTres__promocion">
+                <input type="text" class="contenedorTres__cupon" placeholder="Ingrese código promocional">
+                <textarea name="cupon" class="contenedorTres__nota" placeholder="Agregar nota"></textarea>
+            </div>
+            <div class="contenedorTres__resumen-compra">
+                <div class="contenedorTres__descripcion-resumen">
+                    <span>Resumen de la orden</span>
+                    <span>Dirección de la tienda</span>
+                    <div class="contenedorTres__tabla-producto">
+                        <p>Productos</p>
+                        <table class="contenedorTres__tabla">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody class="contenedorTres__tabla-body">
+                            </tbody>
+                        </table> 
+                    </div>
+                    <div class="contenedorTres__total-compra">
+                        <span>Total</span>
+                        <input type="text" class="contenedorTres__cantidad" disabled>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+        <button class="contenedorUno__finaliza">Finalizar Compra</button>
     </section>
     <!-- Aqui termina el tercer contenedor -->
     <!-- Footer -->
@@ -139,16 +172,16 @@
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
                         <p>
-                            <a href="#!" class="text-reset">Inicio</a>
+                            <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Acerca de nosotros</a>
+                            <a href="../acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Contáctenos</a>
+                            <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Ingresar</a>
+                            <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
                         </p>
                     </div>
                     <!-- Grid column -->

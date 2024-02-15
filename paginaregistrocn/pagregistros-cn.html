@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suscripción de clientes</title>
+    <title>Suscripción de Clientes Dulce Encargo</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -32,7 +32,7 @@
   <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header" id="inicio">
-      <button id="abrir" class="header__btnMenu">
+      <button id="abrir" class="header__btnMenu" title="abrir">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div class="contenedor__logo">
@@ -41,12 +41,12 @@
         </h1>
       </div>
       <nav id="nav" class="header__nav">
-        <button id="cerrar" class="header__btnCerrar">
+        <button id="cerrar" class="header__btnCerrar" title="cerr">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <ul class="header__ul">
           <li class="header__li">
-            <a href="paginaPrincipal.html">Inicio</a>
+            <a href="../paginaLogin/index.html">Inicio</a>
           </li>
           <li class="header__li">
             <a href="/acercaDe/acercaDe.html">Acerca de nosotros</a>
@@ -56,7 +56,7 @@
           </li>
         </ul>
       </nav>
-      <a href="/ingresarLogin/ingresarLogin.html" class="header__btn"
+      <a href="../paginaLogin/index.html" class="header__btn"
         ><button class="header__btnA">Ingresar</button></a
       >
     </header>
@@ -597,7 +597,7 @@
     <!-- Aqui empieza el Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
       <!-- Section: Links  -->
-      <div style="height: 100px; overflow: hidden; margin-bottom: -0.5rem">
+      <div class="svg-onda" style="height: 100px; overflow: hidden; margin-bottom: -0.5rem">
         <svg
           viewBox="0 0 500 150"
           preserveAspectRatio="none"
@@ -610,7 +610,7 @@
         </svg>
       </div>
       <section
-        class=""
+        class="footer__content"
         style="background-color: #cfebca; padding-top: 0.2rem; color: black"
       >
         <div class="container text-center text-md-start mt-5">
@@ -653,7 +653,7 @@
               <!-- Links -->
               <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
               <p>
-                <a href="paginaPrincipal.html" class="text-reset">Inicio</a>
+                <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
               </p>
               <p>
                 <a href="/acercaDe/acercaDe.html" class="text-reset"
@@ -666,7 +666,7 @@
                 >
               </p>
               <p>
-                <a href="/ingresarLogin/ingresarLogin.html" class="text-reset"
+                <a href="../paginaLogin/index.html" class="text-reset"
                   >Ingresar</a
                 >
               </p>

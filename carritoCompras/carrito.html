@@ -36,7 +36,7 @@
                 <li class="header__li"> <a href="../Contactenos/contactenos.html">Contáctenos</a></li>
             </ul>
         </nav>
-        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaPrincipal/paginaPrincipal.html" class="header__btn"><button class="header__btnA">Salir</button></a>
     </header>
     <!-- Aqui termina la Barra de Navegación -->
 
@@ -71,9 +71,6 @@
                     <h4 class="contenedorUno__seguircompra">Seguir Comprando</h4>
                 </a>
             </div>
-            <div class="contenedorUno__finalizar">
-                <button class="contenedorUno__title">Finalizar Compra</button>
-            </div>
         </div>
         <div class="contenedorUno__carrito">
             <h4 class="contenedorUno__carritoTitle">Mi carrito</h4>
@@ -91,12 +88,16 @@
     <section class="contenedorTres">
         <div class="contenedorTres__grid">
             <div class="contenedorTres__promocion">
-                <input type="text" class="contenedorTres__cupon" placeholder="Ingrese código promocional">
-                <textarea name="cupon" class="contenedorTres__nota" placeholder="Agregar nota"></textarea>
+                <label for="label" class="contenedorTres__label">Código promocional</label>
+                <input type="text" name="label" class="contenedorTres__cupon" placeholder="Ingrese código promocional">
+                <button class="contenedorTres__boton-agregar">Agregar</button>
+                <label for="label" class="contenedorTres__label">Comentarios</label>
+                <textarea name="cupon" name="label" class="contenedorTres__nota" placeholder="Agregar nota"></textarea>
+                <button class="contenedorTres__boton-agregar">Agregar</button>
             </div>
             <div class="contenedorTres__resumen-compra">
                 <div class="contenedorTres__descripcion-resumen">
-                    <span>Resumen de la orden</span>
+                    <span class="title-resumen">Resumen de la orden</span>
                     <span>Dirección de la tienda</span>
                     <div class="contenedorTres__tabla-producto">
                         <p>Productos</p>
@@ -113,14 +114,13 @@
                         </table> 
                     </div>
                     <div class="contenedorTres__total-compra">
-                        <span>Total</span>
+                        <span class="title-resumen">Total</span>
                         <input type="text" class="contenedorTres__cantidad" disabled>
                     </div>
-                     
+                    <button class="contenedorUno__finaliza">Finalizar Compra</button>
                 </div>
             </div>
         </div>
-        <button class="contenedorUno__finaliza">Finalizar Compra</button>
     </section>
     <!-- Aqui termina el tercer contenedor -->
     <!-- Footer -->

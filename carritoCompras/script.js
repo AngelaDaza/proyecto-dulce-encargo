@@ -38,17 +38,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         divCard.classList.add("contenedorP");
         divCard.dataset.id = idProducto;
 
-        // Contenedor de check
-        const divCheck = document.createElement("div");
-        divCheck.classList.add("contenedorP__divCheck");
-        const check = document.createElement("input");
-        check.classList.add("contenedorP__check");
-        check.type = "checkbox";
-        check.onchange = reaccionCheck;
-        console.log(check.type);
-        divCheck.appendChild(check);
-        divCard.appendChild(divCheck);
-
         // Contenedor imagen
         const divImagen = document.createElement("div");
         divImagen.classList.add("contenedorP__imagen");
@@ -202,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             }
         }
 
+        localStorage.setItem('listaCompras', JSON.stringify(compras));
         recorrerListaCompras();
     }
 });

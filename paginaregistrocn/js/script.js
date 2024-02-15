@@ -218,17 +218,13 @@ Users.push({
 localStorage.setItem('users', JSON.stringify(Users))
 // Mostraremos que el usuario se registro con exito
 
-alert('Registro fue exitoso')
-// Que nos redireccione al login
-console.log("Entro aca")
-window.location.href = '../paginaLogin/index.html'
 
 Swal.fire({
   icon: 'success',
   title: '¡felicitaciones!',
   text: 'Registro fue exitoso.',
   onClose: () => {
-    window.location.href = "login.html";
+    window.location.href = "../paginaLogin/index.html";
   }
 });
 // Limpiar el formulario
@@ -346,17 +342,12 @@ signupFormBusiness.addEventListener('submit', (e) => {
   localStorage.setItem('users', JSON.stringify(Users))
   // Mostraremos que el usuario se registro con exito
 
-  alert('Registro fue exitoso')
-  // Que nos redireccione al login       
-  window.location.href = '../paginaLogin/index.html'
-
-
        Swal.fire({
         icon: 'success',
         title: '¡felicitaciones!',
         text: 'Registro fue exitoso.',
         onClose: () => {
-          window.location.href = "login.html";
+          window.location.href = '../paginaLogin/index.html'
         }
       });
       signupFormBusiness.reset();

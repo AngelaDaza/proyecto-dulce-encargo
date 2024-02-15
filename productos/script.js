@@ -259,6 +259,10 @@ async function mostrarProductosHtml() {
 }
 
 function reemplazarAtributos(text, paquete) {
+    const localPaquetes = JSON.parse(localStorage.getItem('listaCompras')) ?? [];
+    console.log(localPaquetes.find(x=>x.id==paquete.id));
+    const cantidadCarritoCompras = localPaquetes.find(x=>x.id==paquete.id)?.cantidad;
+
     text = text.replaceAll('{{id}}', paquete.id);
     text = text.replaceAll('{{img}}', paquete.img);
     text = text.replaceAll('{{nombre}}', paquete.nombre);
@@ -268,7 +272,9 @@ function reemplazarAtributos(text, paquete) {
     text = text.replaceAll('{{precioRegular}}', paquete.precioRegular);
     text = text.replaceAll('{{precioFinal}}', paquete.precioFinal);
     text = text.replaceAll('{{descuento}}', paquete.descuento);
-
+    text = text.replaceAll('{{clasesInput}}', cantidadCarritoCompras >0 ? 'card__contenedorBtn-stoke card__contenedorBtn-stoke--activo' : 'card__contenedorBtn-stoke');
+    text = text.replaceAll('{{cantidad}}', cantidadCarritoCompras);
+    
     return text;
 }
 
@@ -308,7 +314,7 @@ if (document.querySelector('.formulario')) {
             inputFinal.value,
             ""
         );
-
+                
         // Agregando nuevo producto a la lista paquetes 
         paquetes.push(nuevoDato);
         //Guardando en local Storage
@@ -328,7 +334,7 @@ const btnBuscar = document.querySelector(".buscadorFiltro__btn");
 // });
 
 // Buscar  por nombre
-btnBuscar.addEventListener("click", function () {
+btnBuscar.addEventListener("click", async function () {
     const entradaText = inputBuscar.value.toLowerCase();
     if (entradaText == "") {
         const localPaquetes = localStorage.getItem("paquetes");
@@ -338,8 +344,7 @@ btnBuscar.addEventListener("click", function () {
     paquetes = paquetes.filter(entrada => {
         return entrada.nombre.toLowerCase().includes(entradaText);
     });
-    console.log(paquetes);
-    mostrarProductosHtml();
+    await mostrarProductosHtml();
 });
 
 // Filtrar por precio
@@ -348,26 +353,26 @@ const inputOrdenar = document.querySelector(".buscadorFiltro__ordenar");
 
 inputOrdenar.addEventListener("change", ordenar);
 
-function ordenar() {
+async function ordenar() {
     const valor = inputOrdenar.value;
     switch (valor) {
         case "opcionMenor":
             paquetes = paquetes.sort((a, b) => {
                 return a.precioFinal - b.precioFinal;
             });
-            mostrarProductosHtml();
+            await mostrarProductosHtml();
             break;
         case "opcionMayor":
             paquetes = paquetes.sort((b, a) => {
                 return a.precioFinal - b.precioFinal;
             });
-            mostrarProductosHtml();
+            await mostrarProductosHtml();
             break;
         default:
             const localPaquetes = localStorage.getItem("paquetes");
             // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
             paquetes = JSON.parse(localPaquetes) ?? [];
-            mostrarProductosHtml();
+            await mostrarProductosHtml();
             break;
     }
 };
@@ -375,9 +380,9 @@ function ordenar() {
 // Logica del carrito de compras
 document.addEventListener("DOMContentLoaded", function (e) {
     const botonAgregarProducto = document.querySelector("#cards");
-    let listaCompras = JSON.parse(localStorage.getItem("listaCompras")) ?? [];
     botonAgregarProducto.addEventListener("click", agregarCarrito);
-
+    let listaCompras = JSON.parse(localStorage.getItem('listaCompras')) ?? [];
+    
     function agregarCarrito(e) {
         let contenedor = e.target.parentElement;
         while (contenedor) {
@@ -389,11 +394,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (contenedor.classList.contains("card__contenedorBtn")) {
             const agregar = paquetes.find(a => a.id == contenedor.dataset.id);
+            const hijos=Array.from(contenedor.childNodes);
+            const cantidad = hijos.find(ele => ele.classList?.contains("card__contenedorBtn-stoke"))
 
             if (listaCompras.find(a => a.id == contenedor.dataset.id)) {
                 listaCompras = listaCompras.map(pq => {
                     if (pq.id == contenedor.dataset.id) {
                         pq.cantidad++;
+                        cantidad.textContent = pq.cantidad;
+                        if (!cantidad.classList.contains('card__contenedorBtn-stoke--activo')) {
+                            cantidad.classList.add('card__contenedorBtn-stoke--activo');
+                        }
                         return pq;
                     } else {
                         return pq;
@@ -401,12 +412,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 });
             } else {
                 listaCompras = [...listaCompras, agregar];
-                console.log("listaCompras");
+                if (!cantidad.classList.contains('card__contenedorBtn-stoke--activo')) {
+                    cantidad.classList.add('card__contenedorBtn-stoke--activo');
+                    cantidad.textContent = 1;
+                }
             }
         }
-        console.log(listaCompras);
         localStorage.setItem('listaCompras', JSON.stringify(listaCompras));
     }
+
+    //* Se agrega funcion de ir al carrito desde productos
+    const btnIrCarrito = document.querySelector('.irCarrito');
+    btnIrCarrito.addEventListener('click', () =>{
+        window.location.href='/carritoCompras/carrito.html';
+    });
 });
+
+
 
 

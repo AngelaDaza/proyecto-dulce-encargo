@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración</title>
+    <title>Configuración perfil tienda de Dulce encargo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -28,25 +28,25 @@
               <li class="header__li">
                 <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
               </li>
-              <li class="header__li"><a href="#contenedorPaquetesDisponibles__title">Paquetes activos</a></li>
-              <li class="header__li"><a href="#contenedorMediosDePago">En progreso</a></li>
+              <li class="header__li"><a href="../perfil tienda/index.html">Paquetes activos</a></li>
+              <li class="header__li"><a href="../perfil tienda/index.html">En progreso</a></li>
               <li class="header__li">
                   <a href="#">Perfil</a>
-                  <ul class="header__ulPerfil">
-                      <li class="header__liPerfil">
-                          <a href="../configuracionTienda/">Editar</a>
+                  <ul class="header__ulPerfil" >
+                        <li class="header__liPerfil">  
+                        <a href="../configuracionTienda/" >Editar</a>
                       </li>
                       <!--<li class="header__liPerfil">
                           <a href="#">Historial de ventas</a>
                       </li>-->
-                      <li class="header__liPerfil">
+                        <li class="header__liPerfil" >
                           <a href="../productos/formularioProducto.html">Agregar nuevo paquete</a>
                       </li>
                   </ul>
               </li>
             </ul>
           </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
       </header>
     <section class="banner">
         <div class="bannerCompleto">
@@ -135,55 +135,69 @@
                     <span class="editar-icono" data-campo="direccion-tienda"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="email-cliente" class="formulario-label">Correo electrónico</label>
+                    <label for="tipo-negocio" class="formulario-label"
+                    >Tipo de negocio</label>
+                    <select name="tipo de negocio"
+                    id="tipo-negocio"
+                    class="formulario-input"
+                    data-placeholder=""
+                    required disabled>
+                        <option value="1" selected>Panadería artesanal</option>
+                        <option value="Panadería tradicional">Panadería tradicional
+                        </option>
+                        <option value="Panadería artesanal">Panadería artesanal</option>
+                        <option value="Repostería tradicional">
+                        Repostería tradicional
+                        </option>
+                        <option value="Repostería artesanal">Repostería artesanal</option>
+                        <option value="Panadería y repostería tradicional">
+                        Panadería y repostería tradicional
+                        </option>
+                        <option value="Panadería y repostería artesanal">
+                        Panadería y repostería artesanal
+                        </option>
+                    </select>
+                    <span class="editar-icono" data-campo="tipo-negocio"><i class="fas fa-pencil-alt"></i></span>
+                </div>
+                <div class="campo">
+                    <label for="email-negocio" class="formulario-label">Correo electrónico</label>
                     <input type="email"
                     class="formulario-input"
-                    id="email-cliente"
+                    id="email-negocio"
                     placeholder="Escriba su correo electrónico"
                     name="Dirección de email" 
                     required value="Pepito@gmail.com" disabled>
-                    <span class="editar-icono" data-campo="email-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="email-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="apellidos-cliente" class="formulario-label">Apellidos</label>
-                    <input
-                    type="text"
-                    class="formulario-input"
-                    id="apellidos-cliente"
-                    placeholder="Escribe tus apellidos"
-                    name="Apellidos del cliente"
-                    required value="Perez" disabled/>
-                    <span class="editar-icono" data-campo="apellidos-cliente"><i class="fas fa-pencil-alt"></i></span>
-                </div>
-                <div class="campo">
-                    <label for="telefono-cliente" class="formulario-label">Teléfono de contacto</label>
+                    <label for="telefono-negocio" class="formulario-label">Teléfono de contacto</label>
                     <input type="number"
                     class="formulario-input"
-                    id="telefono-cliente"
+                    id="telefono-negocio"
                     placeholder="Teléfono de contacto"
                     name="Teléfono de contacto" required value="1234567890" disabled>
-                    <span class="editar-icono" data-campo="telefono-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="telefono-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="usuario-cliente" class="formulario-label">Nombre de usuario</label>
+                    <label for="usuario-negocio" class="formulario-label">Nombre de usuario</label>
                     <input type="text"
                     class="formulario-input"
-                    id="usuario-cliente"
-                    placeholder="Escriba un nombre de usuario"
+                    id="usuario-negocio"
+                    placeholder="Escriba el nombre de usuario"
                     name="Nombre de usuario" required value="PepitoPerez" disabled>
-                    <span class="editar-icono" data-campo="usuario-cliente"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="usuario-negocio"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
-                    <label for="clave-cliente" class="formulario-label">Contraseña</label>
+                    <label for="clave-negocio" class="formulario-label">Contraseña</label>
                     <input
                         type="password"
                         class="formulario-input input1"
-                        id="clave-cliente"
+                        id="clave-negocio"
                         placeholder="Escriba una contraseña"
                         name="contraseña de usuario"
                         required value="contraseña1234" disabled
                     />
-                    <span class="editar-icono" data-campo="clave-cliente" onclick="mostrarContrasenaCliente()"><i class="fas fa-pencil-alt"></i></span>
+                    <span class="editar-icono" data-campo="clave-negocio" onclick="mostrarContrasenaCliente()"><i class="fas fa-pencil-alt"></i></span>
                 </div>
             </div>
             <button type="submit">Guardar Cambios</button>
@@ -235,16 +249,16 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
             <p>
-              <a href="#!" class="text-reset">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Acerca de nosotros</a>
+              <a href="../Acercade/acercade.html" class="text-reset">Acerca de nosotros</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contáctenos</a>
+              <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Ingresar</a>
+              <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
             </p>
           </div>
           <!-- Grid column -->

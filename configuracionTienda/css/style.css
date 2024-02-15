@@ -150,17 +150,25 @@ body {
 }
 .header__liPerfil:hover {
     background-color: #28a3e1eb;
+    
+}
+.header__liPerfil{
+    font-size: 12px;
 }
 .header__liPerfil a:hover {
     display: block;
     color: white;
     padding: .5rem .5rem .5rem 1rem;
+    
 }
 .header__ulPerfil{
     position: absolute;
     display: none;
     list-style: none;
-    width: 200px;
+    width: 250%;
+    padding-left: 15px;
+    font-size: 10px;
+    
 }
 .header__li:hover .header__ulPerfil{
     display: block;
@@ -211,6 +219,9 @@ body {
     .contenedor__logoTitle {
         -webkit-text-stroke: 2px black;
         font-size: 2rem;
+    }
+    .header__liPerfil{
+        font-size: 15px;
     }
 }
 @media(min-width:1023px){
@@ -267,9 +278,25 @@ body {
         border-radius: 2rem;
         padding: 0rem 1rem;
     }
-    
-    
-    
+   
+    .header__liPerfil a{
+        font-size: 15px;
+    }
+    .header__liPerfil a:hover {
+        display: block;
+        color: white;
+        padding: .5rem .5rem .5rem 1rem;
+        
+    }
+    .header__ulPerfil{
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 260%;
+        padding-left: 15px;
+        font-size: 15px;
+        
+    }
     
     .header__btnA {
         font-weight: 700;
@@ -307,6 +334,7 @@ body {
         margin: 0 0.5rem;
         color: #c88f44;
     }
+    
 }
 /*Empieza el body*/
 .banner {

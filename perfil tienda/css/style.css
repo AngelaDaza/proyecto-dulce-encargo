@@ -48,6 +48,7 @@ body {
     opacity: 0;
     visibility: hidden;
     font-size: 15px;
+    z-index: 1;
 }
 .header__ul {
     list-style: none;
@@ -370,7 +371,6 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
-    z-index: -1;
 }
 
 .paquetesDisponibles__card{
@@ -400,6 +400,7 @@ body {
     color: black;
     transform: scale(1.1);
 }
+
 .paquetesDisponibles__cardImg{
     padding-top: 1rem;
     width: 100%;

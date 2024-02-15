@@ -48,6 +48,7 @@ body {
     opacity: 0;
     visibility: hidden;
     font-size: 15px;
+    z-index: 1;
 }
 .header__ul {
     list-style: none;
@@ -359,7 +360,6 @@ body {
     margin: 1rem 2rem;
     overflow: hidden;
     align-items: center;
-    z-index: 100;
 }
 .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
     border: none;
@@ -380,7 +380,7 @@ body {
     display: flex;
     transition: transform 0.5s ease; 
     width: 100vw;
-    z-index: -1;
+
 }
 
 .paquetesDisponibles__card{
@@ -416,6 +416,23 @@ body {
     font-family: var(--fuenteSecundaria);
     color: blue;
     font-size: 20px;
+}
+.verMas__btnA {
+    font-weight: 700;
+    font-size: 18px;
+    color: #eceff1;
+    padding: 0.3rem 1.0rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}
+.verMas__btnA:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
 }
 
 .contenedorMediosDePago__cards{
@@ -545,7 +562,23 @@ body {
         color: blue;
         font-size: 25px;
     }
-    
+    .verMas__btnA {
+        font-weight: 700;
+        font-size: 18px;
+        color: #eceff1;
+        padding: 0.3rem 1.0rem;
+        background-color: #113775f0;
+        border: none;
+        border-radius: 3.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        margin-bottom: 1rem;
+    }
+    .verMas__btnA:hover {
+        background-color: #c88f44;
+        color: black;
+        transform: scale(1.1);
+    }
     .contenedorMediosDePago__cards{
         display: grid;
         grid-template-columns: repeat(2, 1fr);

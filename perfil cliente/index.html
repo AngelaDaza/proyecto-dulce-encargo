@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil cliente</title>
+    <title>Perfil Cliente Dulce Encargo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="shortcut icon"
+      href="../productos/img/icono-dulce-encargo.png"
+      type="image/x-icon"
+    />
 </head>
 <body>
     <header class="header">
@@ -25,23 +30,23 @@
           </button>
           <ul class="header__ul">
             <li class="header__li">
-              <a href="#">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
             </li>
-            <li class="header__li"><a href="#">Paquetes disponibles</a></li>
+            <li class="header__li"><a href="#contenedorPaquetesDisponibles">Paquetes disponibles</a></li>
             <li class="header__li">
                 <a href="#">Perfil</a>
                 <ul class="header__ulPerfil">
                     <li class="header__liPerfil">
-                        <a href="#">Editar</a>
+                        <a href="../configuracionCliente/index.html">Editar</a>
                     </li>
-                    <li class="header__liPerfil">
+                    <!--<li class="header__liPerfil">
                         <a href="#">Historial de pedidos</a>
-                    </li>
+                    </li>-->
                 </ul>
             </li>
           </ul>
         </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
       </header>
     <section class="banner">
         <div class="bannerCompleto">
@@ -51,7 +56,7 @@
         
     </section>
     <div style="height: 60px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 398.67,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
-    <section class="contenedorPaquetesDisponibles">
+    <section class="contenedorPaquetesDisponibles" id="contenedorPaquetesDisponibles">
         <h2 class="contenedorPaquetesDisponibles__title">
             Paquetes disponibles
         </h2>
@@ -65,25 +70,25 @@
                     <img src="img/vintage-store-with-pastries.jpg" alt="Pan Baguette" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Baguettes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestros frescos productos de panadería: croissants, y baguettes que despierta los sentidos.</p>
-                    <a href="#">Ver más</a>
+                    <a href="../productos/productos.html" class="verMas__btn"><button class="verMas__btnA">Ver más</button></a>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/colorful-fresh-vegetables-bowl-wooden-tabletop.jpg" alt="Verduras y frutas" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Verduras y frutas</h3>
                     <p class="paquetesDisponibles__cardParagraph">Explora frescura y vitalidad con nuestro paquete premium de frutas y verduras.</p>
-                    <a href="#">Ver más</a>
+                    <a href="../productos/productos.html" class="verMas__btn"><button class="verMas__btnA">Ver más</button></a>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/assortment-pieces-cake.jpg" alt="Pasteles" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Pasteles</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestras exquisitas tortas. Cada creación es una obra maestra de sabor.</p>
-                    <a href="#">Ver más</a>
+                    <a href="../productos/productos.html" class="verMas__btn"><button class="verMas__btnA">Ver más</button></a>
                 </div>
                 <div class="paquetesDisponibles__card">
                     <img src="img/leaves-near-buns-bread-tower.jpg" alt="Panes" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Panes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Descubre la perfección en cada mordisco con nuestra selección de panes y pasteles horneados.</p>
-                    <a href="#">Ver más</a>
+                    <a href="../productos/productos.html" class="verMas__btn"><button class="verMas__btnA">Ver más</button></a>
                 </div>
                 
             </div>
@@ -121,8 +126,8 @@
     <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Links  -->
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
-    <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+    <div class="svg-onda" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
@@ -163,16 +168,16 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
             <p>
-              <a href="#!" class="text-reset">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Acerca de nosotros</a>
+              <a href="../acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contáctenos</a>
+              <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Ingresar</a>
+              <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
             </p>
           </div>
           <!-- Grid column -->

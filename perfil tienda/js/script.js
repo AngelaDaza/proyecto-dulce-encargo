@@ -2,14 +2,16 @@
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
+const body = document.body;
 
 abrir.addEventListener("click", () =>{
     nav.classList.add("header__nav--visible");
+    body.classList.add("body--activo");
 })
 cerrar.addEventListener("click", () =>{
     nav.classList.remove("header__nav--visible");
+    body.classList.remove("body--activo");
 })
-
 
 
 //Se asignan funcionalidad al Carrusel
@@ -82,7 +84,7 @@ function generarBotonesPaginacion() {
   for (let i = 1; i <= totalPaginas; i++) {
     const boton = document.createElement("li");
     boton.classList.add("page-item");
-    boton.innerHTML = `<a class="page-link" href="#" onclick="cambiarPagina(${i})">${i}</a>`;
+    boton.innerHTML = `<a class="page-link" href="#contenedorMediosDePago" onclick="cambiarPagina(${i})">${i}</a>`;
     botonesPagina.appendChild(boton);
   }
 }
@@ -111,4 +113,33 @@ function actualizarBotonesPaginacion() {
 mostrarElementosPagina(paginaActual);
 generarBotonesPaginacion();
 actualizarBotonesPaginacion();
+
+// Función para buscar elementos y filtrar por hora
+function buscarElementos() {
+  let valorBusqueda = document.getElementById("buscar").value.toLowerCase();
+  let cards = document.querySelectorAll(".contenedorPaquetesProgreso__card");
+
+  cards.forEach(function(card) {
+      let texto = card.textContent.toLowerCase();
+      if (texto.includes(valorBusqueda)) {
+          card.style.display = "block";
+      } else {
+          card.style.display = "none";
+      }
+  });
+}
+
+function filtrarPorCategoria() {
+  let horaSeleccionada = document.getElementById("filtroCategoria").value;
+  let cards = document.querySelectorAll(".contenedorPaquetesProgreso__card");
+
+  cards.forEach(function(card) {
+      let horaCard = card.querySelector(".hora").textContent.trim();
+      if (horaSeleccionada === "" || horaCard === horaSeleccionada) {
+          card.style.display = "block";
+      } else {
+          card.style.display = "none";
+      }
+  });
+}
 

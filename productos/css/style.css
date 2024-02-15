@@ -92,8 +92,15 @@ body {
 .header__nav--visible {
     opacity: 1;
     visibility: visible;
+    width: 65%;
     height: 100%;
     font-size: 13px;
+    pointer-events: all;
+    z-index: 1000;
+}
+.body--activo {
+    position: relative;
+    pointer-events: none;
 }
 .header__btnMenu {
     appearance: none;
@@ -200,8 +207,14 @@ body {
     .header__nav--visible {
         opacity: 1;
         visibility: visible;
+        width: 40%;
         height: 100%;
         font-size: 20px;
+        pointer-events: all;
+    }
+    .body--activo {
+        position: relative;
+        pointer-events: none;
     }
     .header__btnMenu {
         cursor: pointer;
@@ -362,7 +375,7 @@ body {
     text-align: center;
     color: black;
     font-weight: bolder;
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 25px;
     padding-top: 1rem; 
 }
@@ -384,29 +397,6 @@ body {
     margin-top: 0.5rem;
 }
 
-.contenedor-banner-button {
-    font-weight: 700;
-    font-size: 11px;
-    color: #eceff1;
-    padding: 0.3rem 1.0rem;
-    background-color: #113775f0;
-    border: none;
-    border-radius: 3.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.contenedor-banner-button a {
-    text-decoration: none;
-    color: white;
-    font-family: var(--fuenteSecundaria);
-}
-
-.contenedor-banner-button:hover {
-    background-color: #c88f44;
-    color: black;
-    transform: scale(1.1);
-}
 /*Aqui finalizan los Estilos para el contenedor del banner pagina principal en modo celular*/
 /*Aqui empieza el Responive de Tablet del banner pagina principal*/
 @media (min-width: 768px) {
@@ -423,13 +413,14 @@ body {
         height: fit-content;
         width: 50%;
         align-self: center;
+        padding: 1rem 1rem 1rem 4rem;
     }
     
     .contendedor-banner-parrafo {
         text-align: center;
         color: black;
         font-weight: bolder;
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 25px;
         padding-top: 1rem; 
     }
@@ -445,30 +436,6 @@ body {
         width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
-    }
-    
-    .contenedor-banner-button {
-        font-weight: 700;
-        font-size: 15px;
-        color: #eceff1;
-        padding: 0.3rem 1.0rem;
-        background-color: #113775f0;
-        border: none;
-        border-radius: 3.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-    }
-    
-    .contenedor-banner-button a {
-        text-decoration: none;
-        color: white;
-        font-family: var(--fuenteSecundaria);
-    }
-    
-    .contenedor-banner-button:hover {
-        background-color: #c88f44;
-        color: black;
-        transform: scale(1.1);
     }
 }
 /*Aqui finaliza el Responive de Tablet del banner pagina principal*/
@@ -486,13 +453,14 @@ body {
         height: fit-content;
         width: 50%;
         align-self: center;
+        padding: 1rem 1rem 1rem 8rem;
     }
     
     .contendedor-banner-parrafo {
         text-align: center;
         color: black;
         font-weight: bolder;
-        font-size: 20px;
+        font-size: 22px;
         margin-bottom: 25px;
         padding-top: 1rem; 
     }
@@ -508,31 +476,7 @@ body {
         width: 50%;
         border-radius: 1rem;
         margin-top: 0.5rem;
-    }
-    
-    .contenedor-banner-button {
-        font-weight: 700;
-        font-size: 20px;
-        color: #eceff1;
-        padding: 0.3rem 1.0rem;
-        background-color: #113775f0;
-        border: none;
-        border-radius: 3.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-    }
-    
-    .contenedor-banner-button a {
-        text-decoration: none;
-        color: white;
-        font-family: var(--fuenteSecundaria);
-    }
-    
-    .contenedor-banner-button:hover {
-        background-color: #c88f44;
-        color: black;
-        transform: scale(1.1);
-    }
+    }   
 }
 /*Aqui finaliza el Responive de escritorio del banner pagina principal*/
 /*Aqui inicia el Responive de escritorio del titulo, barra de busqueda y filtro*/
@@ -604,7 +548,7 @@ body {
 }
 .buscadorFiltro__ordenar{
     border: none;
-    width: 6rem;
+    width: 7rem;
     height: 41.6px;
     text-align: center;
     border-radius: 2rem;
@@ -617,6 +561,9 @@ body {
 @media (min-width: 768px) and (max-width: 1045px){
     .buscadorFiltro__buscar{
         width: 30rem;
+    }
+    .buscadorFiltro__buscador {
+        z-index: -1;
     }
 }
 /* Aqui finaliza el Responive de tablet del titulo, barra de busqueda y filtro */
@@ -632,6 +579,7 @@ body {
     .buscadorFiltro__buscar{
         width: 18rem;
         font-size: 14px;
+        padding: 5px 16px;
     }
     .buscadorFiltro__ordenar{
         height: 40px;
@@ -643,6 +591,13 @@ body {
     }
     .buscadorFiltro__buscador{
         margin-bottom: 1rem;
+        z-index: -1;
+    }
+    .buscadorFiltro__btn{
+        padding: 0 20px 0 0;
+    }
+    .buscadorFiltro__ordenar{
+        height: 35px;
     }
 }
 /* Aqui finaliza el Responive de celular del titulo, barra de busqueda y filtro */
@@ -652,6 +607,7 @@ body {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+
 }
 .card{
     background-color: white;
@@ -748,6 +704,20 @@ body {
 .card__infoUbicacion{
     margin: 0;
 }
+/* Aqui inicia el responsive de las card en vista celular */
+@media (min-width: 320px) and (max-width: 767px) {
+    .card {
+        z-index: -1;
+    }
+}
+/* Aqui finaliza el responsive de las card en vista celular */
+/* Aqui inicia el responsive de las card en vista celular */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card {
+        z-index: -1;
+    }
+}
+/* Aqui finaliza el responsive de las card en vista celular */
 /* Aqui finaliza las card
 /*Aqui empieza los estilos del footer*/
 .footer__content {

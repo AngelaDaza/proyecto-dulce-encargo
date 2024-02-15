@@ -401,10 +401,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 listaCompras = listaCompras.map(pq => {
                     if (pq.id == contenedor.dataset.id) {
                         pq.cantidad++;
+                        cantidad.textContent = pq.cantidad;
                         if (!cantidad.classList.contains('card__contenedorBtn-stoke--activo')) {
                             cantidad.classList.add('card__contenedorBtn-stoke--activo');
-                            cantidad.textContent = pq.cantidad;
-                            console.log(cantidad);
                         }
                         return pq;
                     } else {

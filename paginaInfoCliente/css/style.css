@@ -361,6 +361,144 @@ body {
 
 }
 
+/*Aqui empieza el carrusel*/
+
+main {
+    background-color: white;
+    padding-bottom: 12%;
+}
+.carrusel {
+    background-color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+    border-radius: 15px;
+}
+.titulo {
+    font-family: var(--fuentePrincipal);
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    margin-top: 1rem;
+    
+}
+.carrusel ul {
+    display: flex;
+    padding: 0;
+    width: 300%;
+    animation: cambio 10s infinite alternate linear;
+}
+.carrusel li {
+    width: 100%;
+    list-style: none;
+}
+.carrusel img {
+    width: 100%;
+    height: 33rem;
+}
+@keyframes cambio {
+    0% {margin-left: 0;}
+    30% {margin-left: 0;}
+    
+    35% {margin-left: -100%;}
+    65% {margin-left: -100%;}
+    
+    70% {margin-left: -200%;}
+    100% {margin-left: -200%;}	
+}
+
+/*termina el carrusel*/
+
+    
+/*img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes*/
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-0{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*background-color: #1e559c;*/
+    margin-top: 1rem;
+
+}
+.contenedor img {
+    width: 30%;
+    height: 100%;
+}
+.contenedor label {
+    font-family: var(--fuenteSecundaria);
+    width: 40%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+}
+#nav-1 {
+    background-color:#113775f0;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+ul, ol {
+    list-style:none;  
+}
+
+.nav > li {
+    float:left;
+}
+
+.nav li a {
+    background-color:#113775f0;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+.nav li a:hover {
+    background-color:#c88f44;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.nav li:hover > ul {
+    display:block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+.nav li ul li ul {
+    right:315px;
+    width: 100%;
+    top:0px;
+    z-index: 99;
+}
+/*termina img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes*/
+
 
 
 

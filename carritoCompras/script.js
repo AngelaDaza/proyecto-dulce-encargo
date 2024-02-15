@@ -202,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             }
         }
 
+        localStorage.setItem('listaCompras', JSON.stringify(compras));
         recorrerListaCompras();
     }
 });

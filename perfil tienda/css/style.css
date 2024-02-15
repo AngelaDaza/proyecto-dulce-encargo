@@ -159,10 +159,13 @@ body {
     position: absolute;
     display: none;
     list-style: none;
-    width: 200px;
+    width: 280%;
 }
 .header__li:hover .header__ulPerfil{
     display: block;
+}
+.header__liPerfil a {
+    font-size: 15px;
 }
 @media (min-width: 768px){
     .header {
@@ -268,7 +271,9 @@ body {
         padding: 0rem 1rem;
     }
     
-    
+    .header__liPerfil a {
+        font-size: 15px;
+    }
     
     
     .header__btnA {
@@ -376,8 +381,25 @@ body {
     background-color: #cfebca;
     border-radius: 1rem;
     padding: 0rem 1rem;
+    place-items: center;
 }
-
+.eliminar__btnA {
+    font-weight: 700;
+    font-size: 18px;
+    color: #eceff1;
+    padding: 0.3rem 1.0rem;
+    background-color: #113775f0;
+    border: none;
+    border-radius: 3.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-bottom: 1rem;
+}
+.eliminar__btnA:hover {
+    background-color: #c88f44;
+    color: black;
+    transform: scale(1.1);
+}
 .paquetesDisponibles__cardImg{
     padding-top: 1rem;
     width: 100%;
@@ -644,12 +666,7 @@ option{
         
     }
     .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-        border: none;
-        font-size: 40px;
-        position: absolute;
-        justify-content: center;
-        margin: 0 1rem;
-        background-color: transparent;
+        display: none;
     }
     .contenedorPaquetesDisponibles__btnLeft {
         left: 1px;
@@ -715,13 +732,17 @@ option{
     }
     #buscar{
         height: 2rem;
-        padding-left: 1rem;
+        padding-left: 0.5rem;
     }
     #filtroCategoria{
         background-color: #8eb080;
         height: 2rem;
         text-align: left;
         padding-left: 1rem;
+        width: fit-content;
+    }
+    option{
+        font-size: 15px;
     }
     .contenedorPaquetesProgreso__cards{
         display: grid;

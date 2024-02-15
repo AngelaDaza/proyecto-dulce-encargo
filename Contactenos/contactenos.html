@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contáctenos</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+
+<body>
+  <!-- Aqui empieza la Barra de Navegación -->
+  <header class="header">
+    <button id="abrir" class="header__btnMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="contenedor__logo">
+      <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
+    </div>
+    <nav id="nav" class="header__nav">
+      <button id="cerrar" class="header__btnCerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="header__ul">
+        <li class="header__li">
+          <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
+        </li>
+        <li class="header__li"><a href="../acercaDe/acercaDe.html">Acerca de nosotros</a></li>
+        <li class="header__li"> <a href="../Contactenos/contactenos.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+    <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+  </header>
+  <!-- Aqui termina la Barra de Navegación -->
+
+  <!-- Aqui comienza el formulario de contacto -->
+  <!--Esta es una barra de búsqueda que se utilizará en otras vistas.
+      <section>
+        <div>
+            <form action="">
+                <input style="text-align: center;" type="search" class="form-control" placeholder="Introduzca aquí su busqueda..." autocomplete="off"
+                <button class="btnSearch" type="submit" tabindex="1" aria-label="Buscar"></button>
+            </form>
+        </div>
+    </section>-->
+
+  <section class="contenedor__contacto">
+    <div class="contenedor__contactoBanner">
+      <img class="contenedor__contactoBannerImg" src="img/Computer.svg" alt="">
+      <h1 class="contenedor__contactoBannerTitle" style="text-align: center;">Contáctenos</h1>
+    </div>
+    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <div class="contenedor__contactoCompleto">
+      <div class="contenedor__contactoParrafoImg">
+        <p class="contenedor__contactoParrafo">¡Hola amante del pan fresco y delicioso! En Dulce Encargo, entendemos que surgen preguntas y queremos estar aquí para ayudarte en cada bocado de tu experiencia de compra.¡Gracias por elegirnos para endulzar tus momentos especiales!</p>
+        <ul class="contenedor__contactoLista">
+          <li><a><i class="fa-solid fa-envelope"></i>info@dulceencargo.com</a></li>
+          <li><a><i class="fa-solid fa-square-phone"></i>555-123-4567</a></li>
+          <li> <a><i class="fa-solid fa-location-dot"></i>Calle Manzana #13-07</a></li>
+        </ul>
+        <img
+          src="img/Panadería.jpg"
+          alt="postre" class="contenedor__contactoImg">
+      </div>
+      <div class="contenedor__contactoForm">
+        <form class="contenedor__contactoFormulario" action="https://formspree.io/f/myyrzapl"
+        method="POST" target="_blank">
+          <label for="ticket_name" class="form-label">
+            Nombre completo<span class="asterisco">*</span>
+          </label>
+          <input type="text" class="form-control" id="name" placeholder="Escriba su nombre" name="Nombre completo" required>
+          <label for="ticket_email" class="form-label">Correo electrónico<span class="asterisco">*</span>
+          </label>
+          <input type="email" class="form-control " id="email" placeholder="Escriba su correo electronico" name="Correo electrónico" required>
+          <label for="ticket_doc_tipo" class=" form-label"> Tipo de documento<span class="asterisco">*</span>
+          </label>
+          <select class="form-control" id="typeDocument" name="tipo de documento" data-placeholder='' required>
+            <option value="" >Seleccione...</option>
+            <option class="form-controlOption" value="Cédula de ciudadanía">
+              Cédula de ciudadanía
+            </option>
+            <option value="Cédula de Extranjería">
+              Cédula de Extranjería
+            </option>
+            <option value="NIT">
+              NIT
+            </option>
+            <option value="Pasaporte">
+              Pasaporte
+            </option>
+            <option value="RUT">
+              RUT
+            </option>
+          </select>
+
+          <label for="ticket_num_doc" class=" form-label">
+            No. de documento<span class="asterisco">*</span>
+          </label>
+          <input type="number" class="form-control " id="numberDocument" placeholder="Escribe tu documento"
+            name="Número de documento" required>
+
+          <label for="ticket_cel" class=" form-label">
+            Celular de contacto<span class="asterisco">*</span>
+          </label>
+          <input type="number" class="form-control " id="cel" placeholder="¿Te llamamos?" name="Télefono de contacto">
+
+          <label for="ticket_motivo" class=" form-label">
+            Motivo de tu contacto<span class="asterisco">*</span>
+          </label>
+          <select class="form-control " id="reason" name="ticket_motivo" data-placeholder='' required>
+            <option value>Seleccione...</option>
+            <option value="Consulta">Consulta</option>
+            <option value="Solicitud">Solicitud</option>
+            <option value="Felicitación">Felicitación</option>
+          </select>
+          <label class="form-label" for="ticket_comentario">Comentarios</label>
+          <textarea id="message" placeholder="Cuentanos..." name="Comentarios" class="form-control" required> </textarea>
+          <div class="botones">
+            <input type="submit" class="form-control botonEnviar" id="submit" placeholder="" name="submit" onclick="submitForm()">
+            <input type="reset" value="Cancelar" class="form-control botonCancelar" id="cancelar" placeholder="" name="cancelar">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Aqui termina el formulario de contacto -->
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Links  -->
+    <div class="svg-onda" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Hybrid
+            </h6>
+            <p style="text-align: justify">
+              Un equipo de desarrollo apasionado y versátil, transformando
+              ideas en soluciones innovadoras.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+            <p>
+              <a href="#!" class="text-reset">Desarrollo web Frontend</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Desarrollo web Backend</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Bases de datos</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Análisis y diseño</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
+            <p>
+              <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
+            </p>
+            <p>
+              <a href="../acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
+            </p>
+            <p>
+              <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
+            </p>
+            <p>
+              <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Bogotá, Colombia</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              hybrid@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 57 234 567 88</p>
+            <p>
+              <i class="fa-brands fa-whatsapp me-3"></i> + 57 234 567 89
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: #8eb080; color: black;">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="#">Hybrid</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

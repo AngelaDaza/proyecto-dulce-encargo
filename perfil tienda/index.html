@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Tienda</title>
+    <title>Perfil Tienda Dulce Encargo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -11,42 +11,47 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../productos/img/icono-dulce-encargo.png"
+      type="image/x-icon"
+    />
 </head>
 <body>
     <header class="header">
-        <button id="abrir" class="header__btnMenu">
+        <button id="abrir" class="header__btnMenu" title="boton">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="contenedor__logo">
           <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-          <button id="cerrar" class="header__btnCerrar">
+          <button id="cerrar" class="header__btnCerrar" title="boton">
             <i class="fa-solid fa-xmark"></i>
           </button>
           <ul class="header__ul">
             <li class="header__li">
-              <a href="#">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
             </li>
-            <li class="header__li"><a href="#">Paquetes activos</a></li>
-            <li class="header__li"><a href="#">En progreso</a></li>
+            <li class="header__li"><a href="#contenedorPaquetesDisponibles__title">Paquetes activos</a></li>
+            <li class="header__li"><a href="#contenedorMediosDePago">En progreso</a></li>
             <li class="header__li">
                 <a href="#">Perfil</a>
                 <ul class="header__ulPerfil">
                     <li class="header__liPerfil">
-                        <a href="#">Editar</a>
+                        <a href="../configuracionTienda/">Editar</a>
                     </li>
-                    <li class="header__liPerfil">
+                    <!--<li class="header__liPerfil">
                         <a href="#">Historial de ventas</a>
-                    </li>
+                    </li>-->
                     <li class="header__liPerfil">
-                        <a href="#">Agregar nuevo paquete</a>
+                        <a href="../productos/formularioProducto.html">Agregar nuevo paquete</a>
                     </li>
                 </ul>
             </li>
           </ul>
         </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
       </header>
       <section class="banner">
         <div class="bannerCompleto">
@@ -57,37 +62,37 @@
     </section>
     <div style="height: 60px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 398.67,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
     <section class="contenedorPaquetesDisponibles">
-        <h2 class="contenedorPaquetesDisponibles__title">
+        <h2 class="contenedorPaquetesDisponibles__title"id="contenedorPaquetesDisponibles__title" >
             Paquetes activos
         </h2>
 
-        <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft"><i class="fa-solid fa-circle-arrow-left"></i></button>
-        <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft" title="boton"><i class="fa-solid fa-circle-arrow-left"></i></button>
+        <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight" title="boton"><i class="fa-solid fa-circle-arrow-right"></i></button>
         <div class="contenedorPaquetesDisponibles__cards" >
             <div class="paquetesDisponibles__cards" id="carrusel">
                 <div class="paquetesDisponibles__card">
                     <img src="img/vintage-store-with-pastries.jpg" alt="Pan Baguette" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Baguettes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestros frescos productos de panadería: croissants, y baguettes que despierta los sentidos.</p>
-                    <a href="#">Ver más</a>
+                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/colorful-fresh-vegetables-bowl-wooden-tabletop.jpg" alt="Verduras y frutas" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Verduras y frutas</h3>
                     <p class="paquetesDisponibles__cardParagraph">Explora frescura y vitalidad con nuestro paquete premium de frutas y verduras.</p>
-                    <a href="#">Ver más</a>
+                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
                 </div> 
                 <div class="paquetesDisponibles__card">
                     <img src="img/assortment-pieces-cake.jpg" alt="Pasteles" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Pasteles</h3>
                     <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestras exquisitas tortas. Cada creación es una obra maestra de sabor.</p>
-                    <a href="#">Ver más</a>
+                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
                 </div>
                 <div class="paquetesDisponibles__card">
                     <img src="img/leaves-near-buns-bread-tower.jpg" alt="Panes" class="paquetesDisponibles__cardImg">
                     <h3 class="paquetesDisponibles__cardTitle">Panes</h3>
                     <p class="paquetesDisponibles__cardParagraph">Descubre la perfección en cada mordisco con nuestra selección de panes y pasteles horneados.</p>
-                    <a href="#">Ver más</a>
+                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
                 </div>
                 
             </div>
@@ -95,22 +100,23 @@
         
     </section>
 
-    <section class="contenedorMediosDePago">
+    <section class="contenedorMediosDePago" id="contenedorMediosDePago" >
       <h2 class="contenedorMediosDePago__title">Paquetes en progreso</h2>
-      <div id="filtro">
-        <label for="buscar">Buscar:</label>
-        <input type="text" id="buscar" oninput="buscarElementos()">
+      <div id="filtro" class="buscarFiltro">
+        <!--<label for="buscar">Buscar:</label>-->
+        <input type="text" id="buscar" oninput="buscarElementos()" placeholder="Buscar">
         <select id="filtroCategoria" onchange="filtrarPorCategoria()">
-            <option value="">Todas las categorías</option>
-            <!-- Agrega las opciones de categorías según tus datos -->
-            <option value="Categoria1">Categoria1</option>
-            <option value="Categoria2">Categoria2</option>
+            <option value="">Filtro</option>
+            <option value="5:00pm-6:00pm">5:00pm-6:00pm</option>
+            <option value="6:00pm-7:00pm">6:00pm-7:00pm</option>
+            <option value="7:00pm-8:00pm">7:00pm-8:00pm</option>
+            <option value="8:00pm-9:00pm">8:00pm-9:00pm</option>
         </select>
       </div>
   
-      <div id="paginacion" class="contenedorPaquetesProgreso__cards">
-        <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+      <div id="paginacion" class="contenedorPaquetesProgreso__cards" >
+        <div class="contenedorPaquetesProgreso__card" >
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -118,59 +124,59 @@
             style="width:100px;height:100px">
           </lord-icon>
           <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre cliente: Angela Daza</p>
+          <p>Especificaciones especiales: Ninguna en especial</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">5:00pm-6:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Panes</p>
+          <p>Nombre cliente: John Villegas</p>
+          <p>Especificaciones especiales: Gluten free</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Baguettes</p>
+          <p>Nombre cliente: Liliana Tamara</p>
+          <p>Especificaciones especiales: Pagaré en efectivo</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>6:00pm-7:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Tortas</p>
+          <p>Nombre cliente: John Villegas</p>
+          <p>Especificaciones especiales: Ninguna en especial </p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Donas</p>
+          <p>Nombre cliente: Karina Sanabria</p>
+          <p>Especificaciones especiales: Sin especificaciones especiales</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -178,23 +184,23 @@
             style="width:100px;height:100px">
           </lord-icon>
           <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre cliente: Karina Sanabria</p>
+          <p>Especificaciones especiales: Sin especificaciones especiales</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Donas</p>
+          <p>Nombre cliente: Angela Daza</p>
+          <p>Especificaciones especiales: Bajo en grasa</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>7:00pm-8:00pm</h3>
+          <h3 class="hora">6:00pm-7:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -203,22 +209,22 @@
           </lord-icon>
           <p>Nombre paquete: Paquete dulce</p>
           <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Especificaciones especiales: Nada en especial</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">5:00pm-6:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Baguettes</p>
+          <p>Nombre cliente: Liliana Tamara</p>
+          <p>Especificaciones especiales: Gluten free</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -227,10 +233,10 @@
           </lord-icon>
           <p>Nombre paquete: Paquete dulce</p>
           <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Especificaciones especiales: Nada en especial</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">7:00pm-8:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
@@ -238,32 +244,32 @@
             style="width:100px;height:100px">
           </lord-icon>
           <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre cliente: Amele Garcia</p>
+          <p>Especificaciones especiales: Sin especificaciones especial</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">8:00pm-9:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Nombre paquete: Tartas</p>
+          <p>Nombre cliente: Angela Daza</p>
+          <p>Especificaciones especiales: Frias por favor</p>
         </div>
         <div class="contenedorPaquetesProgreso__card">
-          <h3>8:00pm-9:00pm</h3>
+          <h3 class="hora">5:00pm-6:00pm</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
+          <p>Nombre paquete: Donas</p>
           <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: </p>
+          <p>Especificaciones especiales: Hola, pasare entre las 5:30 y 5:45</p>
         </div>
       </div>
       <div id="botonesPagina">
@@ -274,8 +280,8 @@
     <!-- Footer -->
   <footer class="text-center text-lg-start bg-body-tertiary text-muted">
     <!-- Section: Links  -->
-    <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
-    <section class="" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
+    <div class="svg-onda" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
+    <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
@@ -316,16 +322,16 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Menú</h6>
             <p>
-              <a href="#!" class="text-reset">Inicio</a>
+              <a href="../paginaPrincipal/paginaPrincipal.html" class="text-reset">Inicio</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Acerca de nosotros</a>
+              <a href="../acercaDe/acercaDe.html" class="text-reset">Acerca de nosotros</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contáctenos</a>
+              <a href="../Contactenos/contactenos.html" class="text-reset">Contáctenos</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Ingresar</a>
+              <a href="../paginaLogin/index.html" class="text-reset">Ingresar</a>
             </p>
           </div>
           <!-- Grid column -->

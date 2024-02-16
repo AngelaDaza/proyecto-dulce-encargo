@@ -138,10 +138,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             if(producto.id == this.parentElement.dataset.id){
                 producto.cantidad++;
                 this.nextElementSibling.value++;
-                this.parentElement.
-                parentElement.
-                childNodes[3].
-                childNodes[1].textContent = producto.cantidad * producto.precioFinal;
+                const contenedorPrecio = retornarHermano(this, 'contenedorP', 'contenedorP_precio').childNodes;
+                contenedorPrecio[1].textContent = producto.cantidad * producto.precioFinal;
                 return producto;
             }else{
                 return producto;
@@ -163,10 +161,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             if(producto.id == this.parentElement.dataset.id){
                 producto.cantidad--;
                 this.previousElementSibling.value--;
-                this.parentElement.
-                parentElement.
-                childNodes[3].
-                childNodes[1].textContent = producto.cantidad * producto.precioFinal;
+                const contenedorPrecio = retornarHermano(this, 'contenedorP', 'contenedorP_precio').childNodes;
+                contenedorPrecio[1].textContent = producto.cantidad * producto.precioFinal;
                 return producto;
             }else{
                 return producto;
@@ -194,6 +190,22 @@ document.addEventListener('DOMContentLoaded', () =>{
         localStorage.setItem('listaCompras', JSON.stringify(compras));
         recorrerListaCompras();
     }
+
+
+    function retornarHermano(elemento, padre, hijoDelPadre){
+        let contenedorPadre = elemento;
+
+        while(!contenedorPadre.classList.contains(padre)){
+            contenedorPadre = contenedorPadre.parentElement;
+        }
+
+        let hijosPadre = contenedorPadre.firstChild;
+ 
+        while(!hijosPadre.classList?.contains(hijoDelPadre)){
+            hijosPadre = hijosPadre.nextElementSibling;
+        }
+        return hijosPadre;
+    }
 });
 
 //* Recorre la lista de compras para crear los datos de la tabla}
@@ -205,6 +217,10 @@ function recorrerListaCompras(){
     compras.forEach(compra => {
         datosTabla.appendChild(crearFilaResumenCompra(compra));
     })
+    const totalHTML = document.querySelector('.contenedorTres__cantidad');
+    const total = compras.reduce((acumulador, prod) => acumulador+= prod.cantidad * prod.precioFinal, 0);
+    console.log(total);
+    totalHTML.value = total;
 }
 
 //* Funcion que crea la fila par insertar en la tabla
@@ -220,7 +236,7 @@ function crearFilaResumenCompra(producto){
     tdCantidad.textContent = cantidad;
 
     const tdPrecioFinal = document.createElement("td");
-    const totalCompra = cantidad * precioFinal;
+    const totalCompra = producto.cantidad * producto.precioFinal;
     tdPrecioFinal.textContent = totalCompra;
 
     tr.appendChild(tdNombre);

@@ -11,31 +11,30 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
     <!-- Aqui empieza la Barra de Navegación -->
     <header class="header">
-        <button id="abrir" class="header__btnMenu" title="abrir">
+        <button id="abrir" class="header__btnMenu">
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="contenedor__logo">
             <h1 class="contenedor__logoTitle">Dulce<i class="fa-solid fa-cookie-bite"></i>Encargo</h1>
         </div>
         <nav id="nav" class="header__nav">
-            <button id="cerrar" class="header__btnCerrar" title="cerrar">
+            <button id="cerrar" class="header__btnCerrar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="header__ul">
                 <li class="header__li">
-                    <a href="#">Inicio</a>
+                    <a href="../paginaPrincipal/paginaPrincipal.html">Inicio</a>
                 </li>
-                <li class="header__li"><a href="#">Acerca de nosotros</a></li>
-                <li class="header__li"> <a href="#">Contáctenos</a></li>
+                <li class="header__li"><a href="../acercaDe/acercaDe.html">Acerca de nosotros</a></li>
+                <li class="header__li"> <a href="../Contactenos/contactenos.html">Contáctenos</a></li>
             </ul>
         </nav>
-        <a href="#" class="header__btn"><button class="header__btnA">Ingresar</button></a>
+        <a href="../paginaLogin/index.html" class="header__btn"><button class="header__btnA">Ingresar</button></a>
     </header>
     <!-- Aqui termina la Barra de Navegación -->
 
@@ -58,7 +57,7 @@
             </h5>
         </div>
         
-        <div id="botons">
+        <!-- <div id="botons">
             <ul class="nav">
                 <li><a href="">Preguntas Frecuentes</a>
                     
@@ -91,13 +90,40 @@
 
             </button>
   
-        </div>
+        </div> -->
+        <div class="contenedor-btn"><a class="btn-suscribirse" href="../paginaregistrocn/pagregistros-cn.html">Suscribete</a></div>
+        <section class="acordeon">
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    ¿Cómo beneficia mi panadería al unirse a esta plataforma?
+                </summary>
+                <p class="acordeon__parrafo">Al unirte, amplías tu visibilidad, llegas a nuevos clientes y participas en una iniciativa que aborda el desperdicio de alimentos de manera efectiva.</p>
+            </details>
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    ¿Cuáles son los requisitos para que mi panadería sea parte de la plataforma?
+                </summary>
+                <p class="acordeon__parrafo">Valoramos la calidad, la sostenibilidad y la diversidad de productos. Si cumples con estos criterios, ¡será un placer tenerte en nuestra plataforma!</p>
+            </details>
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    ¿Cuál es el alcance geográfico de la plataforma?
+                </summary>
+                <p class="acordeon__parrafo">Estamos expandiendo continuamente nuestra red. En la actualidad, operamos en las localidades de Bogotá D.C, y estamos trabajando para llegar a más lugares pronto.</p>
+            </details>
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    ¿Cómo puedo destacar mis productos en su plataforma?
+                </summary>
+                <p class="acordeon__parrafo">Puede resaltar sus productos a través de imágenes atractivas, descripciones detalladas y ofreciendo ofertas especiales. También proporcionamos herramientas para promocionar productos saludables y destacar prácticas sostenibles.</p>
+            </details>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
         <!-- Section: Links  -->
-        <div class="onda" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+        <div class="svg-onda" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
                 style="height: 100%; width: 100%;">
                 <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
                     style="stroke: none; fill: #cfebca;"></path>
@@ -185,5 +211,6 @@
         </div>
         <!-- Copyright -->
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

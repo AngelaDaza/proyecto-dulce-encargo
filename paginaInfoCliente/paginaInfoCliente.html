@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,7 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
-    <link
-      rel="shortcut icon"
-      href="../productos/img/icono-dulce-encargo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../productos/img/icono-dulce-encargo.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -39,32 +36,33 @@
                 <li class="header__li"> <a href="../Contactenos/contactenos.html">Contáctenos</a></li>
             </ul>
         </nav>
-        <a href="../paginaPrincipal/paginaPrincipal.html" class="header__btn"><button class="header__btnA">Salir</button></a>
+        <a href="../paginaPrincipal/paginaPrincipal.html" class="header__btn"><button
+                class="header__btnA">Salir</button></a>
     </header>
     <!-- Aqui termina la Barra de Navegación -->
 
     <main>
         <!--Empieza el carrusel-->
         <div class="carrusel">
-            <div >
+            <div>
                 <h1 class="titulo">¡Reduce el Desperdicio de Alimentos!</h1>
             </div>
-    
+
             <ul>
                 <li>
-                    <img src="img/carru--1.jpg" alt="">
+                    <img class="imagen-carousel" src="img/carru--1.jpg" alt="">
                 </li>
                 <li>
-                    <img src="img/carru--2.jpg" alt="">
+                    <img class="imagen-carousel" src="img/carru--2.jpg" alt="">
                 </li>
                 <li>
-                    <img src="img/carru--3.jpg" alt="">
+                    <img class="imagen-carousel" src="img/carru--3.jpg" alt="">
                 </li>
             </ul>
         </div>
-    
+
         <!--comienza la segunda parte de la pagina clientes como img, descripcion y buttons-->
-        <div class="contenedor">
+        <!-- <div class="contenedor">
             <div class="contenedor-0">
                 <img src="img/img.desper.jpg" alt="">
             <label>En Colombia, más de 20 millones de personas luchan por acceder a alimentos, mientras que el país desperdicia un tercio de su comida. En 2023, 219 niños menores de cinco años murieron por desnutrición, y más de 560,000 sufren desnutrición crónica.</label>
@@ -117,20 +115,76 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
+        <section class="acordeon">
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    Productos
+                </summary>
+                <p class="acordeon__parrafo">Ofertas Especiales en Productos del Día: Descubre nuestras ofertas
+                    especiales en productos del día para ayudarnos a reducir los excedentes y garantizar que cada
+                    delicia horneada encuentre su lugar en tu mesa. Estas interesado <a class="acordeon__link"
+                        href="../paginaregistrocn/pagregistros-cn.html">Suscríbete</a></p>
+            </details>
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    Megabilidad
+                </summary>
+                <p class="acordeon__parrafo">En Dulce encargo, no solo te invitamos a explorar la exquisita variedad de
+                    nuestros productos de panadería, sino que también te extendemos una invitación para ser parte de
+                    nuestro compromiso con la sostenibilidad y la reducción del desperdicio.</p>
+                <p class="acordeon__parrafo">🌍 Productos Frescos y Conscientes: Cada bocado de nuestras delicias es una
+                    experiencia única, pero también es una contribución activa para reducir nuestra huella ambiental.
+                    Trabajamos arduamente para ofrecerte productos frescos y deliciosos, al mismo tiempo que minimizamos
+                    los residuos.</p>
+            </details>
+            <details class="acordeon__details" name="details">
+                <summary class="acordeon__summary">
+                    Preguntas Frecuentes
+                </summary>
+                <details class="acordeon__details-subMenu" name="detailsSubMenu">
+                    <summary class="acordeon__summary-subMenu">
+                        ¿Ofrecen opciones sin gluten?
+                    </summary>
+                    <p class="acordeon__parrafo-subMenu">Sí, contamos con una variedad de productos sin gluten, como panes y galletas, para atender a clientes con necesidades dietéticas especiales.
+                    </p>
+                </details>
+                <details class="acordeon__details-subMenu" name="detailsSubMenu">
+                    <summary class="acordeon__summary-subMenu">
+                        ¿Ofrecen opciones saludables?
+                    </summary>
+                    <p class="acordeon__parrafo-subMenu">Sí, tenemos una variedad de opciones saludables, como pan integral, productos bajos en azúcar y opciones bajas en grasas para aquellos que buscan alternativas más saludables.
+                    </p>
+                </details>
+                <details class="acordeon__details-subMenu" name="detailsSubMenu">
+                    <summary class="acordeon__summary-subMenu">
+                        ¿Cuáles son sus horarios de operación?
+                    </summary>
+                    <p class="acordeon__parrafo-subMenu">No contamos con horario especifico, cada panadería tiene su respectivo horario de apertura y cierre.
+                    </p>
+                </details>
+                <details class="acordeon__details-subMenu" name="detailsSubMenu">
+                    <summary class="acordeon__summary-subMenu">
+                        ¿Hacen entregas a domicilio?
+                    </summary>
+                    <p class="acordeon__parrafo-subMenu">No, ofrecemos servicio de entrega a domicilio.
+                    </p>
+                </details>
+            </details>
+        </section>
     </main>
     <!--Aqui termina el login-->
-    
-    
+
+
 
     <!-- Footer -->
     <footer class="text-center text-lg-start  text-muted" style="width: 100%; background-color: white;">
         <!-- Section: Links  -->
-        <div class="onda" style="height: 150px; overflow: hidden; width: 100%;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-            style="height: 100%; width: 100%;">
-            <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
-                style="stroke: none; fill: #cfebca;"></path>
-        </svg></div>
+        <div class="svg-onda" style="height: 150px; overflow: hidden; width: 100%;"><svg viewBox="0 0 500 150"
+                preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M-22.29,98.20 C149.99,150.00 348.47,-0.47 507.62,121.88 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #cfebca;"></path>
+            </svg></div>
         <section class="footer__content" style="background-color: #cfebca; padding-top: 0.2rem; color: black;">
             <div class="container text-center text-md-start mt-5">
                 <!-- Grid row -->
@@ -216,4 +270,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

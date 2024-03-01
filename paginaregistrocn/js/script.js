@@ -106,7 +106,7 @@ function repetirMostrarContrasenaNegocio() {
   }
 }
 //Aqui finaliza la funcionalidad para activar el icono que muestra u oculta la contraseña a peticion del usuario en el campo de contraseña de ambos formularios.
-let url = 'http://localhost:8080/usuariocliente/crearUsuarioCliente';
+
 // async function formRegistro(datos, url) {
 //   // try {
 //   //   const respuesta = await fetch(url, {
@@ -263,7 +263,7 @@ signupFormCliente.addEventListener('submit', async (e) => {
     username: username,
     password: password
   };
-  
+  let url = 'http://localhost:8080/usuariocliente/crearUsuarioCliente';
   try{
     const respuesta = await formRegistro(datos, url);
   } catch(error){
@@ -291,7 +291,7 @@ signupFormCliente.addEventListener('submit', async (e) => {
 //Aqui empieza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio
 const signupFormBusiness = document.querySelector('#formulario-negocio');
 
-signupFormBusiness.addEventListener('submit', (e) => {
+signupFormBusiness.addEventListener('submit', async(e) => {
   e.preventDefault();
   const typeDocumentBusiness = document.querySelector('#tipo-documento-negocio').value;
   const numberDocumentBusiness = document.querySelector('#numero-documento-negocio').value;
@@ -381,19 +381,36 @@ signupFormBusiness.addEventListener('submit', (e) => {
   }
   // Si el correo no se encuentra registrado, que le permita guardarlo
   Users.push({
-    typeDocument: typeDocumentBusiness,
-    numberDocument: numberDocumentBusiness,
+    name: nameBusiness,
+    email: emailBusiness,
+    username: usernameBusiness,
+  })
+  //Convertimos los datos en cadenas para almacenarlos
+  localStorage.setItem('users', JSON.stringify(Users))
+  
+   // Aqui inicia el fetch
+   let datos = {
+    typeDocument: typeDocumentBusiness, 
+    numberDocument: numberDocumentBusiness, 
     name: nameBusiness,
     locality: localityBusiness,
     address: addressBusiness,
     typeBusiness: typeBusiness,
-    email: emailBusiness,
-    phone: phoneBusiness,
+    email: emailBusiness, 
+    phone: phoneBusiness, 
     username: usernameBusiness,
     password: passwordBusiness
-  })
-  //Convertimos los datos en cadenas para almacenarlos
-  localStorage.setItem('users', JSON.stringify(Users))
+  };
+  let url = 'http://localhost:8080/usuariotienda/crearUsuarioTienda';
+  try{
+    const respuesta = await formRegistro(datos, url);
+  } catch(error){
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo hacer el registro',
+    });
+  }
   // Mostraremos que el usuario se registro con exito
 
   Swal.fire({

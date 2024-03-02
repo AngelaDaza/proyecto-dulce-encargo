@@ -137,8 +137,6 @@ function formRegistro(datos, url){
     body: JSON.stringify(datos),
     headers: {'Content-type': 'application/json'}
   };
-  console.log(configuracion);
-  console.log(datos);
   fetch(url, configuracion)
   .then(response => {
     return response.json()

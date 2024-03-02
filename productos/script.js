@@ -282,18 +282,33 @@ function reemplazarAtributos(text, paquete) {
 if (document.getElementById('cards')) {
     mostrarProductosHtml();
 }
+function formProducto(datos, url){
+    const configuracion = {
+      method: 'POST',
+      body: JSON.stringify(datos),
+      headers: {'Content-type': 'application/json'}
+    };
+    fetch(url, configuracion)
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      console.log(data);
+    })
+  }
 
 if (document.querySelector('.formulario')) {
     // Creando nuevos productos desde el formulario
     // Seleccionando los input del html para poder manipularlos 
-    const inputImg = document.querySelector("#formImg");
-    const inputNombre = document.querySelector("#formNombre");
-    const inputDescripcion = document.querySelector("#formDescripcion");
-    const inputTienda = document.querySelector("#formTienda");
-    const inputUbicacion = document.querySelector("#formUbicacion");
-    const inputRegular = document.querySelector("#formRegular");
-    const inputFinal = document.querySelector("#formFinal");
-    const boton = document.querySelector(".formulario");
+    const inputImg = document.querySelector("#formImg").value;
+    const inputNombre = document.querySelector("#formNombre").value;
+    const inputDescripcion = document.querySelector("#formDescripcion").value;
+    const inputTienda = document.querySelector("#formTienda").value;
+    const inputUbicacion = document.querySelector("#formUbicacion").value;
+    const inputStock = document.querySelector("#formStock").value;
+    const inputRegular = document.querySelector("#formRegular").value;
+    const inputFinal = document.querySelector("#formFinal").value;
+    const boton = document.querySelector(".formulario").value;
 
     // Agregar un evento para cuando se precione el boton
     boton.addEventListener("submit", agregarProducto); // Sin () para que no llame directamente la función
@@ -302,7 +317,7 @@ if (document.querySelector('.formulario')) {
         e.preventDefault(); // Elimina acciones previas (solo con tipo submit)
 
         //Creamos un objeto con las propiedades de la clase Paquete
-        const nuevoDato = new Paquete(
+        /*const nuevoDato = new Paquete(
             Date.now(),
             './img/rollosCanela.jpg',
             inputNombre.value,
@@ -318,7 +333,30 @@ if (document.querySelector('.formulario')) {
         // Agregando nuevo producto a la lista paquetes 
         paquetes.push(nuevoDato);
         //Guardando en local Storage
-        localStorage.setItem("paquetes", JSON.stringify(paquetes));
+        localStorage.setItem("paquetes", JSON.stringify(paquetes));*/
+        //Uso de la base de datos
+        let datos = {
+            name: inputNombre,
+            urlImage: inputImg,
+            description: inputDescripcion,
+            stock: inputStock,
+            regularPrice: inputRegular,
+            finalPrice: inputFinal,
+            category: "Pasteleria",
+            idTienda: {
+                id: 2
+            }
+          };
+          let url = 'http://localhost:8080/usuariocliente/crearUsuarioCliente';
+          try{
+            const respuesta = formRegistro(datos, url);
+          } catch(error){
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'No se pudo hacer el registro',
+            });
+          }
         // Redireccionandonos a pantalla de productos
         window.location.href = "productos.html";
     }

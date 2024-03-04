@@ -248,7 +248,7 @@ function crearFilaResumenCompra(producto){
 //Petición fetch POST 
     // Agregar un evento para cuando se precione el boton
     async function crearCompra(){ 
-        let amount = compras.cantidad;
+        let amount = 2;
         let hora = document.querySelector("#hora").value;// Elimina acciones previas (solo con tipo submit)
         let fecha= new Date().toISOString().split('T')[0];
 

@@ -69,33 +69,8 @@
         <button onclick="mostrarTarjetaAnterior()" id="left" class="contenedorPaquetesDisponibles__btnLeft" title="boton"><i class="fa-solid fa-circle-arrow-left"></i></button>
         <button onclick="mostrarSiguienteTarjeta()" id="right" class="contenedorPaquetesDisponibles__btnRight" title="boton"><i class="fa-solid fa-circle-arrow-right"></i></button>
         <div class="contenedorPaquetesDisponibles__cards" >
-            <div class="paquetesDisponibles__cards" id="carrusel">
-                <div class="paquetesDisponibles__card">
-                    <img src="img/vintage-store-with-pastries.jpg" alt="Pan Baguette" class="paquetesDisponibles__cardImg">
-                    <h3 class="paquetesDisponibles__cardTitle">Baguettes</h3>
-                    <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestros frescos productos de panadería: croissants, y baguettes que despierta los sentidos.</p>
-                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
-                </div> 
-                <div class="paquetesDisponibles__card">
-                    <img src="img/vista-superior-delicioso-concepto-rollos-canela.jpg" alt="Verduras y frutas" class="paquetesDisponibles__cardImg">
-                    <h3 class="paquetesDisponibles__cardTitle">Rollos de canela</h3>
-                    <p class="paquetesDisponibles__cardParagraph">Explora frescura y vitalidad con nuestro paquete premium de rollos de canela.</p>
-                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
-                </div> 
-                <div class="paquetesDisponibles__card">
-                    <img src="img/assortment-pieces-cake.jpg" alt="Pasteles" class="paquetesDisponibles__cardImg">
-                    <h3 class="paquetesDisponibles__cardTitle">Pasteles</h3>
-                    <p class="paquetesDisponibles__cardParagraph">Deléitate con nuestras exquisitas tortas. Cada creación es una obra maestra de sabor.</p>
-                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
-                </div>
-                <div class="paquetesDisponibles__card">
-                    <img src="img/leaves-near-buns-bread-tower.jpg" alt="Panes" class="paquetesDisponibles__cardImg">
-                    <h3 class="paquetesDisponibles__cardTitle">Panes</h3>
-                    <p class="paquetesDisponibles__cardParagraph">Descubre la perfección en cada mordisco con nuestra selección de panes y pasteles horneados.</p>
-                    <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
-                </div>
-                
-            </div>
+          <div class="paquetesDisponibles__cards" id="carrusel">
+          </div>
         </div>
         
     </section>
@@ -113,165 +88,24 @@
             <option value="8:00pm-9:00pm">8:00pm-9:00pm</option>
         </select>
       </div>
-  
       <div id="paginacion" class="contenedorPaquetesProgreso__cards" >
-        <div class="contenedorPaquetesProgreso__card" >
-          <h3 class="hora">6:00pm-7:00pm</h3>
+        <div data-id="{{id}}" class="compras contenedorPaquetesProgreso__card" id="card">
+          <h3 class="card__hora">{{hora}}</h3>
           <lord-icon
             src="https://cdn.lordicon.com/hsrrkevt.json"
             trigger="hover"
             colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
             style="width:100px;height:100px">
           </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Angela Daza</p>
-          <p>Especificaciones especiales: Ninguna en especial</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">5:00pm-6:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Panes</p>
-          <p>Nombre cliente: John Villegas</p>
-          <p>Especificaciones especiales: Gluten free</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">8:00pm-9:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Baguettes</p>
-          <p>Nombre cliente: Liliana Tamara</p>
-          <p>Especificaciones especiales: Pagaré en efectivo</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">6:00pm-7:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Tortas</p>
-          <p>Nombre cliente: John Villegas</p>
-          <p>Especificaciones especiales: Ninguna en especial </p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">7:00pm-8:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Donas</p>
-          <p>Nombre cliente: Karina Sanabria</p>
-          <p>Especificaciones especiales: Sin especificaciones especiales</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">6:00pm-7:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Karina Sanabria</p>
-          <p>Especificaciones especiales: Sin especificaciones especiales</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">8:00pm-9:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Donas</p>
-          <p>Nombre cliente: Angela Daza</p>
-          <p>Especificaciones especiales: Bajo en grasa</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">6:00pm-7:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: Nada en especial</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">5:00pm-6:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Baguettes</p>
-          <p>Nombre cliente: Liliana Tamara</p>
-          <p>Especificaciones especiales: Gluten free</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">8:00pm-9:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: Nada en especial</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">7:00pm-8:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Paquete dulce</p>
-          <p>Nombre cliente: Amele Garcia</p>
-          <p>Especificaciones especiales: Sin especificaciones especial</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">8:00pm-9:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Tartas</p>
-          <p>Nombre cliente: Angela Daza</p>
-          <p>Especificaciones especiales: Frias por favor</p>
-        </div>
-        <div class="contenedorPaquetesProgreso__card">
-          <h3 class="hora">5:00pm-6:00pm</h3>
-          <lord-icon
-            src="https://cdn.lordicon.com/hsrrkevt.json"
-            trigger="hover"
-            colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
-            style="width:100px;height:100px">
-          </lord-icon>
-          <p>Nombre paquete: Donas</p>
-          <p>Nombre cliente: Pepito Perez</p>
-          <p>Especificaciones especiales: Hola, pasare entre las 5:30 y 5:45</p>
+          <div class="card">
+            <p class="card__Fecha"> <strong>Fecha: </strong> {{fecha}}</p>
+            <p class="card__Cliente"><strong>Cliente: </strong> {{nombreCliente}}</p>
+            <p class="card__Producto"><strong>Producto: </strong> {{nombreProducto}}</p>
+            <p class="card__Cantidad"><strong>Cantidad: </strong> {{cantidad}}</p>
+          </div>
         </div>
       </div>
+        
       <div id="botonesPagina">
         
       </div>

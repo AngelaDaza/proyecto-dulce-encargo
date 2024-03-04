@@ -368,7 +368,7 @@ if (document.querySelector('.formulario')) {
     });
     }
     // Redireccionandonos a pantalla de productos
-    window.location.href = "productos.html";
+    window.location.href = '../perfil tienda/index.html';
 })}; // Sin () para que no llame directamente la función
 
 

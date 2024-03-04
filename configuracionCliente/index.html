@@ -63,7 +63,7 @@
                     class="formulario-input"
                     data-placeholder=""
                     required disabled>
-                        <option value="1" selected>CÉDULA DE CIUDADANÍA</option>
+                        <option value="1" selected></option>
                         <option value="CC">CÉDULA DE CIUDADANÍA</option>
                         <option value="CE">CÉDULA DE EXTRANJERÍA COLOMBIANA</option>
                         <option value="DE">CÉDULA EXTRANJERA</option>
@@ -80,7 +80,7 @@
                     id="numero-documento"
                     placeholder="Escribe tu documento"
                     name="Número de documento"
-                    required value="123456789" disabled/>
+                    required disabled/>
                     <span class="editar-icono" data-campo="numero-documento"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -91,7 +91,7 @@
                     id="nombres-cliente"
                     placeholder="Escribe tu nombre"
                     name="Nombre del cliente"
-                    required value="Pepito" disabled/>
+                    required disabled/>
                     <span class="editar-icono" data-campo="nombres-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -102,7 +102,7 @@
                     id="apellidos-cliente"
                     placeholder="Escribe tus apellidos"
                     name="Apellidos del cliente"
-                    required value="Perez" disabled/>
+                    required disabled/>
                     <span class="editar-icono" data-campo="apellidos-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -112,7 +112,7 @@
                     class="formulario-input"
                     data-placeholder=""
                     required disabled>
-                        <option value="" selected>Suba</option>
+                        <option value="" selected></option>
                         <option value="Usaquén">Usaquén</option>
                     <option value="Chapinero">Chapinero</option>
                     <option value="Santa Fe">Santa Fe</option>
@@ -140,7 +140,7 @@
                     id="direccion-cliente"
                     placeholder="Escribe tu dirección"
                     name="Dirección de residencia" 
-                    required value="Calle Manzana #10-04" disabled>
+                    required disabled>
                     <span class="editar-icono" data-campo="direccion-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -150,7 +150,7 @@
                     id="email-cliente"
                     placeholder="Escriba su correo electrónico"
                     name="Dirección de email" 
-                    required value="Pepito@gmail.com" disabled>
+                    required disabled>
                     <span class="editar-icono" data-campo="email-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -159,7 +159,7 @@
                     class="formulario-input"
                     id="telefono-cliente"
                     placeholder="Teléfono de contacto"
-                    name="Teléfono de contacto" required value="1234567890" disabled>
+                    name="Teléfono de contacto" required disabled>
                     <span class="editar-icono" data-campo="telefono-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -168,7 +168,7 @@
                     class="formulario-input"
                     id="usuario-cliente"
                     placeholder="Escriba un nombre de usuario"
-                    name="Nombre de usuario" required value="PepitoPerez" disabled>
+                    name="Nombre de usuario" required disabled>
                     <span class="editar-icono" data-campo="usuario-cliente"><i class="fas fa-pencil-alt"></i></span>
                 </div>
                 <div class="campo">
@@ -179,12 +179,12 @@
                         id="clave-cliente"
                         placeholder="Escriba una contraseña"
                         name="contraseña de usuario"
-                        required value="contraseña1234" disabled
+                        required disabled
                     />
                     <span class="editar-icono" data-campo="clave-cliente" onclick="mostrarContrasenaCliente()"><i class="fas fa-pencil-alt"></i></span>
                 </div>
             </div>
-            <button type="submit">Guardar Cambios</button>
+            <button id="submit" type="submit">Guardar Cambios</button>
         </form>
     </section>
 
@@ -276,5 +276,6 @@
     <!-- Copyright -->
   </footer>
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

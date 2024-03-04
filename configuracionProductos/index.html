@@ -57,17 +57,18 @@
     </section>
     <div style="height: 60px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 398.67,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #cfebca;"></path></svg></div>
     <section>
+        <img class="formulario__imagen">
         <form id="formularioPerfil">
             <div class="formularioCompleto">
               <div class="campo">
                 <label for="imagen-producto" class="formulario-label">Imagen del producto</label>
                 <input
-                type="image"
+                type="text"
                 class="formulario-input"
                 id="imagen-producto"
                 placeholder="Adjunta imagen del producto"
                 name="imagen del producto"
-                required value= "" disabled/>
+                required disabled/>
                 <span class="editar-icono" data-campo="imagen-producto"><i class="fas fa-pencil-alt"></i></span>
               </div>
                 <div class="campo">
@@ -91,25 +92,6 @@
                   required value="Donas rellenas de diferentes sabores" disabled>
                   <span class="editar-icono" data-campo="descripcion-producto"><i class="fas fa-pencil-alt"></i></span>
                 </div>
-              <div class="campo">
-                <label for="nombre-tienda" class="formulario-label">Nombre de tienda</label>
-                <input type="text"
-                class="formulario-input"
-                id="nombre-tienda"
-                placeholder="Escriba el nombre de la tienda"
-                name="Nombre de tienda" required value="Deliciosos girasoles" disabled>
-                <span class="editar-icono" data-campo="nombre-tienda"><i class="fas fa-pencil-alt"></i></span>
-             </div>
-            <div class="campo">
-              <label for="direccion-tienda" class="formulario-label">Dirección de ubicación</label>
-              <input type="text"
-              class="formulario-input"
-              id="direccion-tienda"
-              placeholder="Escribe la dirección"
-              name="Dirección de tienda" 
-              required value="Calle Manzana #10-04" disabled>
-              <span class="editar-icono" data-campo="direccion-tienda"><i class="fas fa-pencil-alt"></i></span>
-            </div>
             <div class="campo">
               <label for="precio-regular" class="formulario-label">Precio regular</label>
               <input
@@ -132,8 +114,19 @@
               required value="5000" disabled/>
               <span class="editar-icono" data-campo="precio-final"><i class="fas fa-pencil-alt"></i></span>
             </div>
+            <div class="campo">
+              <label for="formUbicacion" class="formulario-label">Cantidad disponible</label>
+              <input 
+              type="number" 
+              id="formStock" 
+              class="formulario-input" 
+              placeholder="Escribe la cantidad disponible"
+              name="Cantidad disponible"
+              required disabled>
+              <span class="editar-icono" data-campo="formStock"><i class="fas fa-pencil-alt"></i></span>
+          </div>
             </div>
-            <button type="submit">Guardar Cambios</button>
+            <button class="formulario__btn" type="submit" onclick="">Guardar Cambios</button>
         </form>
     </section>
 
@@ -224,6 +217,9 @@
     </div>
     <!-- Copyright -->
   </footer>
+  <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -382,6 +382,16 @@ form{
     align-items: center;
     
 }
+.formulario__imagen{
+    width: 9rem;
+    height: 7.5rem;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+    border: 8px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0 #d7d7d7;
+}
 .editar-icono{
     background-color: #8eb080;
     border-radius: 100%;

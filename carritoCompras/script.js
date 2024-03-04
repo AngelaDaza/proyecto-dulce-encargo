@@ -245,6 +245,50 @@ function crearFilaResumenCompra(producto){
 
     return tr;
 }
+//Petición fetch POST 
+    // Agregar un evento para cuando se precione el boton
+    async function crearCompra(){ 
+        let amount = compras.cantidad;
+        let hora = document.querySelector("#hora").value;// Elimina acciones previas (solo con tipo submit)
+        let fecha= new Date().toISOString().split('T')[0];
+
+    //Uso de la base de datos
+    let datos = {
+        date: fecha,
+        amount: amount,
+        hour: hora,
+        statusShopping: "En proceso",
+        usuarioCliente: {
+            id: 2
+        },
+        producto: {
+            id: 1
+        }
+    };
+    const url = 'http://localhost:8080/compras/crearCompra';
+    const configuracion = {
+        method: 'POST',
+        body: JSON.stringify(datos),
+        headers: {'Content-Type': 'application/json'}
+    };
+    try{
+    const respuesta = await fetch(url, configuracion)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data);
+    })
+    } catch(error){
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo hacer el registro',
+    });
+    }
+    // Redireccionandonos a pantalla de productos
+    window.location.href = '../perfil cliente/index.html';
+};
 
 function limpiarHTMLPrevio(padre){
     let elemento = padre.firstChild;

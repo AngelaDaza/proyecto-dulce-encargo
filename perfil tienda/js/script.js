@@ -12,7 +12,40 @@ cerrar.addEventListener("click", () =>{
     nav.classList.remove("header__nav--visible");
     body.classList.remove("body--activo");
 })
+//Peticion fetch para los productos activos de la tienda
+let url2 = 'http://localhost:8080/productos/obtenerProductoPorIdTienda/2';
+fetch(url2)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Hubo un problema con la solicitud fetch:', response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => mostrarProductosHtml(data))
+  .catch(error => console.log(error));
 
+  async function mostrarProductosHtml(productos) {
+    try {
+      let listadoProductosHtml = '';
+      productos.forEach(producto => {
+        // Plantilla para la card
+        let cardTemplateProducto = `
+          <div data-id="${producto.id}" class="paquetesDisponibles__card">
+            <img src=${producto.urlImage} alt="Foto producto" class="paquetesDisponibles__cardImg">
+            <h3 class="paquetesDisponibles__cardTitle">${producto.name}</h3>
+            <p class="paquetesDisponibles__cardParagraph">${producto.description}</p>
+            <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
+          </div>`;
+        
+        listadoProductosHtml += cardTemplateProducto;
+      });
+  
+      // Actualizar el contenido de la sección 'paginacion' con las cards generadas
+      document.getElementById('carrusel').innerHTML = listadoProductosHtml;
+    } catch (error) {
+      console.error('Error al mostrar las compras:', error);
+    }
+  }
 
 //Se asignan funcionalidad al Carrusel
 let posicionActual = 0;
@@ -44,6 +77,61 @@ document.addEventListener('DOMContentLoaded', () => {
   actualizarCarrusel(); // Ajustar la posición inicial
 });
 
+//Peticion fetch para las compras en proceso
+let url = 'http://localhost:8080/compras/obtenerTodasLasCompras';
+async function convertirHtmlTexto(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Hubo un problema con la solicitud fetch:', response.statusText);
+    }
+    return await response.text();
+  } catch (error) {
+    throw new Error('Hubo un problema con la solicitud fetch:', error);
+  }
+}
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Hubo un problema con la solicitud fetch:', response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => mostrarComprasHtml(data))
+  .catch(error => console.log(error));
+
+  async function mostrarComprasHtml(compras) {
+    try {
+      console.log(compras);
+      let listadoComprasHtml = '';
+      compras.forEach(compra => {
+        // Plantilla para la card
+        const cardTemplate = `
+          <div data-id="${compra.id}" class="compras contenedorPaquetesProgreso__card" id="card">
+            <h3 class="card__hora">${compra.hour}</h3>
+            <lord-icon
+              src="https://cdn.lordicon.com/hsrrkevt.json"
+              trigger="hover"
+              colors="primary:#ebe6ef,secondary:#3a3347,tertiary:#a866ee,quaternary:#646e78"
+              style="width:100px;height:100px">
+            </lord-icon>
+            <div class="card">
+              <p class="card__Fecha"><strong>Fecha: </strong> ${compra.date}</p>
+              <p class="card__Cliente"><strong>Cliente: </strong> ${compra.usuarioCliente.name} ${compra.usuarioCliente.surname}</p>
+              <p class="card__Producto"><strong>Producto: </strong> ${compra.producto.name}</p>
+              <p class="card__Cantidad"><strong>Cantidad: </strong> ${compra.amount}</p>
+            </div>
+          </div>`;
+        
+        listadoComprasHtml += cardTemplate;
+      });
+  
+      // Actualizar el contenido de la sección 'paginacion' con las cards generadas
+      document.getElementById('paginacion').innerHTML = listadoComprasHtml;
+    } catch (error) {
+      console.error('Error al mostrar las compras:', error);
+    }
+  }
 
 
 

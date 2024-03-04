@@ -282,47 +282,95 @@ function reemplazarAtributos(text, paquete) {
 if (document.getElementById('cards')) {
     mostrarProductosHtml();
 }
+// function formProducto(datos, url){
+//     const configuracion = {
+//       method: 'POST',
+//       body: JSON.stringify(datos),
+//       headers: {'Content-type': 'application/json'}
+//     };
+//     fetch(url, configuracion)
+//     .then(response => {
+//       return response.json()
+//     })
+//     .then(data => {
+//       console.log(data);
+//     })
+//   }
 
 if (document.querySelector('.formulario')) {
     // Creando nuevos productos desde el formulario
     // Seleccionando los input del html para poder manipularlos 
-    const inputImg = document.querySelector("#formImg");
-    const inputNombre = document.querySelector("#formNombre");
-    const inputDescripcion = document.querySelector("#formDescripcion");
-    const inputTienda = document.querySelector("#formTienda");
-    const inputUbicacion = document.querySelector("#formUbicacion");
-    const inputRegular = document.querySelector("#formRegular");
-    const inputFinal = document.querySelector("#formFinal");
-    const boton = document.querySelector(".formulario");
+    const boton = document.querySelector('#formProducto');
 
     // Agregar un evento para cuando se precione el boton
-    boton.addEventListener("submit", agregarProducto); // Sin () para que no llame directamente la función
+    boton.addEventListener("submit", async (e) =>{
+        e.preventDefault(); 
+        const inputImg = document.querySelector("#formImg").value;
+        const inputNombre = document.querySelector("#formNombre").value;
+        const inputDescripcion = document.querySelector("#formDescripcion").value;
+        const inputTienda = document.querySelector("#formTienda").value;
+        const inputUbicacion = document.querySelector("#formUbicacion").value;
+        const inputStock = document.querySelector("#formStock").value;
+        const inputRegular = document.querySelector("#formRegular").value;
+        const inputFinal = document.querySelector("#formFinal").value;
+        const inputCategoria = document.querySelector("#categoria").value;// Elimina acciones previas (solo con tipo submit)
 
-    function agregarProducto(e) {
-        e.preventDefault(); // Elimina acciones previas (solo con tipo submit)
-
-        //Creamos un objeto con las propiedades de la clase Paquete
-        const nuevoDato = new Paquete(
-            Date.now(),
-            './img/rollosCanela.jpg',
-            inputNombre.value,
-            inputTienda.value,
-            inputUbicacion.value,
-            inputDescripcion.value,
-            0,
-            inputRegular.value,
-            inputFinal.value,
-            ""
-        );
-                
-        // Agregando nuevo producto a la lista paquetes 
-        paquetes.push(nuevoDato);
-        //Guardando en local Storage
-        localStorage.setItem("paquetes", JSON.stringify(paquetes));
-        // Redireccionandonos a pantalla de productos
-        window.location.href = "productos.html";
+    //Creamos un objeto con las propiedades de la clase Paquete
+    /*const nuevoDato = new Paquete(
+        Date.now(),
+        './img/rollosCanela.jpg',
+        inputNombre.value,
+        inputTienda.value,
+        inputUbicacion.value,
+        inputDescripcion.value,
+        0,
+        inputRegular.value,
+        inputFinal.value,
+        ""
+    );
+            
+    // Agregando nuevo producto a la lista paquetes 
+    paquetes.push(nuevoDato);
+    //Guardando en local Storage
+    localStorage.setItem("paquetes", JSON.stringify(paquetes));*/
+    //Uso de la base de datos
+    let datos = {
+        name: inputNombre,
+        urlImage: inputImg,
+        description: inputDescripcion,
+        stock: inputStock,
+        regularPrice: inputRegular,
+        finalPrice: inputFinal,
+        category: inputCategoria,
+        idTienda: {
+            id: 2
+        }
+    };
+    const url = 'http://localhost:8080/productos/crearProducto';
+    const configuracion = {
+        method: 'POST',
+        body: JSON.stringify(datos),
+        headers: {'Content-Type': 'application/json'}
+    };
+    try{
+    const respuesta = await fetch(url, configuracion)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data);
+    })
+    } catch(error){
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo hacer el registro',
+    });
     }
-}
+    // Redireccionandonos a pantalla de productos
+    window.location.href = '../perfil tienda/index.html';
+})}; // Sin () para que no llame directamente la función
+
 
 const inputBuscar = document.querySelector(".buscadorFiltro__buscar");
 const btnBuscar = document.querySelector(".buscadorFiltro__btn");

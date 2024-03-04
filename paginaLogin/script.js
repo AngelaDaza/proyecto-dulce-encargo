@@ -12,33 +12,41 @@ cerrar.addEventListener("click", () =>{
     nav.classList.remove("header__nav--visible");
     body.classList.remove("body--activo");
 })
-function validarLogin(){
+async function validarLogin(){
     let usuario = document.getElementById("usuario").value;
     let contraseña = document.getElementById("contraseña").value;
 
-    let usuarios = obtenerUsuariosLocalStorage();
-        
-    let user = usuarios.find(user => user.nameUser == usuario && user.password == contraseña)
-    if (user) {
-        document.getElementById("contraseñaOlvidada").innerHTML = ""
-        if (usuario=="pepito" || usuario=="eder"){
-            window.location.href = '../perfil cliente/index.html'
-        }else{
-            window.location.href = '../perfil tienda/index.html'
-        }
+    const datos={
+        username: usuario,
+        password: contraseña
     }
-    else {
-        document.getElementById("contraseñaOlvidada").innerHTML = "Usuario invalido"
-    }
-}
+    const url = 'http://localhost:8080/usuariocliente/validarCredenciales'
 
-function obtenerUsuariosLocalStorage(){
-    let usuarios = JSON.parse(localStorage.getItem("users"));
-    if(usuarios){
-        return usuarios
-    }
-    return []
-}
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify(usuarioAdm)
+            body: JSON.stringify(datos)
+          };
+          const response_guardar = await fetch(url, requestOptions)
+          .then(response1=>{if (response1.status == 200) {
+            window.location.href = '../perfil cliente/index.html';
+            }else {
+                const url2="http://localhost:8080/usuariotienda/validarCredenciales";
+                const response_guardar2 = fetch(url2, requestOptions)
+                .then(response2=>{if (response2.status == 200) {
+                    window.location.href = '../perfil tienda/index.html';
+                }else {
+                    document.getElementById("contraseñaOlvidada").innerHTML = "Usuario invalido"}})
+            }
+            })
+
+        }
+    // Realizar la solicitud POST usando fetch
+
+
 
 function obtenerContraseña() {
     let usuario = document.getElementById("usuario").value;

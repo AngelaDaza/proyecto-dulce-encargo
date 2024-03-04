@@ -65,7 +65,7 @@
     
     <div class="nuevoProducto contenedor">
         <h3 class="nuevoProducto__title">Nuevo producto</h3>
-        <form action="" class="formulario">
+        <form action="" class="formulario" id="formProducto">
             <div class="formulario__campo">
                 <label for="formImg">Imagen del producto</label>
                 <input type="file" id="formImg" class="formulario__img" accept="image/*" required>
@@ -87,6 +87,27 @@
                 <input type="text" id="formUbicacion" class="formulario__ubicacion" required>
             </div>
             <div class="formulario__campo">
+                <label for="categoria" class="formulario-label"
+                >Categoría producto</label
+                >
+                <select
+                  name="categoria"
+                  id="categoria"
+                  class="formulario-input"
+                  data-placeholder=""
+                  required
+                >
+                  <option value="">Seleccione...</option>
+                  <option value="Panadería">Panadería</option>
+                  <option value="Antojitos">Antojitos</option>
+                  <option value="Pastelería"> Pastelería</option>
+                </select>
+              </div>
+            <div class="formulario__campo">
+                <label for="formUbicacion">Cantidad disponible</label>
+                <input type="number" id="formStock" class="formulario__stock" required>
+            </div>
+            <div class="formulario__campo">
                 <label for="formRegular">Precio regular del producto</label>
                 <input type="number" id="formRegular" class="formulario__precioRegular" required>
             </div>
@@ -95,7 +116,7 @@
                 <input type="number" id="formFinal" class="formulario__precioFinal" required>
             </div>
             <div class="boton">
-                <button class="formulario__btn" type="submit" onclick="">Crear nuevo producto</button>
+                <button class="formulario__btn" id="submit" type="submit" onclick="">Crear nuevo producto</button>
             </div>
         </form>
         

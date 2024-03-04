@@ -109,6 +109,24 @@
                 <div class="contenedorTres__descripcion-resumen">
                     <span class="title-resumen">Resumen de la orden</span>
                     <span>Dirección de la tienda</span>
+                    <label for="hora" class="formulario-label"
+                    >Hora de recolección</label
+                    >
+                    <select
+                    name="hora"
+                    id="hora"
+                    class="formulario-input"
+                    data-placeholder=""
+                    required
+                    >
+                    <option value="">Seleccione...</option>
+                    <option value="4:00pm-5:00pm">4:00pm-5:00pm</option>
+                    <option value="5:00pm-6:00pm">5:00pm-6:00pm</option>
+                    <option value="6:00pm-7:00pm">6:00pm-7:00pm</option>
+                    <option value="7:00pm-8:00pm">7:00pm-8:00pm</option>
+                    <option value="8:00pm-9:00pm">8:00pm-9:00pm</option>
+                    <option value="9:00pm-10:00pm">9:00pm-10:00pm</option>
+                    </select>
                     <div class="contenedorTres__tabla-producto">
                         <p>Productos</p>
                         <table class="contenedorTres__tabla">
@@ -127,7 +145,7 @@
                         <span class="title-resumen">Total</span>
                         <input type="text" class="contenedorTres__cantidad" disabled>
                     </div>
-                    <button class="contenedorUno__finaliza">Finalizar Compra</button>
+                    <button class="contenedorUno__finaliza" id="submit" type="submit" onclick="crearCompra()">Finalizar Compra</button>
                 </div>
             </div>
         </div>

@@ -64,8 +64,8 @@ if (!JSON.parse(localPaquetes)) {
         "Calle del Sueño Dorado, Nº 23",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        5000,
+        2500,
         "Panaderia",
         5
     );
@@ -78,8 +78,8 @@ if (!JSON.parse(localPaquetes)) {
         "Avenida de los Suspiros, Nº 7B",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        2000,
+        1500,
         "Antojitos",
         5
     );
@@ -92,8 +92,8 @@ if (!JSON.parse(localPaquetes)) {
         "Rincón Estrellas, Calle Luna, Nº 42",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        10000,
-        8000,
+        2000,
+        1200,
         "Panaderia",
         5
     );
@@ -106,8 +106,8 @@ if (!JSON.parse(localPaquetes)) {
         "Paseo de los Deseos, Nº 11A",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        2000,
+        1500,
         "Panaderia",
         5
     );
@@ -120,8 +120,8 @@ if (!JSON.parse(localPaquetes)) {
         "Plaza del Arcoíris, Nº 9C",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        5000,
+        2500,
         "Antojitos",
         5
     );
@@ -134,8 +134,8 @@ if (!JSON.parse(localPaquetes)) {
         "Travesía de la Imaginación, Nº 88",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        2000,
+        1500,
         "Pasteleria",
         5
     );
@@ -162,8 +162,8 @@ if (!JSON.parse(localPaquetes)) {
         "Avenida Mariposas Brillantes, Nº 27",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        25000,
-        22000,
+        2500,
+        2000,
         "Panaderia",
         5
     );
@@ -190,8 +190,8 @@ if (!JSON.parse(localPaquetes)) {
         "Carrera de los Fantásticos, Nº 64",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        2000,
+        1500,
         "Antojitos",
         5
     );
@@ -204,8 +204,8 @@ if (!JSON.parse(localPaquetes)) {
         "Pasaje de los Sueños, Nº 13E",
         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
         1,
-        20000,
-        15000,
+        2000,
+        1500,
         "Panaderia",
         5
     );

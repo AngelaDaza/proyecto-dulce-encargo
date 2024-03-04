@@ -342,7 +342,7 @@ body {
         color: #c88f44;
     }
 }
-  /* Aqui termina la Barra de Navegación */
+/* Aqui termina la Barra de Navegación */
 
 
  /*movil*/
@@ -364,7 +364,6 @@ body {
 
 main {
     background-color: white;
-    padding-bottom: 12%;
 }
 .carrusel {
     background-color: white;
@@ -375,11 +374,11 @@ main {
     border-radius: 15px;
 }
 .titulo {
-    font-family: var(--fuentePrincipal);
+    font-family: var(--fuenteSecundaria);
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: #113775f0;
     margin-top: 1rem;
     
 }
@@ -393,9 +392,10 @@ main {
     width: 100%;
     list-style: none;
 }
-.carrusel img {
+.imagen-carousel {
     width: 100%;
     height: 33rem;
+    object-fit: cover;
 }
 @keyframes cambio {
     0% {margin-left: 0;}
@@ -411,9 +411,9 @@ main {
 /*termina el carrusel*/
 
     
-/*img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes*/
+/* img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes*/
 
-.contenedor {
+/* .contenedor {
     width: 100%;
     height: 100%;
     display: flex;
@@ -428,7 +428,6 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*background-color: #1e559c;*/
     margin-top: 1rem;
 
 }
@@ -436,6 +435,7 @@ main {
     width: 30%;
     height: 100%;
 }
+
 .contenedor label {
     font-family: var(--fuenteSecundaria);
     width: 40%;
@@ -495,9 +495,78 @@ ul, ol {
     width: 100%;
     top:0px;
     z-index: 99;
+} */
+/* termina img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes */
+
+/* Aqui empieza el responsive de escritorio para el acordeon */
+.acordeon{
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #6d977364;
+    font-family: var(--fuentePrincipal);
+    color: #0c3b2e;
 }
-/*termina img, descripcion y bton seleccion productos-megabilidad-preguntas frecuentes*/
-
-
+.acordeon__details{
+    padding: .5rem;
+}
+.acordeon__details[open] p{
+    background-color: white;
+}
+.acordeon__summary{
+    font-weight: 700;
+    font-family: var(--fuenteSecundaria);
+}
+.acordeon__parrafo{
+    margin: 1rem 1rem 0 1rem;
+    color: #091814;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.acordeon__details-subMenu{
+    padding: .5rem 2rem;
+}
+.acordeon__summary-subMenu{
+    font-weight: 700;
+    color: #048123;
+}
+.acordeon__parrafo-subMenu{
+    margin: 1rem 2rem 0 2rem;
+    color: #091814;
+    padding: .5rem;
+    border-radius: 5px;
+}
+/* Aqui finaliza el responsive de escritorio para el acordeon */
+/* Aqui inicia el responsive de celular para el acordeon */
+@media (min-width: 320px) and (max-width: 767px){
+    .imagen-carousel {
+        height: 20rem;
+    }
+    .acordeon{
+        margin: 3rem 1rem 0 1rem;
+    }
+    .acordeon__parrafo-subMenu{
+        margin: 1rem 0 0 2rem;
+    }
+    .acordeon__details-subMenu{
+        padding: .5rem 0 .5rem 2rem;
+    }
+}
+/* Aqui finaliza el responsive de celular para el acordeon */
+/* Aqui inicia el responsive de tablet para el acordeon */
+@media (min-width: 768px) and (max-width: 1023px){
+    .acordeon{
+        margin: 3rem 2rem 0 2rem;
+    }
+}
+/* Aqui finaliza el responsive de tablet para el acordeon */
+/*Aqui empieza los estilos del footer*/
+.footer__content {
+    margin-top: -1px;
+}
+/*Aqui finaliza los estilos del footer*/
 
 

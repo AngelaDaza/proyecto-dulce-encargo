@@ -416,7 +416,7 @@ signupFormBusiness.addEventListener('submit', async(e) => {
     title: '¡felicitaciones!',
     text: 'Registro fue exitoso.',
     onClose: () => {
-      window.locality.href = '../paginaLogin/index.html'
+      window.locality.href = 'http://127.0.0.1:5502/paginaLogin/index.html'
     }
   });
   signupFormBusiness.reset();

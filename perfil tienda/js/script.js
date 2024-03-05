@@ -34,7 +34,9 @@ async function mostrarProductosHtml(productos) {
             <img src=${producto.urlImage} alt="Foto producto" class="paquetesDisponibles__cardImg">
             <h3 class="paquetesDisponibles__cardTitle">${producto.name}</h3>
             <p class="paquetesDisponibles__cardParagraph">${producto.description}</p>
-            <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
+            <div class="botones">
+            <a href=""../configuracionProductos/index.html"" class="actualizar__btn"><button class="actualizar__btnA">Actualizar</button></a>
+            <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a></div>
           </div>`;
 
       listadoProductosHtml += cardTemplateProducto;
@@ -262,7 +264,7 @@ function filtrarPorCategoria() {
   let cards = document.querySelectorAll(".contenedorPaquetesProgreso__card");
 
   cards.forEach(function (card) {
-    let horaCard = card.querySelector(".hora").textContent.trim();
+    let horaCard = card.querySelector(".card__hora").textContent.trim();
     if (horaSeleccionada === "" || horaCard === horaSeleccionada) {
       card.style.display = "block";
     } else {

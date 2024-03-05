@@ -4,13 +4,13 @@ const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
 const body = document.body;
 
-abrir.addEventListener("click", () =>{
-    nav.classList.add("header__nav--visible");
-    body.classList.add("body--activo");
+abrir.addEventListener("click", () => {
+  nav.classList.add("header__nav--visible");
+  body.classList.add("body--activo");
 })
-cerrar.addEventListener("click", () =>{
-    nav.classList.remove("header__nav--visible");
-    body.classList.remove("body--activo");
+cerrar.addEventListener("click", () => {
+  nav.classList.remove("header__nav--visible");
+  body.classList.remove("body--activo");
 })
 //Peticion fetch para los productos activos de la tienda
 let url2 = 'http://localhost:8080/productos/obtenerProductoPorIdTienda/2';
@@ -24,28 +24,28 @@ fetch(url2)
   .then(data => mostrarProductosHtml(data))
   .catch(error => console.log(error));
 
-  async function mostrarProductosHtml(productos) {
-    try {
-      let listadoProductosHtml = '';
-      productos.forEach(producto => {
-        // Plantilla para la card
-        let cardTemplateProducto = `
+async function mostrarProductosHtml(productos) {
+  try {
+    let listadoProductosHtml = '';
+    productos.forEach(producto => {
+      // Plantilla para la card
+      let cardTemplateProducto = `
           <div data-id="${producto.id}" class="paquetesDisponibles__card">
             <img src=${producto.urlImage} alt="Foto producto" class="paquetesDisponibles__cardImg">
             <h3 class="paquetesDisponibles__cardTitle">${producto.name}</h3>
             <p class="paquetesDisponibles__cardParagraph">${producto.description}</p>
             <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a>
           </div>`;
-        
-        listadoProductosHtml += cardTemplateProducto;
-      });
-  
-      // Actualizar el contenido de la sección 'paginacion' con las cards generadas
-      document.getElementById('carrusel').innerHTML = listadoProductosHtml;
-    } catch (error) {
-      console.error('Error al mostrar las compras:', error);
-    }
+
+      listadoProductosHtml += cardTemplateProducto;
+    });
+
+    // Actualizar el contenido de la sección 'paginacion' con las cards generadas
+    document.getElementById('carrusel').innerHTML = listadoProductosHtml;
+  } catch (error) {
+    console.error('Error al mostrar las compras:', error);
   }
+}
 
 //Se asignan funcionalidad al Carrusel
 let posicionActual = 0;
@@ -98,15 +98,55 @@ fetch(url)
     return response.json();
   })
   .then(data => mostrarComprasHtml(data))
+  .then(() => {
+    const botonEstado = document.querySelectorAll(".estado__btn");
+    let userId = -1;
+    botonEstado.forEach(btn => {
+      btn.addEventListener("click", function () {
+        userId = this.dataset.id;
+        console.log(userId);
+        console.log(this.previousElementSibling.value);
+        let estadoModificado = {
+          statusShopping: this.previousElementSibling.value,
+        }
+
+        let url3 = `http://localhost:8080/compras/modificarEstadoCompra/${userId}`;
+
+        const options = {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(estadoModificado)
+        };
+        fetch(url3, options)
+          .then(response => response.json())
+          .then(data => {
+            Swal.fire({
+              icon: 'success',
+              title: '¡Felicitaciones!',
+              text: 'Usuario modificado con exito'
+            });
+          })
+          .catch(error =>
+            Swal.fire({
+              icon: 'error',
+              title: 'Ha ocurrido un error',
+              text: 'Error en la solicitud'
+            }))
+      })
+    });
+
+  })
   .catch(error => console.log(error));
 
-  async function mostrarComprasHtml(compras) {
-    try {
-      console.log(compras);
-      let listadoComprasHtml = '';
-      compras.forEach(compra => {
-        // Plantilla para la card
-        const cardTemplate = `
+async function mostrarComprasHtml(compras) {
+  try {
+    console.log(compras);
+    let listadoComprasHtml = '';
+    compras.forEach(compra => {
+      // Plantilla para la card
+      const cardTemplate = `
           <div data-id="${compra.id}" class="compras contenedorPaquetesProgreso__card" id="card">
             <h3 class="card__hora">${compra.hour}</h3>
             <lord-icon
@@ -121,27 +161,27 @@ fetch(url)
               <p class="card__Producto"><strong>Producto: </strong> ${compra.producto.name}</p>
               <p class="card__Cantidad"><strong>Cantidad: </strong> ${compra.amount}</p>
             </div>
+            <div class="estado">
+              <label for="estado" class="estado__label">Estado de la compra</label>
+              <select name="estado" id="estado" class="estado__input" data-placeholder="Ingrese el estado de la compra" required>
+                <option value="${compra.statusShopping}" selected>${compra.statusShopping}</option>
+                <option value="Proceso">En proceso</option>
+                <option value="Entregado">Entregado</option>
+                <option value="Abandonado">Abandonado</option>
+              </select>
+              <button data-id="${compra.id}" type="button" class="estado__btn">Cambiar</button>
+            </div>
           </div>`;
-        
-        listadoComprasHtml += cardTemplate;
-      });
-  
-      // Actualizar el contenido de la sección 'paginacion' con las cards generadas
-      document.getElementById('paginacion').innerHTML = listadoComprasHtml;
-    } catch (error) {
-      console.error('Error al mostrar las compras:', error);
-    }
+
+      listadoComprasHtml += cardTemplate;
+    });
+
+    // Actualizar el contenido de la sección 'paginacion' con las cards generadas
+    document.getElementById('paginacion').innerHTML = listadoComprasHtml;
+  } catch (error) {
+    console.error('Error al mostrar las compras:', error);
   }
-
-
-
-
-
-
-
-
-
-
+}
 
 //Paginación
 // Obtener los elementos relevantes del DOM
@@ -207,13 +247,13 @@ function buscarElementos() {
   let valorBusqueda = document.getElementById("buscar").value.toLowerCase();
   let cards = document.querySelectorAll(".contenedorPaquetesProgreso__card");
 
-  cards.forEach(function(card) {
-      let texto = card.textContent.toLowerCase();
-      if (texto.includes(valorBusqueda)) {
-          card.style.display = "block";
-      } else {
-          card.style.display = "none";
-      }
+  cards.forEach(function (card) {
+    let texto = card.textContent.toLowerCase();
+    if (texto.includes(valorBusqueda)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
 
@@ -221,13 +261,14 @@ function filtrarPorCategoria() {
   let horaSeleccionada = document.getElementById("filtroCategoria").value;
   let cards = document.querySelectorAll(".contenedorPaquetesProgreso__card");
 
-  cards.forEach(function(card) {
-      let horaCard = card.querySelector(".hora").textContent.trim();
-      if (horaSeleccionada === "" || horaCard === horaSeleccionada) {
-          card.style.display = "block";
-      } else {
-          card.style.display = "none";
-      }
+  cards.forEach(function (card) {
+    let horaCard = card.querySelector(".hora").textContent.trim();
+    if (horaSeleccionada === "" || horaCard === horaSeleccionada) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
   });
 }
+
 

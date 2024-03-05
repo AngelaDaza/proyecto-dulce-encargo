@@ -248,7 +248,11 @@ fetch(urlProducto)
         }
         return response.json(); // Llama a response.json() para obtener los datos
     })
-    .then(data => mostrarProductosHtml(data))
+    .then(data =>{
+        if (document.getElementById('cards')) {
+                mostrarProductosHtml(data);
+                console.log(data);
+            }})
     .catch(error => console.log(error));
 
 
@@ -258,13 +262,13 @@ fetch(urlProducto)
 //         document.getElementById(component).innerHTML = data;
 //     }
 // }
+let listadopaquetes = '';
 async function mostrarProductosHtml(productos) {
     try {
-        let listadopaquetes = '';
         const cardTemplate = await convertirHtmlTexto('card.html');
-
-        productos.forEach(productos => {
-            listadopaquetes += reemplazarAtributos(cardTemplate, productos);
+        console.log(productos);
+        productos.forEach(producto => {
+            listadopaquetes += reemplazarAtributos(cardTemplate, producto);
         });
         console.log(listadopaquetes);
 
@@ -295,9 +299,9 @@ function reemplazarAtributos(text, productos) {
 }
 
 // Si existe el id cards estoy en la pagina de productos y muestro los productos sino no los muestro.
-if (document.getElementById('cards')) {
-    mostrarProductosHtml();
-}
+// if (document.getElementById('cards')) {
+//     mostrarProductosHtml(listadopaquetes);
+// }
 
 
 if (document.querySelector('.formulario')) {

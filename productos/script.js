@@ -14,266 +14,282 @@ cerrar.addEventListener("click", () =>{
 })
 
 // Se crea la clase de productos
-class Paquete {
-    id = 0;
-    img = "";
-    nombre = "";
-    tienda = "";
-    ubicacion = "";
-    descripcion = "";
-    cantidad = 0;
-    precioRegular = 0.0;
-    precioFinal = 0.0;
-    categoria = "";
-    descuento = 0.0;
-    stock = 0;
+// class Paquete {
+//     id = 0;
+//     img = "";
+//     nombre = "";
+//     tienda = "";
+//     ubicacion = "";
+//     descripcion = "";
+//     cantidad = 0;
+//     precioRegular = 0.0;
+//     precioFinal = 0.0;
+//     categoria = "";
+//     descuento = 0.0;
+//     stock = 0;
 
-    constructor(id, img, nombre, tienda, ubicacion, descripcion, cantidad, precioRegular, precioFinal, categoria, stock) {
-        this.id = id;
-        this.img = img;
-        this.nombre = nombre;
-        this.tienda = tienda;
-        this.ubicacion = ubicacion;
-        this.descripcion = descripcion;
-        this.cantidad = cantidad;
-        this.precioRegular = precioRegular;
-        this.precioFinal = precioFinal;
-        this.categoria = categoria;
-        this.stock = stock;
-        this.descuento = this.calcularDescuento();
-    }
-    calcularDescuento() {
-        return this.precioRegular - this.precioFinal;
-    }
-}
+//     constructor(id, img, nombre, tienda, ubicacion, descripcion, cantidad, precioRegular, precioFinal, categoria, stock) {
+//         this.id = id;
+//         this.img = img;
+//         this.nombre = nombre;
+//         this.tienda = tienda;
+//         this.ubicacion = ubicacion;
+//         this.descripcion = descripcion;
+//         this.cantidad = cantidad;
+//         this.precioRegular = precioRegular;
+//         this.precioFinal = precioFinal;
+//         this.categoria = categoria;
+//         this.stock = stock;
+//         this.descuento = this.calcularDescuento();
+//     }
+//     calcularDescuento() {
+//         return this.precioRegular - this.precioFinal;
+//     }
+// }
 
-// Se crean los productos y se agregan al arreglo paquetes 
+// // Se crean los productos y se agregan al arreglo paquetes 
 
-// Se define el arreglo paquetes
-// Obtenemos los paquetes del local Storage
-const localPaquetes = localStorage.getItem("paquetes");
-// Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
-let paquetes = JSON.parse(localPaquetes) ?? [];
+// // Se define el arreglo paquetes
+// // Obtenemos los paquetes del local Storage
+// const localPaquetes = localStorage.getItem("paquetes");
+// // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+// let paquetes = JSON.parse(localPaquetes) ?? [];
 
-if (!JSON.parse(localPaquetes)) {
-    let paquete1 = new Paquete(
-        1101,
-        './img/paqueteDulce.jpg',
-        "Paquete dulce",
-        "Cafeteria los antojitos de la Abuela",
-        "Calle del Sueño Dorado, Nº 23",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        5000,
-        2500,
-        "Panaderia",
-        5
-    );
+// if (!JSON.parse(localPaquetes)) {
+//     let paquete1 = new Paquete(
+//         1101,
+//         './img/paqueteDulce.jpg',
+//         "Paquete dulce",
+//         "Cafeteria los antojitos de la Abuela",
+//         "Calle del Sueño Dorado, Nº 23",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         5000,
+//         2500,
+//         "Panaderia",
+//         5
+//     );
 
-    let paquete2 = new Paquete(
-        1102,
-        './img/rollosCanela.jpg',
-        "Rollos de Canela",
-        "Palmeritas",
-        "Avenida de los Suspiros, Nº 7B",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1500,
-        "Antojitos",
-        5
-    );
+//     let paquete2 = new Paquete(
+//         1102,
+//         './img/rollosCanela.jpg',
+//         "Rollos de Canela",
+//         "Palmeritas",
+//         "Avenida de los Suspiros, Nº 7B",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1500,
+//         "Antojitos",
+//         5
+//     );
 
-    let paquete3 = new Paquete(
-        1103,
-        './img/baguette.jpg',
-        "Baguette",
-        "Horno Celestial",
-        "Rincón Estrellas, Calle Luna, Nº 42",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1200,
-        "Panaderia",
-        5
-    );
+//     let paquete3 = new Paquete(
+//         1103,
+//         './img/baguette.jpg',
+//         "Baguette",
+//         "Horno Celestial",
+//         "Rincón Estrellas, Calle Luna, Nº 42",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1200,
+//         "Panaderia",
+//         5
+//     );
 
-    let paquete4 = new Paquete(
-        1104,
-        './img/croissants.jpg',
-        "Croissants del Paraíso",
-        "Cafeteria Hybrid",
-        "Paseo de los Deseos, Nº 11A",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1500,
-        "Panaderia",
-        5
-    );
+//     let paquete4 = new Paquete(
+//         1104,
+//         './img/croissants.jpg',
+//         "Croissants del Paraíso",
+//         "Cafeteria Hybrid",
+//         "Paseo de los Deseos, Nº 11A",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1500,
+//         "Panaderia",
+//         5
+//     );
 
-    let paquete5 = new Paquete(
-        1105,
-        './img/galletas.jpg',
-        "Variedad de Galletas",
-        "Pan de la Abuela",
-        "Plaza del Arcoíris, Nº 9C",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        5000,
-        2500,
-        "Antojitos",
-        5
-    );
+//     let paquete5 = new Paquete(
+//         1105,
+//         './img/galletas.jpg',
+//         "Variedad de Galletas",
+//         "Pan de la Abuela",
+//         "Plaza del Arcoíris, Nº 9C",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         5000,
+//         2500,
+//         "Antojitos",
+//         5
+//     );
 
-    let paquete6 = new Paquete(
-        1106,
-        './img/donas.jpg',
-        "Donas",
-        "Dunkin Donuts",
-        "Travesía de la Imaginación, Nº 88",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1500,
-        "Pasteleria",
-        5
-    );
+//     let paquete6 = new Paquete(
+//         1106,
+//         './img/donas.jpg',
+//         "Donas",
+//         "Dunkin Donuts",
+//         "Travesía de la Imaginación, Nº 88",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1500,
+//         "Pasteleria",
+//         5
+//     );
 
-    let paquete7 = new Paquete(
-        1107,
-        './img/tartas.jpg',
-        "Tartas Frescas",
-        "Dulce Éxtasis",
-        "Calle del Silencio Mágico, Nº 3D",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        20000,
-        15000,
-        "Pasteleria",
-        5
-    );
+//     let paquete7 = new Paquete(
+//         1107,
+//         './img/tartas.jpg',
+//         "Tartas Frescas",
+//         "Dulce Éxtasis",
+//         "Calle del Silencio Mágico, Nº 3D",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         20000,
+//         15000,
+//         "Pasteleria",
+//         5
+//     );
 
-    let paquete8 = new Paquete(
-        1108,
-        './img/panesIntegral.jpg',
-        "Panes Integrales",
-        "Panaderia J.J.",
-        "Avenida Mariposas Brillantes, Nº 27",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2500,
-        2000,
-        "Panaderia",
-        5
-    );
+//     let paquete8 = new Paquete(
+//         1108,
+//         './img/panesIntegral.jpg',
+//         "Panes Integrales",
+//         "Panaderia J.J.",
+//         "Avenida Mariposas Brillantes, Nº 27",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2500,
+//         2000,
+//         "Panaderia",
+//         5
+//     );
 
-    let paquete9 = new Paquete(
-        1109,
-        './img/tortaChocolate.jpg',
-        "Torta de Chocolate",
-        "Panaderia J.J.",
-        "Avenida Mariposas Brillantes, Nº 27",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        20000,
-        15000,
-        "Antojitos",
-        5
-    );
+//     let paquete9 = new Paquete(
+//         1109,
+//         './img/tortaChocolate.jpg',
+//         "Torta de Chocolate",
+//         "Panaderia J.J.",
+//         "Avenida Mariposas Brillantes, Nº 27",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         20000,
+//         15000,
+//         "Antojitos",
+//         5
+//     );
 
-    let paquete10 = new Paquete(
-        1110,
-        './img/muffin.jpg',
-        "Muffin",
-        "El Rincon del Pan",
-        "Carrera de los Fantásticos, Nº 64",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1500,
-        "Antojitos",
-        5
-    );
+//     let paquete10 = new Paquete(
+//         1110,
+//         './img/muffin.jpg',
+//         "Muffin",
+//         "El Rincon del Pan",
+//         "Carrera de los Fantásticos, Nº 64",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1500,
+//         "Antojitos",
+//         5
+//     );
 
-    let paquete11 = new Paquete(
-        1111,
-        './img/panQueso.jpg',
-        "Panecillos de Queso",
-        "Sabor Artesano",
-        "Pasaje de los Sueños, Nº 13E",
-        "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
-        1,
-        2000,
-        1500,
-        "Panaderia",
-        5
-    );
+//     let paquete11 = new Paquete(
+//         1111,
+//         './img/panQueso.jpg',
+//         "Panecillos de Queso",
+//         "Sabor Artesano",
+//         "Pasaje de los Sueños, Nº 13E",
+//         "Rollos de canela dulces horneados hechos con una masa de pan suave y esponjosa.",
+//         1,
+//         2000,
+//         1500,
+//         "Panaderia",
+//         5
+//     );
 
-    // Se agregan al arreglo los objetos 
-    paquetes.push(
-        paquete1,
-        paquete2,
-        paquete3,
-        paquete4,
-        paquete5,
-        paquete6,
-        paquete7,
-        paquete8,
-        paquete9,
-        paquete10,
-        paquete11,
-    );
+//     // Se agregan al arreglo los objetos 
+//     paquetes.push(
+//         paquete1,
+//         paquete2,
+//         paquete3,
+//         paquete4,
+//         paquete5,
+//         paquete6,
+//         paquete7,
+//         paquete8,
+//         paquete9,
+//         paquete10,
+//         paquete11,
+//     );
 
-    localStorage.setItem("paquetes",JSON.stringify(paquetes));
-}
+//     localStorage.setItem("paquetes",JSON.stringify(paquetes));
+// }
 
 // Creando productos en el HTML
-async function convertirHtmlTexto(file) {
-    let info = "";
-
-    await fetch(file)
-        .then(response => response.text())
-        .then(data => { info = data })
-        .catch(error => { console.error('Error al cargar el contenido:', error) });
-
-    return info;
+const urlProducto="http://localhost:8080/productos/obtenerTodosLosProductos";
+async function convertirHtmlTexto(urlProducto) {
+    try {
+        const response = await fetch(urlProducto);
+        if (!response.ok) {
+            throw new Error(`Hubo un problema con la solicitud fetch: ${response.statusText}`);
+        }
+        return await response.text();
+    } catch (error) {
+        throw new Error(`Hubo un problema con la solicitud fetch: ${error.message}`);
+    }
 }
+fetch(urlProducto)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Hubo un problema con la solicitud fetch: ${response.statusText}`);
+        }
+        return response.json(); // Llama a response.json() para obtener los datos
+    })
+    .then(data => mostrarProductosHtml(data))
+    .catch(error => console.log(error));
 
-async function cargarComponenteHtml(file, component) {
-    let data = await convertirHtmlTexto(file);
-    if (document.getElementById(component)) {
-        document.getElementById(component).innerHTML = data;
+
+// async function cargarComponenteHtml(urlProducto, component) {
+//     const data = await convertirHtmlTexto(urlProducto);
+//     if (document.getElementById(component)) {
+//         document.getElementById(component).innerHTML = data;
+//     }
+// }
+async function mostrarProductosHtml(productos) {
+    try {
+        let listadopaquetes = '';
+        const cardTemplate = await convertirHtmlTexto('card.html');
+
+        productos.forEach(productos => {
+            listadopaquetes += reemplazarAtributos(cardTemplate, productos);
+        });
+        console.log(listadopaquetes);
+
+        document.getElementById('cards').innerHTML = listadopaquetes;
+        
+    } catch (error) {
+        console.error('Error al mostrar los productos:', error);
     }
 }
 
-async function mostrarProductosHtml() {
-    let listadopaquetes = '';
-    let text = await convertirHtmlTexto('card.html');
-
-    for (let i = 0; i < paquetes.length; i++) {
-        listadopaquetes = listadopaquetes + reemplazarAtributos(text, paquetes[i]);
-    }
-
-    document.getElementById('cards').innerHTML = listadopaquetes;
-}
-
-function reemplazarAtributos(text, paquete) {
-    const localPaquetes = JSON.parse(localStorage.getItem('listaCompras')) ?? [];
-    console.log(localPaquetes.find(x=>x.id==paquete.id));
-    const cantidadCarritoCompras = localPaquetes.find(x=>x.id==paquete.id)?.cantidad;
-
-    text = text.replaceAll('{{id}}', paquete.id);
-    text = text.replaceAll('{{img}}', paquete.img);
-    text = text.replaceAll('{{nombre}}', paquete.nombre);
-    text = text.replaceAll('{{descripcion}}', paquete.descripcion);
-    text = text.replaceAll('{{tienda}}', paquete.tienda);
-    text = text.replaceAll('{{ubicacion}}', paquete.ubicacion);
-    text = text.replaceAll('{{precioRegular}}', paquete.precioRegular);
-    text = text.replaceAll('{{precioFinal}}', paquete.precioFinal);
-    text = text.replaceAll('{{descuento}}', paquete.descuento);
-    text = text.replaceAll('{{clasesInput}}', cantidadCarritoCompras >0 ? 'card__contenedorBtn-stoke card__contenedorBtn-stoke--activo' : 'card__contenedorBtn-stoke');
-    text = text.replaceAll('{{cantidad}}', cantidadCarritoCompras);
+function reemplazarAtributos(text, productos) {
+    const localPaquetes = [productos]; // Usar productos obtenidos en lugar de localStorage
+    const cantidadCarritoCompras = localPaquetes.find(x => x.id === productos.id)?.aumont;
+    console.log(productos);
+    text = text.replace('{{id}}', productos.id);
+    text = text.replace('{{img}}', productos.urlImage);
+    text = text.replace('{{nombre}}', productos.name);
+    text = text.replace('{{descripcion}}', productos.description);
+    text = text.replace('{{tienda}}', productos.idTienda.name);
+    text = text.replace('{{ubicacion}}', productos.idTienda.address);
+    text = text.replace('{{precioRegular}}', productos.regularPrice);
+    text = text.replace('{{precioFinal}}', productos.finalPrice);
+    text = text.replace('{{descuento}}', productos.discount);
+    text = text.replace('{{clasesInput}}', cantidadCarritoCompras >0 ? 'card__contenedorBtn-stoke card__contenedorBtn-stoke--activo' : 'card__contenedorBtn-stoke');
+    text = text.replace('{{cantidad}}', cantidadCarritoCompras);
     
     return text;
 }
@@ -282,20 +298,7 @@ function reemplazarAtributos(text, paquete) {
 if (document.getElementById('cards')) {
     mostrarProductosHtml();
 }
-// function formProducto(datos, url){
-//     const configuracion = {
-//       method: 'POST',
-//       body: JSON.stringify(datos),
-//       headers: {'Content-type': 'application/json'}
-//     };
-//     fetch(url, configuracion)
-//     .then(response => {
-//       return response.json()
-//     })
-//     .then(data => {
-//       console.log(data);
-//     })
-//   }
+
 
 if (document.querySelector('.formulario')) {
     // Creando nuevos productos desde el formulario

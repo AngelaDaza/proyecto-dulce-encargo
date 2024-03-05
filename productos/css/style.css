@@ -606,7 +606,7 @@ body {
 }
 /* Aqui finaliza el Responive de celular del titulo, barra de busqueda y filtro */
 /*Aqui inicia los card de productos*/
-.producto{
+.productos{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;

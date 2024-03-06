@@ -53,7 +53,7 @@ cerrar.addEventListener("click", () =>{
 // // Obtenemos los paquetes del local Storage
 // const localPaquetes = localStorage.getItem("paquetes");
 // // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
-// let paquetes = JSON.parse(localPaquetes) ?? [];
+let paquetes = [];
 
 // if (!JSON.parse(localPaquetes)) {
 //     let paquete1 = new Paquete(
@@ -230,9 +230,9 @@ cerrar.addEventListener("click", () =>{
 
 // Creando productos en el HTML
 const urlProducto="http://localhost:8080/productos/obtenerTodosLosProductos";
-async function convertirHtmlTexto(urlProducto) {
+async function convertirHtmlTexto(plantillaHTML) {
     try {
-        const response = await fetch(urlProducto);
+        const response = await fetch(plantillaHTML);
         if (!response.ok) {
             throw new Error(`Hubo un problema con la solicitud fetch: ${response.statusText}`);
         }
@@ -252,8 +252,9 @@ fetch(urlProducto)
         if (document.getElementById('cards')) {
                 mostrarProductosHtml(data);
                 console.log(data);
-            }})
+            }paquetes = data})
     .catch(error => console.log(error));
+    
 
 
 // async function cargarComponenteHtml(urlProducto, component) {
@@ -283,7 +284,7 @@ function reemplazarAtributos(text, productos) {
     const localPaquetes = [productos]; // Usar productos obtenidos en lugar de localStorage
     const cantidadCarritoCompras = localPaquetes.find(x => x.id === productos.id)?.aumont;
     console.log(productos);
-    text = text.replace('{{id}}', productos.id);
+    text = text.replaceAll('{{id}}', productos.id);
     text = text.replace('{{img}}', productos.urlImage);
     text = text.replace('{{nombre}}', productos.name);
     text = text.replace('{{descripcion}}', productos.description);
@@ -389,85 +390,20 @@ const btnBuscar = document.querySelector(".buscadorFiltro__btn");
 // });
 
 // Buscar  por nombre
-function buscarElementos() {
-    let valorBusqueda = document.getElementById("buscar").value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
-  
-    cards.forEach(function (card) {
-      let texto = card.textContent.toLowerCase();
-      if (texto.includes(valorBusqueda)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+btnBuscar.addEventListener("click", async function () {
+    const entradaText = inputBuscar.value.toLowerCase();
+    if (entradaText == "") {
+        const localPaquetes = localStorage.getItem("paquetes");
+        // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
+        paquetes = JSON.parse(localPaquetes) ?? [];
+    }
+    paquetes = paquetes.filter(entrada => {
+        return entrada.nombre.toLowerCase().includes(entradaText);
     });
-  }
-// btnBuscar.addEventListener("click", async function () {
-//     const entradaText = inputBuscar.value.toLowerCase();
-//     if (entradaText == "") {
-//         const localPaquetes = localStorage.getItem("paquetes");
-//         // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
-//         paquetes = JSON.parse(localPaquetes) ?? [];
-//     }
-//     paquetes = paquetes.filter(entrada => {
-//         return entrada.nombre.toLowerCase().includes(entradaText);
-//     });
-//     await mostrarProductosHtml();
-// });
+    await mostrarProductosHtml();
+});
 
-// Filtrar por precio o categorias
-// async function filtrarPorPrecioOCategoria() {
-//     let filtroSeleccionado = document.getElementById("filtro").value;
-//     try {
-//         let endpoint = '';
-//         // Define el endpoint correspondiente según el filtro seleccionado
-//         switch (filtroSeleccionado) {
-//             case "opcionMenor":
-//                 endpoint = 'http://localhost:8080/productos/obtenerProductoDeMenorAMayor';
-//                 break;
-//             case "opcionMayor":
-//                 endpoint = 'http://localhost:8080/productos/obtenerProductoDeMayorAMenor';
-//                 break;
-//             case "panaderia":
-//                 endpoint = 'http://localhost:8080/productos/obtenerProductoPorCategoria/panaderia';
-//                 break;
-//             case "antojitos":
-//                 endpoint = 'http://localhost:8080/productos/obtenerProductoPorCategoria/antojitos';
-//                 break;
-//             case "pasteleria":
-//             endpoint = 'http://localhost:8080/productos/obtenerProductoPorCategoria/pasteleria';
-//             break;
-//             // Agrega más casos según sea necesario para otros filtros
-//             default:
-//                 console.error('Filtro no válido:', filtroSeleccionado);
-//                 return;
-//         }
-
-//         const response = await fetch(endpoint);
-//         if (!response.ok) {
-//             throw new Error('Hubo un problema al obtener los datos:', response.statusText);
-//         }
-//         const productosFiltrados = await response.json();
-
-//         // Oculta todas las tarjetas
-//         let cards = document.querySelectorAll(".card");
-//         cards.forEach(card => {
-//             card.style.display = "none";
-//         });
-
-//         //Muestra solo las tarjetas correspondientes a los productos filtrados
-//         productosFiltrados.forEach(productos => {
-//             let cardId = `producto-${productos.id}`;
-//             let card = document.getElementById(cardId);
-//             if (card) {
-//                 card.style.display = "block";
-//             }
-//         });
-//     } catch (error) {
-//         console.error('Error al filtrar los productos:', error);
-//     }
-//   }
-
+// Filtrar por precio
 
 const inputOrdenar = document.querySelector(".buscadorFiltro__ordenar");
 
@@ -511,9 +447,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
             }
             contenedor = contenedor.parentElement;
         }
-
+        console.log(contenedor);
         if (contenedor.classList.contains("card__contenedorBtn")) {
             const agregar = paquetes.find(a => a.id == contenedor.dataset.id);
+            console.log(agregar);
+            console.log(contenedor.dataset.id);
             const hijos=Array.from(contenedor.childNodes);
             const cantidad = hijos.find(ele => ele.classList?.contains("card__contenedorBtn-stoke"))
 
@@ -547,7 +485,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
         window.location.href='/carritoCompras/carrito.html';
     });
 });
-
-
-
-

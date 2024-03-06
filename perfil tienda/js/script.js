@@ -35,7 +35,7 @@ async function mostrarProductosHtml(productos) {
             <h3 class="paquetesDisponibles__cardTitle">${producto.name}</h3>
             <p class="paquetesDisponibles__cardParagraph">${producto.description}</p>
             <div class="botones">
-            <a href=""../configuracionProductos/index.html"" class="actualizar__btn"><button class="actualizar__btnA">Actualizar</button></a>
+            <a href="../configuracionProductos/index.html" class="actualizar__btn"><button class="actualizar__btnA">Actualizar</button></a>
             <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a></div>
           </div>`;
 

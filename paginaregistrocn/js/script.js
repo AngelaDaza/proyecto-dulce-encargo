@@ -276,8 +276,8 @@ signupFormCliente.addEventListener('submit', async (e) => {
     icon: 'success',
     title: '¡felicitaciones!',
     text: 'Registro fue exitoso.',
-    onClose: () => {
-      window.locality.href = "../paginaLogin/index.html";
+    willClose: () => {
+         window.location.href = "../paginaLogin/index.html";
     }
   });
   // Limpiar el formulario
@@ -415,11 +415,12 @@ signupFormBusiness.addEventListener('submit', async(e) => {
     icon: 'success',
     title: '¡felicitaciones!',
     text: 'Registro fue exitoso.',
-    onClose: () => {
-      window.locality.href = '../paginaLogin/index.html'
+    willClose: () => {
+      window.location.href = '../paginaLogin/index.html'
     }
   });
   signupFormBusiness.reset();
+  
 });
 //Aqui finaliza la funcionaliad para guardar la información en el localstorage de la inscripción de negocio.
 

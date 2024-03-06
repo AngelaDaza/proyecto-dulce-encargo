@@ -407,6 +407,14 @@ main {
     70% {margin-left: -200%;}
     100% {margin-left: -200%;}	
 }
+.boton{
+    display: grid;
+    place-items: center;
+}
+.suscripcionBoton{
+    margin-top: 2rem;
+}
+
 
 /*termina el carrusel*/
 

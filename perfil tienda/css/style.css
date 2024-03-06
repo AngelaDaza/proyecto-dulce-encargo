@@ -684,9 +684,9 @@ option{
         align-items: center;
         
     }
-    /* .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
-       
-    } */
+    .contenedorPaquetesDisponibles__btnLeft, .contenedorPaquetesDisponibles__btnRight {
+       display: none;
+    }
     .contenedorPaquetesDisponibles__btnLeft {
         left: 1px;
         margin-top: 15rem;

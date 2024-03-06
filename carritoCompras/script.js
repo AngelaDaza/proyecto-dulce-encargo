@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', () =>{
     const contenedorCompras = document.querySelector('.contenedorDos');
     
     compras.forEach(compra => {
+        console.log(compra);
         const {id: idProducto,
-            img: imagenProducto, 
-            nombre: nombreProducto,
-            descripcion: desProducto,
-            precioFinal: precioFinalProducto,
+            urlImage: imagenProducto, 
+            name: nombreProducto,
+            description: desProducto,
+            finalPrice: precioFinalProducto,
             cantidad: cantidadProducto
         } = compra;
         // Contenedor Principal
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         divImagen.classList.add("contenedorP__imagen");
         const imagen = document.createElement("img");
         imagen.classList.add("contenedorP__img");
-        imagen.src = "../productos/" + imagenProducto;
+        imagen.src = imagenProducto;
         console.log(imagen.src);
         divImagen.appendChild(imagen);
         divCard.appendChild(divImagen);
@@ -134,12 +135,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 
     function aumentarProducto(e){
-        const XD = compras.map(producto => {
+        const productoAumentado = compras.map(producto => {
+            console.log(producto);
             if(producto.id == this.parentElement.dataset.id){
                 producto.cantidad++;
                 this.nextElementSibling.value++;
                 const contenedorPrecio = retornarHermano(this, 'contenedorP', 'contenedorP_precio').childNodes;
-                contenedorPrecio[1].textContent = producto.cantidad * producto.precioFinal;
+                contenedorPrecio[1].textContent = producto.cantidad * producto.finalPrice;
                 return producto;
             }else{
                 return producto;
@@ -162,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                 producto.cantidad--;
                 this.previousElementSibling.value--;
                 const contenedorPrecio = retornarHermano(this, 'contenedorP', 'contenedorP_precio').childNodes;
-                contenedorPrecio[1].textContent = producto.cantidad * producto.precioFinal;
+                contenedorPrecio[1].textContent = producto.cantidad * producto.finalPrice;
                 return producto;
             }else{
                 return producto;
@@ -218,37 +220,37 @@ function recorrerListaCompras(){
         datosTabla.appendChild(crearFilaResumenCompra(compra));
     })
     const totalHTML = document.querySelector('.contenedorTres__cantidad');
-    const total = compras.reduce((acumulador, prod) => acumulador+= prod.cantidad * prod.precioFinal, 0);
+    const total = compras.reduce((acumulador, prod) => acumulador+= prod.cantidad * prod.finalPrice, 0);
     console.log(total);
     totalHTML.value = total;
 }
 
 //* Funcion que crea la fila par insertar en la tabla
 function crearFilaResumenCompra(producto){
-    const {nombre,cantidad, precioFinal} = producto;
+    const {name,cantidad, finalPrice} = producto;
 
     const tr = document.createElement("tr");
 
     const tdNombre = document.createElement("td");
-    tdNombre.textContent = nombre;
+    tdNombre.textContent = name;
 
     const tdCantidad = document.createElement("td");
     tdCantidad.textContent = cantidad;
 
     const tdPrecioFinal = document.createElement("td");
-    const totalCompra = producto.cantidad * producto.precioFinal;
+    const totalCompra = cantidad * finalPrice;
     tdPrecioFinal.textContent = totalCompra;
 
     tr.appendChild(tdNombre);
     tr.appendChild(tdCantidad);
     tr.appendChild(tdPrecioFinal);
 
-    return tr;
-}
+    return tr;}
 //Petición fetch POST 
     // Agregar un evento para cuando se precione el boton
     async function crearCompra(){ 
-        let amount = 2;
+        let amount = compras[0].cantidad;
+        console.log(amount);
         let hora = document.querySelector("#hora").value;// Elimina acciones previas (solo con tipo submit)
         let fecha= new Date().toISOString().split('T')[0];
 

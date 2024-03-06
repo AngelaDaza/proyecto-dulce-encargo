@@ -27,23 +27,24 @@ fetch(url2)
     let productId = -1;
     btnEliminar.forEach(botonEl => {
       botonEl.addEventListener("click", function () {
+        console.log(this);
         productId = this.dataset.id;
         console.log(productId);
         let urlEliminar = `http://localhost:8080/productos/eliminarProducto/${productId}`;
 
         const options = {
           method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json'
-          }
+          
         };
         fetch(urlEliminar, options)
-          .then(response => response.json())
-          .then(data => {
+          .then(() => {
             Swal.fire({
               icon: 'success',
               title: '¡Felicitaciones!',
-              text: 'Producto eliminado con exito'
+              text: 'Producto eliminado con exito',
+              willClose: () => {
+                window.location.href = 'index.html'
+              }
             });
           })
           .catch(error =>
@@ -67,7 +68,7 @@ fetch(url2)
             <p class="paquetesDisponibles__cardParagraph">${producto.description}</p>
             <div class="botones">
             <a href="../configuracionProductos/index.html" class="actualizar__btn"><button class="actualizar__btnA">Actualizar</button></a>
-            <a href="#" class="eliminar__btn"><button class="eliminar__btnA">Eliminar</button></a></div>
+            <a href="#" class="eliminar__btn"><button data-id="${producto.id}" class="eliminar__btnA">Eliminar</button></a></div>
           </div>`;
 
             listadoProductosHtml += cardTemplateProducto;
@@ -130,6 +131,9 @@ fetch(url2)
           }
           return response.json();
         })
+        .then(data => {
+          return data.filter(producto=>producto.statusShopping=="En proceso")
+        })
         .then(data => mostrarComprasHtml(data))
         .then(() => {
           const botonEstado = document.querySelectorAll(".estado__btn");
@@ -139,6 +143,9 @@ fetch(url2)
               userId = this.dataset.id;
               console.log(userId);
               console.log(this.previousElementSibling.value);
+              if(this.previousElementSibling.value != "Proceso"){
+                this.parentElement.parentElement.remove();
+              }
               let estadoModificado = {
                 statusShopping: this.previousElementSibling.value,
               }

@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //  Fetch para mostrar info del usuario
-let userId = 1;
+let userId = 2;
 let url = `http://localhost:8080/usuariotienda/obtenerUsuarioTiendaPorId/${userId}`;
 
 // Realizamos la solicitud GET utilizando fetch

@@ -251,7 +251,6 @@ fetch(urlProducto)
     .then(data =>{
         if (document.getElementById('cards')) {
                 mostrarProductosHtml(data);
-                console.log(data);
             }paquetes = data})
     .catch(error => console.log(error));
     
@@ -263,10 +262,11 @@ fetch(urlProducto)
 //         document.getElementById(component).innerHTML = data;
 //     }
 // }
-let listadopaquetes = '';
 async function mostrarProductosHtml(productos) {
     try {
+        let listadopaquetes = '';
         const cardTemplate = await convertirHtmlTexto('card.html');
+        limpiarHTMLPrevio(document.getElementById("cards"));
         console.log(productos);
         productos.forEach(producto => {
             listadopaquetes += reemplazarAtributos(cardTemplate, producto);
@@ -392,15 +392,10 @@ const btnBuscar = document.querySelector(".buscadorFiltro__btn");
 // Buscar  por nombre
 btnBuscar.addEventListener("click", async function () {
     const entradaText = inputBuscar.value.toLowerCase();
-    if (entradaText == "") {
-        const localPaquetes = localStorage.getItem("paquetes");
-        // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
-        paquetes = JSON.parse(localPaquetes) ?? [];
-    }
     paquetes = paquetes.filter(entrada => {
-        return entrada.nombre.toLowerCase().includes(entradaText);
+        return entrada.name.toLowerCase().includes(entradaText);
     });
-    await mostrarProductosHtml();
+    await mostrarProductosHtml(paquetes);
 });
 
 // Filtrar por precio
@@ -414,21 +409,29 @@ async function ordenar() {
     switch (valor) {
         case "opcionMenor":
             paquetes = paquetes.sort((a, b) => {
-                return a.precioFinal - b.precioFinal;
+                return a.finalPrice - b.finalPrice;
             });
-            await mostrarProductosHtml();
+            await mostrarProductosHtml(paquetes);
             break;
         case "opcionMayor":
             paquetes = paquetes.sort((b, a) => {
-                return a.precioFinal - b.precioFinal;
+                return a.finalPrice - b.finalPrice;
             });
-            await mostrarProductosHtml();
+            await mostrarProductosHtml(paquetes);
             break;
         default:
-            const localPaquetes = localStorage.getItem("paquetes");
-            // Convertir los paquetes de JSON a objeto y si no se le asigna un array vacio
-            paquetes = JSON.parse(localPaquetes) ?? [];
-            await mostrarProductosHtml();
+            fetch(urlProducto)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Hubo un problema con la solicitud fetch: ${response.statusText}`);
+                }
+                return response.json(); // Llama a response.json() para obtener los datos
+            })
+            .then(data =>{
+                if (document.getElementById('cards')) {
+                        mostrarProductosHtml(data);
+                    }paquetes = data})
+            .catch(error => console.log(error));
             break;
     }
 };
@@ -485,3 +488,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
         window.location.href='/carritoCompras/carrito.html';
     });
 });
+
+ function limpiarHTMLPrevio(padre){
+    let elemento = padre.firstChild;
+
+    while(elemento){
+        elemento.remove();
+        elemento = padre.firstChild;
+    }
+}
